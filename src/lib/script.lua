@@ -1,0 +1,161 @@
+# Development
+# f79a73a7-3d3d-4b2b-9435-4fd791f6133e
+# Production
+# ed8121b6-8534-42cf-84f0-1e46269ed9c8
+
+avrae_asking_for_inputs = {
+    "title": "Avrae asking for inputs?",
+    "body": "Always choose option 1."
+}
+
+flight = {
+    "title": "Flying in the dungeon?",
+    "body": "Flight is not possible within dungeon combat, due to the complications of automating flight with monsters and maps.\n\nFlight may be used out of combat."
+}
+
+combat_section = {
+    "title": "Combat",
+    "body": f"When arriving on a floor with monsters. You will be prompted to run `{ctx.prefix}dungeon monsters` to add them to initiative.\n\nRun `{ctx.prefix}map` and `{ctx.prefix}i next` to display the map and proceed to the first combatantʼs turn."
+}
+
+player_turns = {
+    "title": "Player controlled turns",
+    "body": f"""On player controlled combatants turns, control is turned over to them. They should do their actions, bonus actions, movement etc. and when finished run `{ctx.prefix}i next` to proceed to the next combatant.
+
+Attacks and spells should **always** be targetted with the `-t` argument. If you forget to target something, you may reroll again and target it. You may not keep a roll from an untargetted attack.
+
+If the player would trigger a reaction from an enemy, like an opportunity attack then the monster **always** takes the reaction.
+You can use this command to do an opportunity attack:
+```
+{ctx.prefix}i aoo '<combatant_name>' '<attack_name>' -t '<target_name>'
+```
+
+The player whose turn it was last will then run each sucessive monster turn until initiative reaches another player controlled combatant."""
+}
+
+wild_shapes_and_transformations = {
+    "title": "Wildshape and other transformations",
+    "body": f"""When you use an ability like Polymorph or Wildshape to take on the stat block of another creature, you would run the following commands.
+
+```
+{ctx.prefix}i madd '<new_creature_name>' -h -controller @<discord_name> -name '<new_creature_name>'
+```
+```
+{ctx.prefix}team ghost '<original_creature_name>'
+```
+```
+{ctx.prefix}team 1 '<new_Creature_name>'
+```
+
+When the form ends you can then run the following commands:
+
+```
+{ctx.prefix}i remove '<new_creature_name>'
+```
+```
+{ctx.prefix}team ghost '<original_creature_name>'
+```"""
+}
+
+monster_turns = {
+    "title": "Monster turns",
+    "body": f"""Firstly, the player managing the monsters turn should review if the monster is capable of acting. Eg. a monster with the Unconscious Condition should not get a turn and the player should `{ctx.prefix}i next`.
+
+If the monster is capable of acting then the player should run `{ctx.prefix}auto once` and wait at least 5 seconds after running this command for any other players to react. eg. to cast shield if they were hit
+
+If a monster can see no adventurers or enemies to target then the monster takes the Search action. The monster rolls a perception check and an investigation check, and then the check with the higher modifier is used against the stealth check to determine if that enemy is found and is no longer hiding.
+
+If a monster tries to do something that should be impossible. eg. moving after being opportunity attacked by a combatant with sentinel, then the player in control should override and resolve the monsters turn in the way that makes the most sense. You can review the monsters available actions by running `{ctx.prefix}i a` and choosing the first from the top that can be used or multiattack if the monster has that ability. If there is no logical choice how to resolve a monsters turn they take the Dodge action. `{ctx.prefix}dodge '<monster_name>'`.
+
+The player in control should repeat this process until the intitiative reaches a player controlled combatant who then takes over."""
+}
+
+npc_turns = {
+    "title": "NPC turns",
+    "body": "NPC turns are resolved the same way monster turns are."
+}
+
+map_commands = {
+    "title": "Map Commands",
+    "body": f"""On your turn, you can run the `{ctx.prefix}map` command to view the map.
+
+To move your PC please use `{ctx.prefix}go 10e10s10e` to move your PC around the map. You can combine any number of feat with any direction, `n`, `ne`, `e`, `se`, `s`, `sw`, `w` and `nw`.
+
+Alternatively, `{ctx.prefix}move` may be used to move your PC to a specific square, however `{ctx.prefix}go` is preferred.
+
+You may also use the `{ctx.prefix}distance` command to measure the distance between any squares or combatants.
+
+You may also move other combatants using `-t '<combatant_name>'` at the end of a `{ctx.prefix}go` or `{ctx.prefix}move` command. eg. `{ctx.prefix}go 10e -t GO1`.
+
+`{ctx.prefix}map undo` may be used to revert to the last time a `{ctx.prefix}map` command was used if a mistake was made."""
+}
+
+summons = {
+    "title": "Summons, familiars, conjurations and companions",
+    "body": f"""You may use the following commands to add monsters to initiative and set them as friendly.
+```
+{ctx.prefix}i madd '<summon_name>' -h -controller @<discord_name> -name '<summon_name>'
+```
+```
+{ctx.prefix}team 1 '<summon_name>'
+```"""
+}
+
+resting = {
+    "title": "Resting within the dungeon",
+    "body": "Resting within the dungeon is strictly prohibited to special floors which state they allow you to rest."
+}
+
+hiding = {
+    "title": "Stealth and hiding",
+    "body": f"""When attempting to hide in dungeon combat you must follow this step by step:
+* First, justify why you are able to hide in a text post. eg 'I hide behind this big rock.'
+    * You must justify why the monsters cannot see you. If there is a monster who would obviously see you then you cannot hide.
+* Next, use the Hide action to make a Stealth check against the Passive Perception of all monsters present.
+    * If a monster has advantage or disadvantage on perception checks you can add or minus 5 from their passive score.
+* If the stealth check you rolled meets or beats the highest passive perception of the monsters then you successfully hid, and may run the following command to set yourself as non-targettable by the monsters until your next turn.
+```
+{ctx.prefix}i effect "<character_name>" "Ghost (auto)" -dur 1
+```
+* If an enemy would see you or you would stop hiding for any reason, then you can remove this effect with the following command:
+```
+{ctx.prefix}i re "<character_name>" "Ghost (auto)"
+```
+"""
+}
+
+death = {
+    "title": "Death",
+    "body": """The dungeon is a special location protected by powerful magical rites and wardings. Any adventurer who dies within the dungeon is transported to the entrance of the dungeon, leaving **all** of the gear they took with them or found within the dungeon at the location they died.
+
+Gear lost to death can be retrieved by returning to the same dungeon (using the same seed) and floor you previously died upon and succesfully clearing any encounter on that floor."""
+}
+
+script = [
+    avrae_asking_for_inputs,
+    flight,
+    combat_section,
+    player_turns,
+    monster_turns,
+    npc_turns,
+    wild_shapes_and_transformations,
+    map_commands,
+    summons,
+    resting,
+    hiding,
+    death
+]
+
+def get_script(section_name = None):
+    if section_name == None:
+        return script
+
+    new_script = []
+
+    section_name_search = section_name.lower()
+
+    for section in script:
+        if section_name_search in section.title.lower() or section_name_search in section.body.lower():
+            new_script.append(section)
+
+    return new_script

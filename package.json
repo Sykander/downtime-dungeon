@@ -1,0 +1,14 @@
+{
+  "name": "downtime_dungeon",
+  "version": "1.0.0",
+  "description": "This is a collection of aliases for avrae, to be used to run an automated downtime dungeon.",
+  "main": "",
+  "scripts": {
+    "deploy": "node utils/deploy.js"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "axios": "^1.7.7"
+  }
+}
