@@ -1185,7 +1185,7 @@ monster_list = [
         image_url = "https://www.dndbeyond.com/avatars/thumbnails/30788/673/1000/1000/638062178858715934.png",
         token = "zt2fm",
         size = "M",
-        type_str = "Humanoid(human)",
+        type_str = "Humanoid (human)",
         cr = 5,
         pp = 12,
     ),
