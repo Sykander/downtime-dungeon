@@ -1263,7 +1263,7 @@ monster_list = [
         image_url = "https://www.dndbeyond.com/avatars/thumbnails/30782/14/1000/1000/638061948209066036.png",
         token = "53e7r",
         size = "L",
-        type_str = "Fiend(Devil)",
+        type_str = "Fiend (devil)",
         cr = 11,
         pp = 13,
     ),
