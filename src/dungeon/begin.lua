@@ -9,7 +9,8 @@ using(
     get_dungeon_data = env.get_gvar_id_by_name("get_dungeon_data"),
     random = env.get_gvar_id_by_name("random"),
     map_tools = env.get_gvar_id_by_name("map_tools"),
-    npc_tools = env.get_gvar_id_by_name("npc_tools")
+    npc_tools = env.get_gvar_id_by_name("npc_tools"),
+    npcs = env.get_gvar_id_by_name("npcs")
 )
 
 args = argparse(&ARGS&)
