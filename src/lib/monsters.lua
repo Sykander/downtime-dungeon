@@ -727,7 +727,7 @@ monster_list = [
         cr = 2,
         pp = 10,
         size = "M",
-        type_str "Undead"
+        type_str = "Undead",
     ),
     configure_monster(
         name = "Ghost",
