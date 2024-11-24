@@ -1180,6 +1180,51 @@ monster_list = [
         cr = 8,
         pp = 13,    
     ),
+    configure_monster(
+        name = "Ice Devil",
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/30782/19/1000/1000/638061948317576166.png",
+        token = "8ymvp",
+        type_str = "Fiend (devil)",
+        size = "L",
+        cr = 14,
+        pp = 12
+    ),
+    configure_monster(
+        name = "Ice Mephit",
+        type_str = "Elemental",
+        size = "S",
+        pp = 12,
+        cr = 0.5,
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/34175/909/1000/1000/638190241405142934.png",
+        token = "vytj9"
+    ),
+    configure_monster(
+        name = "Imp",
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/43939/643/1000/1000/638607427690376961.png",
+        token = "nmqet",
+        size = "S",
+        type_str = "Fiend (devil, shapechanger)",
+        cr = 1,
+        pp = 11
+    ),
+    configure_monster(
+        name = "Invisible Stalker",
+        type_str = "Elemental",
+        size = "M",
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/30831/81/1000/1000/638063804958813537.png",
+        token = "bjzxn",
+        pp = 18,
+        cr = 6
+    ),
+    configure_monster(
+        name = "Iron Golem",
+        type_str = "Construct",
+        size = "L",
+        cr = 16,
+        pp = 10,
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/30784/170/1000/1000/638062031423594632.png",
+        token = wspbc
+    )
 ]
 
 def get_monsters_in_cr_range(cr_min, cr_max):
