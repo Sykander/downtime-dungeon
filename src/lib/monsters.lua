@@ -700,8 +700,86 @@ monster_list = [
         size = "L",
         type_str = "Giant",
         cr = 4,
-        pp = 14
-    )
+        pp = 14,
+    ),
+    configure_monster(
+    name = "Fire Elemental",
+    image_url = "https://www.dndbeyond.com/avatars/thumbnails/30783/695/1000/1000/638062015772259390.png",
+    token = "z3x8k",
+    size = "L",
+    type_str = "Elemental"
+    cr = 5,
+    pp = 10, 
+     ),
+
+     configure_monster(
+     name = "Fire Giant",
+     image_url = "https://www.dndbeyond.com/avatars/thumbnails/30783/927/1000/1000/638062023828890799.png",
+     token = "mmqhd",
+     size = "H",
+     type_str = "Giant",
+     cr = 9,
+     pp = 16, 
+
+     ),
+     configure_monster(
+     name = "Flameskull",
+     image_url = "https://www.dndbeyond.com/avatars/thumbnails/14/487/1000/1000/636364325235118776.png",
+     token = "9c6xg",
+     size = "T",
+     type_str = "Undead",
+     cr = 4,
+     pp = 12,
+
+     ),
+     configure_monster(
+     name = "Flesh Golem",
+     image_url = "https://www.dndbeyond.com/avatars/thumbnails/30783/970/1000/1000/638062024851930870.png",
+     token = "2mqhz",
+     size = "M",
+     type_str = "Construct",
+     cr = 5,
+     pp = 10,
+
+     ),
+     configure_monster(
+     name = "Flying Snake",
+     image_url = "https://www.dndbeyond.com/avatars/thumbnails/16/517/1000/1000/636376319640572721.jpeg",
+     token = "nhezy",
+     size = "T",
+     type_str = "Beast",
+     cr = 0.125, 
+     pp = 11,
+     ),
+     configure_monster(
+     name = "Flying Sword", 
+     image_url = "https://www.dndbeyond.com/avatars/thumbnails/30761/834/1000/1000/638061095632921781.png",
+     token = "yjcvu",
+     size = "S",
+     type_str = "Construct",
+     cr = 0.25,
+     pp = 7, 
+     ),
+     configure_monster(
+    name = "Frog",
+    image_url = "https://www.dndbeyond.com/avatars/thumbnails/16/523/1000/1000/636376321230650501.jpeg",
+    token = "5hftq",
+    size = "T",
+    type_str = "Beast",
+    cr = 0,
+    pp = 11,
+     ),
+    configure_monster(
+    name = "Frost Giant",
+    image_url = "https://www.dndbeyond.com/avatars/thumbnails/30783/929/1000/1000/638062023951430779.png",
+    token = "4xhkk",
+    size = "H",
+    type_str = "Giant",
+    cr = 8,
+    pp = 13,    
+    ),
+    
+
 ]
 
 def get_monsters_in_cr_range(cr_min, cr_max):
