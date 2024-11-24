@@ -1223,7 +1223,8 @@ monster_list = [
         cr = 16,
         pp = 10,
         image_url = "https://www.dndbeyond.com/avatars/thumbnails/30784/170/1000/1000/638062031423594632.png",
-        token = wspbc
+        token = "wspbc"
+
     )
 ]
 
