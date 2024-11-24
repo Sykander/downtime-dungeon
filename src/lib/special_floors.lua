@@ -161,6 +161,6 @@ If the prayer is not offered or is failed, the chalice remains dim, but the cler
         "name": "Spirit of the Depths",
         "desc": """A ghostly light wreathed figure appears on the dungeon floor, floating from one end of the room to the other. You get the impression that it is bored. One adventurer can make DC 13 performance check to entertain the figure. On a success, you may read the following spoilered text.
 
-||> The spirit grants each adventurers a blessing of protection, allowing them to use a reaction to gain resistance against once damage type until the start of your next turn. ||"""
+||> The spirit grants each adventurer a blessing of protection, allowing them to use a reaction to gain resistance against one damage type until the start of your next turn. This blessing of protection can be used once per time it has been received.||"""
       }
 ]
