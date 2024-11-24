@@ -1023,7 +1023,7 @@ monster_list = [
         token = "vdzke",
         size = "M",
         type_str = "Dragon",
-        pp 14,
+        pp = 14,
         cr 3
     ),
     configure_monster(
