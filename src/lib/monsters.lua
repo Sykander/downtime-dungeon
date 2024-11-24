@@ -1219,7 +1219,8 @@ monster_list = [
     configure_monster(
         name = "Hezrou",
         size = "L",
-        type_str = "Fiend(Demon)",
+        type_str = "Fiend (demon)",
+=
         cr = 8,
         pp = 11,
     ),
