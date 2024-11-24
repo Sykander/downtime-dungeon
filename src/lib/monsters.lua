@@ -734,7 +734,7 @@ monster_list = [
         type_str = "Undead",
         size = "M",
         cr = 4,
-        pp 11,
+        pp = 11,
         image_url = "https://www.dndbeyond.com/avatars/thumbnails/30783/917/1000/1000/638062023593120762.png",
         token = "mz6u8"
     ),
