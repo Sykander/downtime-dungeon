@@ -1222,7 +1222,6 @@ monster_list = [
         token = "2g72k",
         size = "L",
         type_str = "Fiend (demon)",
-=
         cr = 8,
         pp = 11,
     ),
