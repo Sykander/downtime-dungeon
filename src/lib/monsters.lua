@@ -737,7 +737,6 @@ monster_list = [
         type_str = "Construct",
         cr = 5,
         pp = 10,
-
      ),
      configure_monster(
         name = "Flying Snake",
@@ -775,8 +774,6 @@ monster_list = [
         cr = 8,
         pp = 13,    
     ),
-
-
 ]
 
 def get_monsters_in_cr_range(cr_min, cr_max):
