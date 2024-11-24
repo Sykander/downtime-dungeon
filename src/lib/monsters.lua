@@ -910,7 +910,7 @@ monster_list = [
         size = "L",
         token = "nkyjz",
         cr = 3,
-        pp 9,
+        pp = 9,
         type_str = "Beast"
     ),
     configure_monster(
