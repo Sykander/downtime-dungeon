@@ -707,7 +707,7 @@ monster_list = [
         image_url = "https://www.dndbeyond.com/avatars/thumbnails/30783/695/1000/1000/638062015772259390.png",
         token = "z3x8k",
         size = "L",
-        type_str = "Elemental"
+        type_str = "Elemental",
         cr = 5,
         pp = 10, 
      ),
