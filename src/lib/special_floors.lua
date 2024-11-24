@@ -156,5 +156,10 @@ A cleric who offers a prayer (lasting 10 minutes) may attempt a Religion check, 
 > 3. The altar empowers the cleric's holy symbol allowing them to add +1 to their next Healing Word or Cure Wounds spell cast within the next 24 hours.||
 
 If the prayer is not offered or is failed, the chalice remains dim, but the cleric still feels a sense of calm, as if their devotion has been acknowledged."""
+      },
+      {
+        "name": "Spirit of the Depths",
+        "desc": """A being made out of pure light appears in the floor, floating from one end of the room to the other. You get the impression that it is bored. Adventures can make DC 13 performance check to entertain the floating light. On a success, you may read the following spoilered text.
+||> The spirit grants each adventurers a blessing of protection, allowing them to use a reaction to gain resistance against once damage type until the start of your next turn. ||"""
       }
 ]
