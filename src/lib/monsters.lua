@@ -1574,7 +1574,7 @@ monster_list = [
         pp = 16,
     ),
     configure_monster(
-        name = "Nodic",
+        name = "Nothic",
         image_url = "https://www.dndbeyond.com/avatars/thumbnails/30833/693/1000/1000/638063870558761680.png",
         token = "vnt2c",
         size = "M",
