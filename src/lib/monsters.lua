@@ -1042,7 +1042,7 @@ monster_list = [
         type_str = "Ooze",
         size = "M",
         cr = 0.5,
-        pp 8
+        pp = 8
     ),
     configure_monster(
         name = "Green Dragon Wyrmling",
