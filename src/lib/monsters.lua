@@ -1024,7 +1024,7 @@ monster_list = [
         size = "M",
         type_str = "Dragon",
         pp = 14,
-        cr 3
+        cr = 3
     ),
     configure_monster(
         name = "Gorgon",
