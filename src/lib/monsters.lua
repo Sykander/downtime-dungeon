@@ -1538,6 +1538,8 @@ monster_list = [
     ),
     configure_monster(
         name = "Mummy Lord",
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/30833/586/1000/1000/638063867954193239.png",
+        token = "ctpkj",
         size = "M",
         type_str = "Undead",
         cr = 15,
