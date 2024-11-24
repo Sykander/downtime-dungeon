@@ -1218,6 +1218,8 @@ monster_list = [
     ),
     configure_monster(
         name = "Hezrou",
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/30781/620/1000/1000/638061931586077246.png",
+        token = "2g72k",
         size = "L",
         type_str = "Fiend (demon)",
 =
