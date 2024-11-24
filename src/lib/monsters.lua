@@ -1245,7 +1245,7 @@ monster_list = [
     configure_monster(
         name = "Hobgoblin",
         size = "M",
-        type_str = "Humanoid (Goblinoid)",
+        type_str = "Humanoid (goblinoid)",
         cr = 0.5,
         pp = 10, 
     ),
