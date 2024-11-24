@@ -700,7 +700,413 @@ monster_list = [
         size = "L",
         type_str = "Giant",
         cr = 4,
+        pp = 14
+    ),
+    configure_monster(
+        name = "Gargoyle",
+        size = "M",
+        type_str = "Elemental",
+        pp = 10,
+        cr = 2,
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/30783/892/1000/1000/638062022959460682.png",
+        token = "6gqd6"
+    ),
+    configure_monster(
+        name = "Gelatinous Cube",
+        type_str = "Ooze",
+        size = "L",
+        cr = 2,
+        pp = 8,
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/30834/149/1000/1000/638063882505895317.png",
+        token = "5w85c"
+    ),
+    configure_monster(
+        name = "Ghast",
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/0/411/1000/1000/636252786516023032.jpeg",
+        token = "msyys",
+        cr = 2,
+        pp = 10,
+        size = "M",
+        type_str = "Undead",
+    ),
+    configure_monster(
+        name = "Ghost",
+        type_str = "Undead",
+        size = "M",
+        cr = 4,
+        pp = 11,
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/30783/917/1000/1000/638062023593120762.png",
+        token = "mz6u8"
+    ),
+    configure_monster(
+        name = "Ghoul",
+        type_str = "Undead",
+        size = "M",
+        cr = 1,
+        pp = 10,
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/14/483/1000/1000/636364323937041514.png",
+        token = "jrgme"
+    ),
+    configure_monster(
+        name = "Giant Ape",
+        type_str = "Beast",
+        size = "H",
+        cr = 7,
         pp = 14,
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/43938/889/1000/1000/638607408673681530.png",
+        token = "vjqbr"
+    ),
+    configure_monster(
+        name = "Giant Badger",
+        type_str = "Beast",
+        size = "M",
+        cr = 0.25,
+        pp = 11,
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/43938/902/1000/1000/638607409157242443.png",
+        token = "z4zp9"
+    ),
+    configure_monster(
+        name = "Giant Bat",
+        type_str = "Beast",
+        size = "L",
+        cr = 0.25,
+        pp = 11,
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/43938/918/1000/1000/638607409599142805.png",
+        token = "mecq5"
+    ),
+    configure_monster(
+        name = "Giant Boar",
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/43938/952/1000/1000/638607410436443314.png",
+        token = "ybuq6",
+        size = "L",
+        pp = 8,
+        cr = 2,
+        type_str = "Beast"
+    ),
+    configure_monster(
+        name = "Giant Centipede",
+        size = "S",
+        cr = 0.25,
+        pp = 8,
+        type_str = "Beast"
+    ),
+    configure_monster(
+        name = "Giant Constrictor Snake",
+        size = "H",
+        cr = 2,
+        pp = 12,
+        type_str = "Beast"
+    ),
+    configure_monster(
+        name = "Giant Crab",
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/43939/240/1000/1000/638607418422171721.png",
+        token = "8xtmt",
+        cr = 0.125,
+        pp = 9,
+        type_str = "Beast",
+        size = "M"
+    ),
+    configure_monster(
+        name = "Giant Crocodile",
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/43939/131/1000/1000/638607415525020149.png",
+        token = "8awad",
+        size = "H",
+        type_str = "Beast",
+        cr = 5,
+        pp = 10
+    ),
+    configure_monster(
+        name = "Giant Eagle",
+        size = "L",
+        type_str = "Beast",
+        cr = 1,
+        pp = 14,
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/30849/296/1000/1000/638064498953526929.png",
+        token = "cvq9s"
+    ),
+    configure_monster(
+        name = "Giant Elk",
+        type_str = "Beast",
+        size = "H",
+        pp = 14,
+        cr = 2
+    ),
+    configure_monster(
+        name = "Giant Fire Beetle",
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/9/896/1000/1000/636334287498492864.jpeg",
+        token = "wpz53",
+        cr = 0,
+        pp = 8,
+        size = "S"
+    ),
+    configure_monster(
+        name = "Giant Frog",
+        size = "M",
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/16/521/1000/1000/636376321052503535.jpeg",
+        token = "rsstz",
+        cr = 0.25,
+        pp = 12
+    ),
+    configure_monster(
+        name = "Giant Goat",
+        cr = 0.5,
+        pp = 11,
+        type_str = "Beast",
+        size = "L"
+    ),
+    configure_monster(
+        name = "Giant Hyena",
+        cr = 1,
+        type_str = "Beast",
+        size = "L",
+        pp = 13,
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/9/902/1000/1000/636334288674955736.jpeg",
+        token = "jm7r7"
+    ),
+    configure_monster(
+        name = "Giant Lizard",
+        type_str = "Beast",
+        size = "L",
+        pp = 10,
+        cr = 0.25
+    ),
+    configure_monster(
+        name = "Giant Octopus",
+        type_str = "Beast",
+        cr = 1,
+        pp = 14,
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/9/898/1000/1000/636334288003435302.jpeg",
+        size = "L",
+        token = "gj8yx"
+    ),
+    configure_monster(
+        name = "Giant Owl",
+        type_str = "Beast",
+        size = "L",
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/16/535/1000/1000/636376331788287090.jpeg",
+        token = "rzpea",
+        cr = 0.25,
+        pp = 15
+    ),
+    configure_monster(
+        name = "Giant Poisonous Snake",
+        type_str = "Beast",
+        size = "M",
+        cr = 0.25,
+        pp = 12
+    ),
+    configure_monster(
+        name = "Giant Rat",
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/16/538/1000/1000/636376332197953299.jpeg",
+        token = "b9q4g",
+        cr = 0.125,
+        size = "S",
+        pp = 10,
+        type_str = "Beast"
+    ),
+    configure_monster(
+        name = "Giant Scorpion",
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/43939/816/1000/1000/638607431888752085.png",
+        size = "L",
+        token = "nkyjz",
+        cr = 3,
+        pp = 9,
+        type_str = "Beast"
+    ),
+    configure_monster(
+        name = "Giant Sea Horse",
+        type_str = "Beast",
+        size = "L",
+        cr = 0.5,
+        pp = 11
+    ),
+    configure_monster(
+        name = "Giant Shark",
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/43939/787/1000/1000/638607431063881100.png",
+        token = "bfq2x",
+        cr = 5,
+        pp = 13,
+        type_str = "Beast",
+        size = "L"
+    ),
+    configure_monster(
+        name = "Giant Spider",
+        type_str = "Beast",
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/43939/570/1000/1000/638607426460275494.png",
+        token = "4gchd",
+        size = "L",
+        cr = 1,
+        pp = 10
+    ),
+    configure_monster(
+        name = "Giant Toad",
+        type_str = "Beast",
+        cr = 1,
+        pp = 10,
+        size = "L"
+    ),
+    configure_monster(
+        name = "Giant Vulture",
+        type_str = "Beast",
+        size = "L",
+        pp = 13,
+        cr = 1
+    ),
+    configure_monster(
+        name = "Giant Wasp",
+        type_str = "Beast",
+        size = "M",
+        cr = 0.5,
+        pp = 10
+    ),
+    configure_monster(
+        name = "Giant Weasel",
+        type_str = "Beast",
+        cr = 0.125,
+        size = "M",
+        pp = 10,
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/43939/590/1000/1000/638607426813965799.png",
+        token = "99esf"
+    ),
+    configure_monster(
+        name = "Giant Wolf Spider",
+        type_str = "Beast",
+        cr = 0.25,
+        pp = 13,
+        size = "M"
+    ),
+    configure_monster(
+        name = "Glabrezu",
+        size = "L",
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/30781/613/1000/1000/638061931338828581.png",
+        token = "22tph",
+        cr = 9,
+        pp = 13
+    ),
+    configure_monster(
+        name = "Gibbering Mouther",
+        size = "M",
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/30784/554/1000/1000/638062046140139699.png",
+        token = "5uy75",
+        cr = 2,
+        pp = 10,
+        type_str = "Aberration"
+    ),
+    configure_monster(
+        name = "Gnoll",
+        size = "M",
+        type_str = "Humanoid (gnoll)",
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/30784/505/1000/1000/638062044385041691.png",
+        token = "wfm8t",
+        cr = 0.5,
+        pp = 10
+    ),
+    configure_monster(
+        name = "Goat",
+        size = "M",
+        type_str = "Beast",
+        cr = 0,
+        pp = 10
+    ),
+    configure_monster(
+        name = "Goblin",
+        size = "S",
+        type_str = "Humanoid (goblinoid)",
+        cr = 0.25,
+        pp = 9,
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/30783/955/1000/1000/638062024584880857.png",
+        token = "z8hak"
+    ),
+    configure_monster(
+        name = "Gold Dragon Wyrmling",
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/30782/562/1000/1000/638061966416208867.png",
+        token = "vdzke",
+        size = "M",
+        type_str = "Dragon",
+        pp = 14,
+        cr = 3
+    ),
+    configure_monster(
+        name = "Gorgon",
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/30784/711/1000/1000/638062051514524448.png",
+        token = "85qr5",
+        size = "L",
+        type_str = "Monstrosity",
+        cr = 5,
+        pp = 14
+    ),
+    configure_monster(
+        name = "Gray Ooze",
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/30834/153/1000/1000/638063882595415196.png",
+        token = "cmcay",
+        type_str = "Ooze",
+        size = "M",
+        cr = 0.5,
+        pp = 8
+    ),
+    configure_monster(
+        name = "Green Dragon Wyrmling",
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/30782/393/1000/1000/638061960809474996.png",
+        token = "w6ees",
+        size = "M",
+        type_str = "Dragon",
+        cr = 2,
+        pp = 14
+    ),
+    configure_monster(
+        name = "Green Hag",
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/30788/618/1000/1000/638062177566175594.png",
+        token = "6atwb",
+        size = "M",
+        type_str = "Fey",
+        cr = 3,
+        pp = 14
+    ),
+    configure_monster(
+        name = "Grick",
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/30784/267/1000/1000/638062035101336042.png",
+        token = "pxp97",
+        cr = 2,
+        pp = 12,
+        size = "M",
+        type_str = "Monstrosity"
+    ),
+    configure_monster(
+        name = "Griffon",
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/30784/568/1000/1000/638062046654629903.png",
+        token = "rvzqw",
+        cr = 2,
+        pp = 15,
+        size = "Large",
+        type_str = "Monstrosity"
+    ),
+    configure_monster(
+        name = "Grimlock",
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/30784/270/1000/1000/638062035227436078.png",
+        token = "5pcma",
+        cr = 0.25,
+        pp = 13,
+        size = "M",
+        type_str = "Humanoid (grimlock)"
+    ),
+    configure_monster(
+        name = "Guardian Naga",
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/30833/678/1000/1000/638063870254701844.png",
+        token = "n77b8",
+        cr = 10,
+        pp = 14,
+        size = "L",
+        type_str = "Monstrosity"
+    ),
+    configure_monster(
+        name = "Gynosphinx",
+        legendary_actions = True,
+        size = "L",
+        type_str = "Monstrosity",
+        cr = 11,
+        pp = 18,
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/30835/919/1000/1000/638063924067395675.png",
+        token = "42pug"
     ),
     configure_monster(
         name = "Fire Elemental",
@@ -885,6 +1291,51 @@ monster_list = [
         cr = 0,
         pp = 13,
     ),
+    configure_monster(
+        name = "Ice Devil",
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/30782/19/1000/1000/638061948317576166.png",
+        token = "8ymvp",
+        type_str = "Fiend (devil)",
+        size = "L",
+        cr = 14,
+        pp = 12
+    ),
+    configure_monster(
+        name = "Ice Mephit",
+        type_str = "Elemental",
+        size = "S",
+        pp = 12,
+        cr = 0.5,
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/34175/909/1000/1000/638190241405142934.png",
+        token = "vytj9"
+    ),
+    configure_monster(
+        name = "Imp",
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/43939/643/1000/1000/638607427690376961.png",
+        token = "nmqet",
+        size = "S",
+        type_str = "Fiend (devil, shapechanger)",
+        cr = 1,
+        pp = 11
+    ),
+    configure_monster(
+        name = "Invisible Stalker",
+        type_str = "Elemental",
+        size = "M",
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/30831/81/1000/1000/638063804958813537.png",
+        token = "bjzxn",
+        pp = 18,
+        cr = 6
+    ),
+    configure_monster(
+        name = "Iron Golem",
+        type_str = "Construct",
+        size = "L",
+        cr = 16,
+        pp = 10,
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/30784/170/1000/1000/638062031423594632.png",
+        token = "wspbc"
+    )
 ]
 
 def get_monsters_in_cr_range(cr_min, cr_max):
