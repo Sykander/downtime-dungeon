@@ -41,7 +41,7 @@ def get_has_secondary_npc(dungeon_data):
         using(server_secondary_npc_chance_module=server_secondary_npc_chance_override)
         return server_secondary_npc_chance_module.get_has_secondary_npc(dungeon_data)
 
-    return random.get_random_integer(0, 100, dungeon_data["floor_seed"] - 31982) > 95
+    return random.get_random_integer(0, 100, dungeon_data["floor_seed"] - 31982) > 90
 
 def get_cr(dungeon_data):
     if server_cr_calculator_override != None:
