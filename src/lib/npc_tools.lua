@@ -46,13 +46,10 @@ def get_add_npcs_commands(dungeon_data, floor_data):
 
     for npc_event in npc_events:
         npc = npc_event["npc"]
-        npc_in_combat = c.get_combatant(npc["full_name"])
-
-        if not npc_in_combat:
-            square_index = random.get_random_integer(0, starting_squares_len - 1)
-            start_square = starting_squares[square_index]
-            npc_commands.append(f'{ctx.prefix}i madd "{npc["sheet"]["monster"]}" -name "{npc["full_name"]}" -note "Location: {start_square} | Color: b | Note: {npc["sheet"]["name"]}"')
-            npc_commands.append(f'{ctx.prefix}i effect "{npc["full_name"]}" "(Ally (auto))"')
+        square_index = random.get_random_integer(0, starting_squares_len - 1)
+        start_square = starting_squares[square_index]
+        npc_commands.append(f'{ctx.prefix}i madd "{npc["sheet"]["monster"]}" -name "{npc["full_name"]}" -note "Location: {start_square} | Color: b | Note: {npc["sheet"]["name"]}"')
+        npc_commands.append(f'{ctx.prefix}i effect "{npc["full_name"]}" "(Ally (auto))"')
 
         if npc_event["does_special_action"] and npc["sheet"]["has_special_actions"]:
             special_actions = npc["sheet"]["special_actions"]
