@@ -1663,7 +1663,6 @@ monster_list = [
         cr = 3,
         pp = 13,
     ),
-    
 ]
 
 def get_monsters_in_cr_range(cr_min, cr_max):
