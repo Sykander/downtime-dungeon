@@ -132,61 +132,111 @@ goals = [
         "name": "Lost Relic",
         "desc": "The adventurer is searching the dungeon for an ancient and long lost relic.",
         "explanation_dialogue": "I once sought to uncover the secrets hidden in these halls. But what I found here was a trap. A curse perhaps, or worse I fear. Every time I think I’ve found a way out, the maze shifts, and I’m back where I started.",
-        "gift_dialogue": "Here, take this. I found it buried beneath a pile of rubble. It’s not the relic I seek, but perhaps it will aid you in your own journey."
+        "gift_dialogue": "Here, take this. I found it buried beneath a pile of rubble. It’s not the relic I seek, but perhaps it will aid you in your own journey.",
+        "joins_combat_dialogue_list": [
+            '"Ahhh, more adventurers here to find treasure I presume? Quick, help me with these monsters!" *The adventurer gestures frantically at the approaching creatures, raising their weapon.*',
+            '"Blast it all, I had almost uncovered the secret behind this place when these monsters attacked me! Help me with them please?" *They clutch the relic fragments they were holding, eyes filled with frustration.*',
+            '"Arrhhhhhhh...." *The adventurer screams in pain as one of the monsters gets him, staggering back and raising his weapon weakly in defense.*'
+        ]
     },
     {
         "name": "Prestige",
         "desc": "The adventurer is looking to make a name for themselves as a famous and skilled dungeon delver.",
         "explanation_dialogue": "I've heard stories, you know... tales of those who entered these halls and came out legends. I've always wanted more than just gold or treasure. I want prestige—the kind that makes my name known in every tavern and on every street. I want to carve my place into the history of this dungeon, to be remembered as the one who conquered its greatest horrors.",
-        "gift_dialogue": "This isn’t much, but it’s something I came across during my search. A token, perhaps, to remember me by when tales of our deeds are told."
+        "gift_dialogue": "This isn’t much, but it’s something I came across during my search. A token, perhaps, to remember me by when tales of our deeds are told.",
+        "joins_combat_dialogue_list": [
+            '"Ha! A perfect opportunity to showcase my skill! Watch and learn as I take them down!" *The adventurer strikes with flair, clearly attempting to impress those around them.*',
+            '"Do you see this? This is how legends are made! Come, fight alongside me!" *They leap into battle with a wide grin, eager to show their worth.*',
+            '"Finally, a chance to prove my worth! Together, we’ll make history!" *They shout as they rush forward with dramatic gusto, sword gleaming.*'
+        ]
     },
     {
         "name": "Lost and Confused",
         "desc": "The adventurer entered the dungeon with a larger party but somewhere along the way they were separated from the others. Now they seek to catch up to their lost group.",
         "explanation_dialogue": "I—I’m not supposed to be here alone. There were others, a larger group... but somewhere down here, we got separated. It’s all a blur. We were fighting off creatures, and then the tunnel collapsed, and when I came to, everyone was gone. I’ve been searching for hours—days, maybe?—but this dungeon... it’s like it shifts, changes. It’s hard to keep track of anything.",
-        "gift_dialogue": "I stumbled across this while searching for my friends. Maybe it will help you find your way, even if I haven’t found mine yet."
+        "gift_dialogue": "I stumbled across this while searching for my friends. Maybe it will help you find your way, even if I haven’t found mine yet.",
+        "joins_combat_dialogue_list": [
+            '"Not again! These monsters won’t stop coming! Help me fight them off, please!" *The adventurer glances nervously over their shoulder, eyes wide as they scramble to prepare for the incoming battle.*',
+            '"I can’t do this alone—there’s no way I’ll survive without your help!" *They shout, looking around in confusion, clutching their weapon tightly.*',
+            '"I thought I heard my group ahead, but it was just..." *They freeze as the creatures approach before shouting,* "These things! Defend yourselves!" *They raise their shield defensively, face pale.*'
+        ]
     },
     {
         "name": "Forgotten Vows",
         "desc": "The adventurer has come to fulfill a promise made long ago to a friend or loved one who perished in the dungeon.",
         "explanation_dialogue": "I swore an oath, a long time ago. To them. To make sure their story didn’t end here, in the cold and the dark. They came here chasing a dream, and all they found was an end they didn’t deserve. I’ve carried that weight with me ever since. I have to find their remains—or the treasure they sought—and bring it back to the surface. For them. For me.",
-        "gift_dialogue": "I found this near where they fell. I think it’s meant to help someone. Maybe that someone is you."
+        "gift_dialogue": "I found this near where they fell. I think it’s meant to help someone. Maybe that someone is you.",
+        "joins_combat_dialogue_list": [
+            '"For the vow I made! I won’t let these monsters stop me now—fight by my side!" *The adventurer grips a locket tightly, eyes burning with resolve.*',
+            '"These beasts think they can keep me from honoring their memory? I’ll destroy them!" *They strike with purpose, each blow carrying the weight of their oath.*',
+            '"Stay with me! Together, we’ll make sure this place doesn’t claim any more lives!" *The adventurer moves protectively in front of you, their voice full of determination.*'
+        ]
     },
     {
         "name": "Ancient Rivalry",
         "desc": "The adventurer is determined to settle a score with an old enemy who has also entered the dungeon.",
         "explanation_dialogue": "It's not about treasure for me. No. It’s *him*. He’s always one step ahead, mocking me, taunting me. If he’s in here, then I’ll find him. And this time, I’ll finish it. This dungeon may be the end of one of us, but it won’t be me.",
-        "gift_dialogue": "This isn’t the prize I’m after, but it could still prove useful to you. Take it—before he finds a way to use it against us."
+        "gift_dialogue": "This isn’t the prize I’m after, but it could still prove useful to you. Take it—before he finds a way to use it against us.",
+        "joins_combat_dialogue_list": [
+            '"He’s probably watching, laughing. Let’s show him what I’m made of! Help me end this!" *They charge into the fray with wild fervor, eyes scanning for their rival.*',
+            '"Do you see him? He’s here somewhere! We’ll fight him together—he won’t win!" *The adventurer charges ahead, voice full of fury.*',
+            '"I won’t let him outshine me—not here, not ever! Fight!" *They shout with conviction as they swing their weapon with renewed energy.*'
+        ]
     },
     {
         "name": "Cursed Redemption",
         "desc": "The adventurer is seeking a way to lift a curse that has plagued them since their last ill-fated venture into a dungeon.",
         "explanation_dialogue": "It’s been years since I’ve felt whole. This curse... it clings to me, draining my strength, my will. The last time I entered a place like this, I was foolish, reckless. And I paid the price. They said the cure might be here, buried deep in these forgotten halls. I don’t know if I’ll make it out, but if I don’t try, this curse will kill me—or worse.",
-        "gift_dialogue": "I came across this while seeking my cure. It’s no help to me, but perhaps it can be to you. Use it well."
+        "gift_dialogue": "I came across this while seeking my cure. It’s no help to me, but perhaps it can be to you. Use it well.",
+        "joins_combat_dialogue_list": [
+            '"I can feel it... the curse pulling me down! Help me, or it will claim us both!" *The adventurer staggers slightly, gasping for breath as they struggle to move.*',
+            '"This curse... it weakens me with every step. I need your help to survive this!" *They wince as they fight, their body aching from the curse’s toll.*',
+            '"I won’t let this curse stop me from finding the cure. Together, we’ll make it!" *They brace themselves, determined to push through the pain and continue the fight.*'
+        ]
     },
     {
         "name": "Debt of Blood",
         "desc": "The adventurer owes a life debt to someone who disappeared into the dungeon, and they’ve vowed to bring them back—or die trying.",
         "explanation_dialogue": "They saved me, once. Pulled me out of the jaws of death when no one else would. Now it’s my turn. They came here, chasing glory, gold—who knows? But they never came back. I owe them my life. So I’ll find them, or what’s left of them. And if the dungeon takes me, at least I’ll have paid my debt.",
-        "gift_dialogue": "This belonged to someone who came before me. I owe them everything. They would've wanted you to have it."
+        "gift_dialogue": "This belonged to someone who came before me. I owe them everything. They would've wanted you to have it.",
+        "joins_combat_dialogue_list": [
+            '"I won’t let them die in vain! Help me finish this!" *The adventurer grits their teeth, face set in grim determination.*',
+            '"They saved me... Now it’s my turn to save them! Help me!" *They charge forward with a battle cry, eyes filled with resolve.*',
+            '"I owe them everything. We’ll fight together, and we’ll make sure they’re never forgotten!" *The adventurer strikes hard, moving as though every blow is a tribute.*'
+        ]
     },
     {
         "name": "Unfinished Research",
         "desc": "The adventurer is a scholar or mage searching for forbidden knowledge hidden within the dungeon.",
         "explanation_dialogue": "This dungeon is more than just stone and traps. It’s a vault of secrets—magic, history, things forgotten by the world above. My colleagues called me mad to come here, but they don’t understand. The answers to my questions lie in these depths. I can feel it. If I can survive long enough to uncover them, the world will know my name for centuries.",
-        "gift_dialogue": "Ah, take this! I’ve cataloged its properties, and it no longer serves my work. But in your hands, it might just save your life."
+        "gift_dialogue": "Ah, take this! I’ve cataloged its properties, and it no longer serves my work. But in your hands, it might just save your life.",
+        "joins_combat_dialogue_list": [
+            '"This is fascinating! Look at the architecture here—how did they build this? Wait... the monsters! Fight them off!" *The adventurer scribbles notes as they fumble for their weapon.*',
+            '"Ah! A breakthrough! Now, let’s deal with these creatures before they ruin my discovery!" *They leap into combat, completely absorbed in their research.*',
+            '"I must find more information—there’s so much to learn down here! But first, these monsters!" *They shout as they rush forward, swiping their staff at the enemies.*'
+        ]
     },
     {
         "name": "Lost Love",
         "desc": "The adventurer is desperately searching for their lost lover, who disappeared into the dungeon on a previous expedition.",
         "explanation_dialogue": "They came here, against my wishes. Said they had to prove themselves, had to bring something back that would make everything better. That was months ago. Everyone says they’re gone, that I should move on. But I know they’re still in here. I feel it. And I’ll keep searching until I find them, no matter what stands in my way.",
-        "gift_dialogue": "I found this during my search for them. It feels wrong to keep it, like it’s meant for someone else. Maybe it’s meant for you."
+        "gift_dialogue": "I found this during my search for them. It feels wrong to keep it, like it’s meant for someone else. Maybe it’s meant for you.",
+        "joins_combat_dialogue_list": [
+            '"Where are you? Please, if you’re alive, call out! I’ll find you!" *The adventurer’s voice cracks with desperation, eyes scanning every shadow.*',
+            '"I won’t stop searching! Not until I find them!" *They fight with a frenzied urgency, always glancing around, hoping to catch a glimpse of their loved one.*',
+            '"Stay with me... We’ll make it through together, no matter what." *They rally themselves, their voice full of determination and longing.*'
+        ]
     },
     {
         "name": "Test of Worth",
         "desc": "The adventurer is here as part of a rite of passage or sacred trial to prove their worth to their people or a secret order.",
         "explanation_dialogue": "This is the test. The trial. The elders said I wouldn’t survive, that no one ever does. But if I do, if I make it out alive, I’ll be more than just another apprentice or outcast. I’ll be worthy—of respect, of power, of the name they said I could never claim.",
-        "gift_dialogue": "This is something I discovered along my trial. Take it—you’ll need all the help you can get."
+        "gift_dialogue": "This is something I discovered along my trial. Take it—you’ll need all the help you can get.",
+        "joins_combat_dialogue_list": [
+            '"This is the moment! My test begins now!" *The adventurer stands tall, their eyes fierce with focus.*',
+            '"I won’t fail! Not here, not after everything I’ve been through!" *They grip their weapon tightly, face flushed with determination.*',
+            '"Watch and learn—this trial will be mine to conquer!" *The adventurer charges in, clearly eager to prove themselves.*'
+        ]
     }
 ]
 goals_len = len(goals)
