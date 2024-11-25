@@ -20,6 +20,8 @@ SPECIAL_FLOOR_LIST = server_config.get_special_floors_list(special_floors.specia
 SPECIAL_FLOOR_LEN = len(SPECIAL_FLOOR_LIST)
 
 def get_floor_data(dungeon_data) -> dict:
+    oldState = random.getState()
+    random.setSeed(dungeon_data["floor_seed"])
     floor_num = dungeon_data["floor_num"]
     seed = dungeon_data["floor_seed"]
 
@@ -46,7 +48,7 @@ def get_floor_data(dungeon_data) -> dict:
     floor_data["map"] = map
 
     if encountered_special_floor:
-        special_floor_index = random.get_random_integer(0, SPECIAL_FLOOR_LEN - 1, seed)
+        special_floor_index = random.get_random_integer(0, SPECIAL_FLOOR_LEN - 1)
         special_floor = SPECIAL_FLOOR_LIST[special_floor_index]
         floor_data["special_floor"] = special_floor
         floor_data['encountered_special_floor'] = True
@@ -58,10 +60,12 @@ def get_floor_data(dungeon_data) -> dict:
     if encountered_npc and floor_data["encountered_monsters"]:
         npc = dungeon_data["npcs"]["primary"]
         if not npc["dead"]:
+            joins_combat_dialogue_list = npc["goal"]["joins_combat_dialogue_list"]
+            combat_dialogue_index = random.get_random_integer(0, len(joins_combat_dialogue_list) - 1)
             floor_data["encountered_npc"] = True
             floor_data["npc_events"].append({
                 "name": "NPC joins combat",
-                "desc": f"""{npc["full_name"]} joins combat to fight by your side!""",
+                "desc": f"""**{npc["full_name"]}** {joins_combat_dialogue_list[combat_dialogue_index]}""",
                 "does_special_action": True,
                 "npc": npc
             })
@@ -69,7 +73,7 @@ def get_floor_data(dungeon_data) -> dict:
     if encountered_npc and encountered_special_floor:
         non_combat_events = npcs.non_combat_events
         non_combat_events_len = len(non_combat_events)
-        non_combat_events_index = random.get_random_integer(0, non_combat_events_len - 1, seed)
+        non_combat_events_index = random.get_random_integer(0, non_combat_events_len - 1)
         event = non_combat_events[non_combat_events_index]
 
         npc = dungeon_data["npcs"]["primary"]
@@ -82,4 +86,5 @@ def get_floor_data(dungeon_data) -> dict:
                 "npc": npc
             })
 
+    random.setState(oldState)
     return floor_data
