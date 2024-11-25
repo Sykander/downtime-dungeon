@@ -5,7 +5,8 @@ using(
     get_floor_data = env.get_gvar_id_by_name("get_floor_data"),
     describe_floor = env.get_gvar_id_by_name("describe_floor"),
     get_dungeon_data = env.get_gvar_id_by_name("get_dungeon_data"),
-    get_status = env.get_gvar_id_by_name("get_status")
+    get_status = env.get_gvar_id_by_name("get_status"),
+    map_tools = env.get_gvar_id_by_name("map_tools")
 )
 
 com = combat()
