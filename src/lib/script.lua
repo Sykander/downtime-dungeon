@@ -87,7 +87,7 @@ You may also use the `{ctx.prefix}distance` command to measure the distance betw
 
 You may also move other combatants using `-t '<combatant_name>'` at the end of a `{ctx.prefix}go` or `{ctx.prefix}move` command. eg. `{ctx.prefix}go 10e -t GO1`.
 
-`{ctx.prefix}map undo` may be used to revert to the last time a `{ctx.prefix}map` command was used if a mistake was made."""
+`{ctx.prefix}map undo` may be used to revert to the last state from when a `{ctx.prefix}map` command was used if a mistake was made."""
 }
 
 summons = {
@@ -103,7 +103,11 @@ summons = {
 
 resting = {
     "title": "Resting within the dungeon",
-    "body": "Resting within the dungeon is strictly prohibited to special floors which state they allow you to rest."
+    "body": f"""Resting within the dungeon is strictly prohibited to special floors which state they allow you to rest.
+
+When short resting in the dungeon please run the following command to advance time 1 hour.
+```{ctx.prefix}i round 600```
+You may not rest multiple times on the same floor."""
 }
 
 hiding = {
@@ -126,9 +130,26 @@ hiding = {
 
 death = {
     "title": "Death",
-    "body": """The dungeon is a special location protected by powerful magical rites and wardings. Any adventurer who dies within the dungeon is transported to the entrance of the dungeon, leaving **all** of the gear they took with them or found within the dungeon at the location they died.
+    "body": f"""The dungeon is a special location protected by powerful magical rites and wardings. Any adventurer who dies within the dungeon is transported to the entrance of the dungeon, leaving **all** of the gear they took with them or found within the dungeon at the location they died.
 
 Gear lost to death can be retrieved by returning to the same dungeon (using the same seed) and floor you previously died upon and succesfully clearing any encounter on that floor."""
+}
+
+time_script = {
+    "title": "Time",
+    "body": f"""Time passes whilst traversing the dungeon. When you advance to the next floor 1 round passes, when you short rest an hour passes, and time also passes during other activities like short rests or special floors.
+
+Advance rounds to signify the passage of time, when your characters choose to spend time doing things other than combat or advancing floors.
+```
+1 round    6 seconds
+10 rounds  1 minute
+100 rounds 10 minutes
+600 rounds 1 hour
+```
+You can use the following command to advance time, replacing 100 with the number of rounds to advance.```
+{ctx.prefix}i round 100
+```
+For each day (24 hours) spent without long resting, adventurers must roll a Constitution saving throw or suffer a level of exhaustion. The DC is 10 and increases by 5 for each additional day spent without long resting."""
 }
 
 script = [
@@ -143,7 +164,8 @@ script = [
     summons,
     resting,
     hiding,
-    death
+    death,
+    time_script
 ]
 
 def get_script(section_name = None):
