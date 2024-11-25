@@ -13,9 +13,6 @@ using(
     npcs = env.get_gvar_id_by_name("npcs")
 )
 
-SPECIAL_FLOOR_CHANCE = server_config.get_is_special_floor
-NPC_FLOOR_CHANCE = server_config.get_has_primary_npc
-
 SPECIAL_FLOOR_LIST = server_config.get_special_floors_list(special_floors.special_floors_list)
 SPECIAL_FLOOR_LEN = len(SPECIAL_FLOOR_LIST)
 
@@ -41,8 +38,10 @@ def get_floor_data(dungeon_data) -> dict:
     cr = floor(server_config.get_cr(dungeon_data))
     floor_data["cr"] = cr
 
-    encountered_special_floor = SPECIAL_FLOOR_CHANCE(dungeon_data)
-    encountered_npc = NPC_FLOOR_CHANCE(dungeon_data)
+    encountered_special_floor = server_config.get_is_special_floor(dungeon_data)
+    encountered_monsters = not encountered_special_floor
+    encountered_primary_npc = server_config.get_has_primary_npc(dungeon_data)
+    encountered_secondary_npc = server_config.get_has_secondary_npc(dungeon_data)
 
     map = map_picker.pick_map(seed)
     floor_data["map"] = map
@@ -52,12 +51,12 @@ def get_floor_data(dungeon_data) -> dict:
         special_floor = SPECIAL_FLOOR_LIST[special_floor_index]
         floor_data["special_floor"] = special_floor
         floor_data['encountered_special_floor'] = True
-    else:
+    elif encountered_monsters:
         monsters = encounters.generate_encounter(cr, seed)
         floor_data["monsters"] = monsters
         floor_data["encountered_monsters"] = True
 
-    if encountered_npc and floor_data["encountered_monsters"]:
+    if encountered_primary_npc and encountered_monsters:
         npc = dungeon_data["npcs"]["primary"]
         if not npc["dead"]:
             joins_combat_dialogue_list = npc["goal"]["joins_combat_dialogue_list"]
@@ -70,13 +69,26 @@ def get_floor_data(dungeon_data) -> dict:
                 "npc": npc
             })
 
-    if encountered_npc and encountered_special_floor:
+    if encountered_secondary_npc and encountered_monsters:
+        npc = dungeon_data["npcs"]["secondary"]
+        if not npc["dead"]:
+            joins_combat_dialogue_list = npc["goal"]["joins_combat_dialogue_list"]
+            combat_dialogue_index = random.get_random_integer(0, len(joins_combat_dialogue_list) - 1)
+            floor_data["encountered_npc"] = True
+            floor_data["npc_events"].append({
+                "name": "NPC joins combat",
+                "desc": f"""**{npc["full_name"]}** {joins_combat_dialogue_list[combat_dialogue_index]}""",
+                "does_special_action": True,
+                "npc": npc
+            })
+
+    if (encountered_primary_npc or encountered_secondary_npc) and encountered_special_floor:
         non_combat_events = npcs.non_combat_events
         non_combat_events_len = len(non_combat_events)
         non_combat_events_index = random.get_random_integer(0, non_combat_events_len - 1)
         event = non_combat_events[non_combat_events_index]
 
-        npc = dungeon_data["npcs"]["primary"]
+        npc = dungeon_data["npcs"]["primary"] if encountered_primary_npc else dungeon_data["npcs"]["secondary"]
         if not npc["dead"]:
             floor_data["encountered_npc"] = True
             floor_data["npc_events"].append({
