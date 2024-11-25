@@ -78,20 +78,19 @@ for adventurer in com.combatants:
     if adventurer:
         map_tools.set_combatant_square(adventurer, start_square)
 
-map_command = f"""{ctx.prefix}auto map '{map["auto_map_name"]}' """ if map["auto_map"] else f'{ctx.prefix}map {map["options"]}'
-map_command_description = f'Please run the following command set the map for the encounter:```{map_command}```'
+map_tools.attach_map_to_combatant(map["map_state"], com.get_combatant(adventurers[0]))
+map_url = map_tools.generate_map_image(from_state=map["map_state"])
 
 fields = [
     get_status.get_status_description(com.round_num, dungeon_data),
-    f'Seed|{dungeon_data["seed"]}',
-    f'Map|{map_command_description}'
+    f'Seed|{dungeon_data["seed"]}'
 ]
 description = f'''{adventurers_list_str} enter{"s" if len(adventurers) == 1 else ""} the Downtime Dungeon!
 
 {floor_description}
 '''
 
-output = get_message.get_message(description, fields)
+output = get_message.get_message(description, fields, image=map_url)
 
 npc_commands = npc_tools.get_add_npcs_commands(dungeon_data, floor_data)
 

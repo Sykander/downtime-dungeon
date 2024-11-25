@@ -22,16 +22,12 @@ floor_data = get_floor_data.get_floor_data(dungeon_data)
 floor_description = describe_floor.describe_floor(floor_data)
 
 map = floor_data["map"]
-
-map_command = f"""{ctx.prefix}auto map '{map["auto_map_name"]}' """ if map["auto_map"] else f'{ctx.prefix}map {map["options"]}'
-map_command_description = f'Please run the following command set the map for the encounter:```{map_command}```'
-
+map_url = map_tools.generate_map_image()
 
 fields = [
-    get_status.get_status_description(com.round_num, dungeon_data), 
-    f'Map|{map_command_description}'
+    get_status.get_status_description(com.round_num, dungeon_data)
 ]
-outputEmbeded = get_message.get_message(floor_description, fields)
+outputEmbeded = get_message.get_message(floor_description, fields, image=map_url)
 
 return outputEmbeded
 </drac2>

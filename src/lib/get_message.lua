@@ -30,7 +30,8 @@ def get_banner(description, fields, title = title_base, footer = footer_base):
 def get_error(description: str) -> str:
     return f'{embed_base} -title {EMBED_LEFT_QUOTE}Error{EMBED_RIGHT_QUOTE} -desc {EMBED_LEFT_QUOTE}{format_to_length(description, 4020)}{EMBED_RIGHT_QUOTE}'
 
-def get_message(description: str, fields: list[str] = [], title = title_base, footer = footer_base) -> str: 
+def get_message(description: str, fields: list[str] = [], title = title_base, footer = footer_base, image = None) -> str: 
     fields_strings = [f'-f {EMBED_LEFT_QUOTE}{format_to_length(field, 1020)}{EMBED_RIGHT_QUOTE} ' for field in fields]
     fields_output = ''.join(fields_strings)
-    return f'{embed_base} -title {EMBED_LEFT_QUOTE}{title}{EMBED_RIGHT_QUOTE} -desc {EMBED_LEFT_QUOTE}{format_to_length(description, 4020)}{EMBED_RIGHT_QUOTE} {fields_output} -footer {EMBED_LEFT_QUOTE}{footer}{EMBED_RIGHT_QUOTE}'
+    image_output = f'-image {image}' if image != None else ""
+    return f'{embed_base} -title {EMBED_LEFT_QUOTE}{title}{EMBED_RIGHT_QUOTE} -desc {EMBED_LEFT_QUOTE}{format_to_length(description, 4020)}{EMBED_RIGHT_QUOTE} {fields_output} -footer {EMBED_LEFT_QUOTE}{footer}{EMBED_RIGHT_QUOTE} {image_output}'
