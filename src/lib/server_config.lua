@@ -11,6 +11,7 @@ using(
 server_gold_override = get_svar("DowntimeDungeon_gold", None)
 server_special_floor_chance_override = get_svar("DowntimeDungeon_special_floor_chance", None)
 server_primary_npc_chance_override = get_svar("DowntimeDungeon_primary_npc_chance", None)
+server_secondary_npc_chance_override = get_svar("DowntimeDungeon_secondary_npc_chance", None)
 server_cr_calculator_override = get_svar("DowntimeDungeon_cr_calculator", None)
 server_special_floors_override = get_svar("DowntimeDungeon_special_floors", None)
 
@@ -34,6 +35,13 @@ def get_has_primary_npc(dungeon_data):
         return server_primary_npc_chance_module.get_has_primary_npc(dungeon_data)
 
     return random.get_random_integer(0, 100, dungeon_data["floor_seed"]) > 80
+
+def get_has_secondary_npc(dungeon_data):
+    if server_secondary_npc_chance_override != None:
+        using(server_secondary_npc_chance_module=server_secondary_npc_chance_override)
+        return server_secondary_npc_chance_module.get_has_secondary_npc(dungeon_data)
+
+    return random.get_random_integer(0, 100, dungeon_data["floor_seed"] - 31982) > 90
 
 def get_cr(dungeon_data):
     if server_cr_calculator_override != None:
