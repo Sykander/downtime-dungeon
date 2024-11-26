@@ -61,7 +61,7 @@ monster_turns = {
     "title": "Monster turns",
     "body": f"""Firstly, the player managing the monsters turn should review if the monster is capable of acting. Eg. a monster with the Unconscious Condition should not get a turn and the player should `{ctx.prefix}i next`.
 
-If the monster is capable of acting then the player should run `{ctx.prefix}auto once` and wait at least 5 seconds after running this command for any other players to react. eg. to cast shield if they were hit
+If the monster is capable of acting then the player should run `{ctx.prefix}dungeon auto` and wait at least 5 seconds after running this command for any other players to react. eg. to cast shield if they were hit
 
 If a monster can see no adventurers or enemies to target then the monster takes the Search action. The monster rolls a perception check and an investigation check, and then the check with the higher modifier is used against the stealth check to determine if that enemy is found and is no longer hiding.
 

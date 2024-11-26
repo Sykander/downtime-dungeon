@@ -6,6 +6,11 @@
             "gvar_id": "ea6bd498-5320-410d-8501-28e119857f17"
         },
         {
+            "name": "auto_tools",
+            "file": "src/lib/auto_tools.lua",
+            "gvar_id": "abd22d03-21d0-41f5-87a4-74371cd6a22b"
+        },
+        {
             "name": "describe_floor",
             "file": "src/lib/describe_floor.lua",
             "gvar_id": "6ee6493d-8028-46d3-b4d9-3ce7b06c6ef4"
@@ -134,6 +139,11 @@
                     "name": "script",
                     "alias_name": "dungeon script",
                     "file": "src/dungeon/script.lua"
+                },
+                {
+                    "name": "auto",
+                    "alias_name": "dungeon auto",
+                    "file": "src/dungeon/auto.lua"
                 }
             ]
         }
