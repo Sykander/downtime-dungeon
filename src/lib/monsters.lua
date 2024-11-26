@@ -1882,6 +1882,16 @@ monster_list = [
         cr = 0.5,
         pp = 11, 
     ),
+    configure_monster(
+        name = "Unicorn",
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/30836/227/1000/1000/638063931763028274.png",
+        token = "5vfxs",
+        size = "L",
+        type_str = "Celestial",
+        cr = 5,
+        pp = 13,
+        legendary_actions = True
+    ),
 ]   
 
 def get_monsters_in_cr_range(cr_min, cr_max):
