@@ -1882,7 +1882,7 @@ monster_list = [
         cr = 0.5,
         pp = 11, 
     ),
-    configure_monster(
+    configure_monster
         name = "Warhorse",
         image_url = "https://www.dndbeyond.com/avatars/thumbnails/43939/915/1000/1000/638607434779874338.png",
         token = "ykpgz",
@@ -2033,7 +2033,126 @@ monster_list = [
         image_url = "https://www.dndbeyond.com/avatars/thumbnails/30836/518/1000/1000/638063938742199028.png",
         token = "96vgt",
         size = "L"
-    )
+    ),
+    configure_monster(
+        name = "Vampire",
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/30836/365/1000/1000/638063935245277290.png",
+        token = "n5y2r",
+        cr = 13,
+        pp = 18,
+        legendary_actions = True,
+        size = "M",
+        type_str = "Undead (shapechanger)",
+        legendary_resistance = True
+    ),
+    configure_monster(
+        name = "Vampire Spawn",
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/30836/356/1000/1000/638063935154177308.png",
+        token = "b7qc9",
+        cr = 5,
+        pp = 13,
+        type_str = "Undead",
+        size = "M"
+    ),
+    configure_monster(
+        name = "Violet Fungus",
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/29317/506/1000/1000/638004853119895129.jpeg",
+        token = "46csp",
+        type_str = "Plant",
+        size = "M",
+        cr = 0.25,
+        pp = 6
+    ),
+    configure_monster(
+        name = "Vrock",
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/30781/648/1000/1000/638061932392542985.png",
+        token = "vjx57",
+        type_str = "Fiend (demon)",
+        cr = 6,
+        pp = 11,
+        size = "L"
+    ),
+    configure_monster(
+        name = "Vulture",
+        type_str = "Beast",
+        size = "M",
+        cr = 0,
+        pp = 13
+    ),
+    configure_monster(
+        name = "Unicorn",
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/30836/227/1000/1000/638063931763028274.png",
+        token = "5vfxs",
+        size = "L",
+        type_str = "Celestial",
+        cr = 5,
+        pp = 13,
+        legendary_actions = True
+    ),
+    configure_monster(
+        name = "Tarrasque",
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/30836/117/1000/1000/638063929008461547.png",
+        token = "23q5b",
+        size = "G",
+        type_str = "Monstrosity (titan)",
+        cr = 30,
+        pp = 10,
+        legendary_resistance = True,
+        legendary_actions = True
+    ),
+    configure_monster(
+        name = "Tiger",
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/43939/899/1000/1000/638607434272563738.png",
+        token = "wmzz7",
+        cr = 1,
+        pp = 13,
+        size = "L",
+        type_str = "Beast"
+    ),
+    configure_monster(
+        name = "Treant",
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/30836/130/1000/1000/638063929302059775.png",
+        token = "b8pbq",
+        size = "H",
+        type_str = "Plant",
+        cr = 9,
+        pp = 13,
+    ),
+    configure_monster(
+        name = "Triceratops",
+        type_str = "Beast",
+        size = "H",
+        cr = 5,
+        pp = 10,
+    ),
+    configure_monster(
+        name = "Troll",
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/30836/144/1000/1000/638063929586218907.png",
+        token = "jhu9c",
+        cr = 5,
+        pp = 12,
+
+        type_str = "Giant",
+        size = "L"
+    ),
+    configure_monster(
+        name = "Twig Blight",
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/16/464/1000/1000/636376286997771487.png",
+        token = "pec85",
+        cr = 0.125,
+        pp = 9,
+        size = "S",
+        type_str = "Plant"
+    ),
+    configure_monster(
+        name = "Tyrannosaurus Rex",
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/16/594/1000/1000/636376369004412963.jpeg",
+        token = "gexvx",
+        size = "h",
+        type_str = "Beast",
+        cr = 8,
+        pp = 14
+    ),
 ]   
 
 def get_monsters_in_cr_range(cr_min, cr_max):
