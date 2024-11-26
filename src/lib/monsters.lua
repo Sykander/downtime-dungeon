@@ -1883,6 +1883,16 @@ monster_list = [
         pp = 11, 
     ),
     configure_monster(
+        name = "Unicorn",
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/30836/227/1000/1000/638063931763028274.png",
+        token = "5vfxs",
+        size = "L",
+        type_str = "Celestial",
+        cr = 5,
+        pp = 13,
+        legendary_actions = True
+  ),
+  configure_monster(
         name = "Tarrasque",
         image_url = "https://www.dndbeyond.com/avatars/thumbnails/30836/117/1000/1000/638063929008461547.png",
         token = "23q5b",
