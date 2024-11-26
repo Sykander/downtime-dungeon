@@ -1995,7 +1995,8 @@ monster_list = [
         image_url = "https://www.dndbeyond.com/avatars/thumbnails/30849/314/1000/1000/638064499491607044.png",
         token = "zpng4",
         cr = 3,
-        pp 15,
+        pp = 15,
+
         size = "L",
         type_str = "Monstrosity"
     ),
