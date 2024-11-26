@@ -2152,6 +2152,288 @@ monster_list = [
         cr = 0.25, 
         pp = 15, 
     ), 
+    configure_monster
+        name = "Warhorse",
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/43939/915/1000/1000/638607434779874338.png",
+        token = "ykpgz",
+        cr = 0.5,
+        pp = 11,
+        type_str = "Beast",
+        size = "L"
+    ),
+    configure_monster(
+        name = "Warhorse Skeleton",
+        type_str = "Undead",
+        size = "L",
+        cr = 0.5,
+        pp = 9
+    ),
+    configure_monster(
+        name = "Water Elemental",
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/30783/698/1000/1000/638062015886859442.png",
+        token = "7jw6c",
+        size = "L",
+        type_str = "Elemental",
+        pp = 10,
+        cr = 5
+    ),
+    configure_monster(
+        name = "Weasel",
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/43939/934/1000/1000/638607435160554577.png",
+        token = "zg2fd",
+        size = "T",
+        type_str = "Beast",
+        cr = 0,
+        pp = 13
+    ),
+    configure_monster(
+        name = "Werebear",
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/30832/392/1000/1000/638063837302552346.png",
+        token = "bnp7q",
+        size = "M",
+        type_str = "Humanoid (human, shapechanger)",
+        cr = 5,
+        pp = 17
+    ),
+    configure_monster(
+        name = "Wereboar",
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/30832/513/1000/1000/638063840378621476.png",
+        token = "c976u",
+        size = "M",
+        type_str = "Humanoid (human, shapechanger)",
+        cr = 4,
+        pp = 12
+    ),
+    configure_monster(
+        name = "Wererat",
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/30832/404/1000/1000/638063837496982415.png",
+        token = "w7c2j",
+        size = "M",
+        type_str = "Humanoid (human, shapechanger)",
+        cr = 2,
+        pp = 12
+    ),
+    configure_monster(
+        name = "Weretiger",
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/30832/412/1000/1000/638063837609252415.png",
+        token = "jrcxt",
+        size = "M",
+        type_str = "Humanoid (human, shapechanger)",
+        size = "M",
+        cr = 4,
+        pp = 14
+    ),
+    configure_monster(
+        name = "Werewolf",
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/30832/418/1000/1000/638063837750512227.png",
+        token = "y8ekn",
+        cr = 3,
+        pp = 14,
+        type_str = "Humanoid (human, shapechanger)",
+        size = "M",
+    ),
+    configure_monster(
+        name = "White Dragon Wyrmling",
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/30782/441/1000/1000/638061962420535703.png",
+        token = "reqb3",
+        type_str = "Dragon",
+        size = "M",
+        cr = 2,
+        pp = 14
+    ),
+    configure_monster(
+        name = "Wight",
+        type_str = "Undead",
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/30836/504/1000/1000/638063938582699923.png",
+        token = "4t425",
+        cr = 3,
+        pp = 13,
+        size = "M"
+    ),
+    configure_monster(
+        name = "Will-o’-Wisp",
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/16/585/1000/1000/636376363763232290.jpeg",
+        token = "66qde",
+        cr = 2,
+        pp = 12,
+
+        size = "T",
+        type_str = "Undead"
+    ),
+    configure_monster(
+        name = "Winter Wolf",
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/30849/314/1000/1000/638064499491607044.png",
+        token = "zpng4",
+        cr = 3,
+        pp = 15,
+
+        size = "L",
+        type_str = "Monstrosity"
+    ),
+    configure_monster(
+        name = "Wolf",
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/43939/948/1000/1000/638607435568755201.png",
+        token = "4ht4k",
+        cr = 0.25,
+        pp = 13,
+        size = "M",
+        type_str = "Beast"
+    ),
+    configure_monster(
+        name = "Worg",
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/0/52/1000/1000/636252724662073178.jpeg",
+        token = "2ppfx",
+        cr = 0.5,
+        pp = 14,
+        size = "M",
+        type_str = "Monstrosity"
+    ),
+    configure_monster(
+        name = "Wraith",
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/30836/510/1000/1000/638063938653309509.png",
+        token = "2xz9h",
+        cr = 5,
+        pp = 12,
+        type_str = "Undead",
+        size = "M"
+    ),
+    configure_monster(
+        name = "Wyvern",
+        type_str = "Dragon",
+        cr = 6,
+        pp = 14,
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/30836/518/1000/1000/638063938742199028.png",
+        token = "96vgt",
+        size = "L"
+    ),
+    configure_monster(
+        name = "Vampire",
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/30836/365/1000/1000/638063935245277290.png",
+        token = "n5y2r",
+        cr = 13,
+        pp = 18,
+        legendary_actions = True,
+        size = "M",
+        type_str = "Undead (shapechanger)",
+        legendary_resistance = True
+    ),
+    configure_monster(
+        name = "Vampire Spawn",
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/30836/356/1000/1000/638063935154177308.png",
+        token = "b7qc9",
+        cr = 5,
+        pp = 13,
+        type_str = "Undead",
+        size = "M"
+    ),
+    configure_monster(
+        name = "Violet Fungus",
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/29317/506/1000/1000/638004853119895129.jpeg",
+        token = "46csp",
+        type_str = "Plant",
+        size = "M",
+        cr = 0.25,
+        pp = 6
+    ),
+    configure_monster(
+        name = "Vrock",
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/30781/648/1000/1000/638061932392542985.png",
+        token = "vjx57",
+        type_str = "Fiend (demon)",
+        cr = 6,
+        pp = 11,
+        size = "L"
+    ),
+    configure_monster(
+        name = "Vulture",
+        type_str = "Beast",
+        size = "M",
+        cr = 0,
+        pp = 13
+    ),
+    configure_monster(
+        name = "Unicorn",
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/30836/227/1000/1000/638063931763028274.png",
+        token = "5vfxs",
+        size = "L",
+        type_str = "Celestial",
+        cr = 5,
+        pp = 13,
+        legendary_actions = True
+    ),
+    configure_monster(
+        name = "Tarrasque",
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/30836/117/1000/1000/638063929008461547.png",
+        token = "23q5b",
+        size = "G",
+        type_str = "Monstrosity (titan)",
+        cr = 30,
+        pp = 10,
+        legendary_resistance = True,
+        legendary_actions = True
+    ),
+    configure_monster(
+        name = "Tiger",
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/43939/899/1000/1000/638607434272563738.png",
+        token = "wmzz7",
+        cr = 1,
+        pp = 13,
+        size = "L",
+        type_str = "Beast"
+    ),
+    configure_monster(
+        name = "Treant",
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/30836/130/1000/1000/638063929302059775.png",
+        token = "b8pbq",
+        size = "H",
+        type_str = "Plant",
+        cr = 9,
+        pp = 13,
+    ),
+    configure_monster(
+        name = "Triceratops",
+        type_str = "Beast",
+        size = "H",
+        cr = 5,
+        pp = 10,
+    ),
+    configure_monster(
+        name = "Troll",
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/30836/144/1000/1000/638063929586218907.png",
+        token = "jhu9c",
+        cr = 5,
+        pp = 12,
+        type_str = "Giant",
+        size = "L"
+    ),
+    configure_monster(
+        name = "Twig Blight",
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/16/464/1000/1000/636376286997771487.png",
+        token = "pec85",
+        cr = 0.125,
+        pp = 9,
+        size = "S",
+        type_str = "Plant"
+    ),
+    configure_monster(
+        name = "Tyrannosaurus Rex",
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/16/594/1000/1000/636376369004412963.jpeg",
+        token = "gexvx",
+        size = "h",
+        type_str = "Beast",
+        cr = 8,
+        pp = 14
+    ),
+    configure_monster(
+        name = "Xorn",
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/30836/551/1000/1000/638063939544338029.png",
+        token = "ggqm6",
+        cr = 5,
+        pp = 16,
+        size = "M",
+        type_str = "Elemental"
+    ),
+ main
 ]   
 
 def get_monsters_in_cr_range(cr_min, cr_max):

@@ -5,7 +5,8 @@ using(
     get_floor_data = env.get_gvar_id_by_name("get_floor_data"),
     describe_floor = env.get_gvar_id_by_name("describe_floor"),
     get_dungeon_data = env.get_gvar_id_by_name("get_dungeon_data"),
-    get_status = env.get_gvar_id_by_name("get_status")
+    get_status = env.get_gvar_id_by_name("get_status"),
+    map_tools = env.get_gvar_id_by_name("map_tools")
 )
 
 com = combat()
@@ -22,16 +23,12 @@ floor_data = get_floor_data.get_floor_data(dungeon_data)
 floor_description = describe_floor.describe_floor(floor_data)
 
 map = floor_data["map"]
-
-map_command = f"""{ctx.prefix}auto map '{map["auto_map_name"]}' """ if map["auto_map"] else f'{ctx.prefix}map {map["options"]}'
-map_command_description = f'Please run the following command set the map for the encounter:```{map_command}```'
-
+map_url = map_tools.generate_map_image()
 
 fields = [
-    get_status.get_status_description(com.round_num, dungeon_data), 
-    f'Map|{map_command_description}'
+    get_status.get_status_description(com.round_num, dungeon_data)
 ]
-outputEmbeded = get_message.get_message(floor_description, fields)
+outputEmbeded = get_message.get_message(floor_description, fields, image=map_url)
 
 return outputEmbeded
 </drac2>

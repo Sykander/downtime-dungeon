@@ -145,6 +145,19 @@ def get_has_primary_npc(dungeon_data):
   return random.get_random_integer(0, 100, dungeon_data["floor_seed"] + 99) > 80
 ```
 
+## Secondary NPC Chance
+`DowntimeDungeon_secondary_npc_chance` - gvar_id
+Configures the chance of the secondary npc showing up on a floor.
+
+The corresponding gvar if set should contain a function called `get_has_secondary_npc` which takes the argument `dungeon_data` and returns a `bool` corresponding to if the npc shows up on that floor or not.
+
+```py
+using(random="a1cd80b3-772b-49b7-8bf0-c743cd380ccb")
+
+def get_has_secondary_npc(dungeon_data):
+  return random.get_random_integer(0, 100, dungeon_data["floor_seed"] + 929) > 90
+```
+
 ## CR
 `DowntimeDungeon_cr_calculator` - gvar_id
 Configures the CR for each floor.

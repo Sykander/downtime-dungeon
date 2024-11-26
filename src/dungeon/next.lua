@@ -55,14 +55,13 @@ for adventurer in com.combatants:
     if adventurer:
         map_tools.set_combatant_square(adventurer, start_square)
 
-map_command = f"""{ctx.prefix}auto map '{map["auto_map_name"]}' """ if map["auto_map"] else f'{ctx.prefix}map {map["options"]}'
-map_command_description = f'Please run the following command set the map for the encounter:```{map_command}```'
+map_tools.attach_map_to_combatant(map["map_state"], com.get_combatant(dungeon_data["adventurers"][0]))
+map_url = map_tools.generate_map_image()
 
 fields = [
-    get_status.get_status_description(com.round_num + floorsToSkip, dungeon_data),
-    f'Map|{map_command_description}'
+    get_status.get_status_description(com.round_num + floorsToSkip, dungeon_data)
 ]
-messageEmbeded = get_message.get_message(floor_description, fields)
+messageEmbeded = get_message.get_message(floor_description, fields, image=map_url)
 
 output = f'multiline {ctx.prefix}{messageEmbeded}'
 
