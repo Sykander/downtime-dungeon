@@ -241,30 +241,145 @@ goals = [
 ]
 goals_len = len(goals)
 
-def leadership_action(npc, floor_data, dungeon_data):
-    return f"""{ctx.prefix}i aoo "{npc["full_name"]}" leadership"""
+def cast_spell_on_self(spellname, npc, floor_data, dungeon_data):
+    return f"""{ctx.prefix}i rc "{npc["full_name"]}" "{spellname}" -t "{npc["full_name"]}" """
 
-def invisibility_action(npc, floor_data, dungeon_data):
+def use_action_no_target(actionname, npc, floor_data, dungeon_data):
+    return f"""{ctx.prefix}i aoo "{npc["full_name"]}" "{actionname}" """
+
+def use_ability_on_random_adventurer(abilityname, npc, floor_data, dungeon_data):
     adventurers = dungeon_data["adventurers"]
     adventurers_len = len(adventurers)
     adventurer_index = random.get_random_integer(0, adventurers_len - 1)
     adventurer = adventurers[adventurer_index]
-    return f"""{ctx.prefix}i rc "{npc["full_name"]}" "Greater Invisibility" -t "{adventurer}" """
+    return f"""{ctx.prefix}i aoo "{npc["full_name"]}" "{abilityname}" -t "{adventurer}" """
 
-def cure_wounds_action(npc, floor_data, dungeon_data):
+def cast_spell_on_random_adventurer(spellname, npc, floor_data, dungeon_data):
     adventurers = dungeon_data["adventurers"]
     adventurers_len = len(adventurers)
     adventurer_index = random.get_random_integer(0, adventurers_len - 1)
     adventurer = adventurers[adventurer_index]
-    return f"""{ctx.prefix}i rc "{npc["full_name"]}" "Cure Wounds" -t "{adventurer}" """
+    return f"""{ctx.prefix}i rc "{npc["full_name"]}" "{spellname}" -t "{adventurer}" """
+
+def cast_spell_on_all_adventurers(spellname, npc, floor_data, dungeon_data):
+    target_all_adventurers = ""
+    for adventurer in dungeon_data["adventurers"]:
+        target_all_adventurers += f'-t "{adventurer}" '
+    return f"""{ctx.prefix}i rc "{npc["full_name"]}" "{spellname}" {target_all_adventurers}"""
 
 actions = {
-    "leadership": leadership_action,
-    "invisibility": invisibility_action,
-    "cure_wounds": cure_wounds_action
+    "leadership": lambda npc, floor_data, dungeon_data: use_action_no_target("Leadership", npc, floor_data, dungeon_data),
+    "greater_invisibility": lambda npc, floor_data, dungeon_data: cast_spell_on_random_adventurer("Greater Invisibility", npc, floor_data, dungeon_data),
+    "cure_wounds": lambda npc, floor_data, dungeon_data: cast_spell_on_random_adventurer("Cure Wounds", npc, floor_data, dungeon_data),
+    "bless": lambda npc, floor_data, dungeon_data: cast_spell_on_all_adventurers("Bless", npc, floor_data, dungeon_data),
+    "mind_blank": lambda npc, floor_data, dungeon_data: cast_spell_on_random_adventurer("Mind Blank", npc, floor_data, dungeon_data),
+    "shield_of_faith": lambda npc, floor_data, dungeon_data: cast_spell_on_random_adventurer("Shield of Faith", npc, floor_data, dungeon_data),
+    "longstrider": lambda npc, floor_data, dungeon_data: cast_spell_on_random_adventurer("Longstrider", npc, floor_data, dungeon_data),
+    "healing_touch": lambda npc, floor_data, dungeon_data: use_ability_on_random_adventurer("Healing Touch", npc, floor_data, dungeon_data),
+    "stoneskin": lambda npc, floor_data, dungeon_data: cast_spell_on_random_adventurer("Stoneskin", npc, floor_data, dungeon_data),
+    "barkskin": lambda npc, floor_data, dungeon_data: cast_spell_on_random_adventurer("Barkskin", npc, floor_data, dungeon_data),
+    "deep_gnome_blur": lambda npc, floor_data, dungeon_data: cast_spell_on_self("Blur", npc, floor_data, dungeon_data),
+    "duergar_enlarge": lambda npc, floor_data, dungeon_data: use_action_no_target("Enlarge", npc, floor_data, dungeon_data),
+    "duergar_invisibility": lambda npc, floor_data, dungeon_data: use_action_no_target("Invisibility", npc, floor_data, dungeon_data),
 }
 
 npc_sheets = [
+    {
+        "name": "Cleric",
+        "monster": "Acolyte",
+        "has_special_actions": True,
+        "special_actions": ["cure_wounds", "bless"]
+    },
+    {
+        "name": "Wizard",
+        "monster": "Archmage",
+        "has_special_actions": True,
+        "special_actions": ["mind_blank", "stoneskin"]
+    },
+    {
+        "name": "Rogue",
+        "monster": "Assassin",
+        "has_special_actions": False,
+        "special_actions": []
+    },
+    {
+        "name": "Rogue",
+        "monster": "Bandit",
+        "has_special_actions": False,
+        "special_actions": []
+    },
+    {
+        "name": "Rogue",
+        "monster": "Bandit Captain",
+        "has_special_actions": False,
+        "special_actions": []
+    },
+    {
+        "name": "Barbarian",
+        "monster": "Berserker",
+        "has_special_actions": False,
+        "special_actions": []
+    },
+    {
+        "name": "Barbarian",
+        "monster": "Bugbear",
+        "has_special_actions": False,
+        "special_actions": []
+    },
+    {
+        "name": "Warlock",
+        "monster": "Cult Fanatic",
+        "has_special_actions": True,
+        "special_actions": ["shield_of_faith"]
+    },
+    {
+        "name": "Warlock",
+        "monster": "Deep Gnome (Svirfneblin)",
+        "has_special_actions": True,
+        "special_actions": ["deep_gnome_blur"]
+    },
+    {
+        "name": "Druid",
+        "monster": "Druid",
+        "has_special_actions": True,
+        "special_actions": ["longstrider", "barkskin"]
+    },
+    {
+        "name": "Fighter",
+        "monster": "Duergar",
+        "has_special_actions": True,
+        "special_actions": ["duergar_enlarge", "duergar_invisibility"]
+    },
+    {
+        "name": "Barbarian",
+        "monster": "Gladiator",
+        "has_special_actions": False,
+        "special_actions": []
+    },
+    {
+        "name": "Barbarian",
+        "monster": "Grimlock",
+        "has_special_actions": False,
+        "special_actions": []
+    },
+    {
+        "name": "Fighter",
+        "monster": "Guard",
+        "has_special_actions": False,
+        "special_actions": []
+    },
+    {
+        "name": "Fighter",
+        "monster": "Half-Red Dragon Veteran",
+        "has_special_actions": False,
+        "special_actions": []
+    },
+    {
+        "name": "Fighter",
+        "monster": "Hobgoblin",
+        "has_special_actions": False,
+        "special_actions": []
+    },
     {
         "name": "Fighter",
         "monster": "Knight",
@@ -272,10 +387,22 @@ npc_sheets = [
         "special_actions": ["leadership"]
     },
     {
+        "name": "Fighter",
+        "monster": "Lizardfolk",
+        "has_special_actions": False,
+        "special_actions": []
+    },
+    {
         "name": "Wizard",
         "monster": "Mage",
         "has_special_actions": True,
-        "special_actions": ["invisibility"]
+        "special_actions": ["greater_invisibility"]
+    },
+    {
+        "name": "Barbarian",
+        "monster": "Orc",
+        "has_special_actions": False,
+        "special_actions": []
     },
     {
         "name": "Cleric",
@@ -285,10 +412,70 @@ npc_sheets = [
     },
     {
         "name": "Rogue",
-        "monster": "Assassin",
+        "monster": "Spy",
         "has_special_actions": False,
         "special_actions": []
-    }
+    },
+    {
+        "name": "Barbarian",
+        "monster": "Thug",
+        "has_special_actions": False,
+        "special_actions": []
+    },
+    {
+        "name": "Barbarian",
+        "monster": "Tribal Warrior",
+        "has_special_actions": False,
+        "special_actions": []
+    },
+    {
+        "name": "Fighter",
+        "monster": "Veteran",
+        "has_special_actions": False,
+        "special_actions": []
+    },
+    {
+        "name": "Fighter",
+        "monster": "Werebear",
+        "has_special_actions": False,
+        "special_actions": []
+    },
+    {
+        "name": "Fighter",
+        "monster": "Wereboar",
+        "has_special_actions": False,
+        "special_actions": []
+    },
+    {
+        "name": "Fighter",
+        "monster": "Wererat",
+        "has_special_actions": False,
+        "special_actions": []
+    },
+    {
+        "name": "Fighter",
+        "monster": "Weretiger",
+        "has_special_actions": False,
+        "special_actions": []
+    },
+    {
+        "name": "Fighter",
+        "monster": "Werewolf",
+        "has_special_actions": False,
+        "special_actions": []
+    },
+    {
+        "name": "Paladin",
+        "monster": "Deva",
+        "has_special_actions": True,
+        "special_actions": ["healing_touch"]
+    },
+    {
+        "name": "Paladin",
+        "monster": "Erinyes",
+        "has_special_actions": False,
+        "special_actions": []
+    },
 ]
 npc_sheets_len = len(npc_sheets)
 
@@ -297,7 +484,13 @@ def gift_dialogue(npc, floor_data, dungeon_data):
 
 They look up slowly as the adventurers approach, sizing them up with a mixture of curiosity and caution."""
 
-    line1 = "Hmm... didn’t expect to find anyone alive down here. Not often do people make it this far... Not many make it back from the deeper parts of this place. The dungeon changes, you see. Always shifts, always moves. It can get... personal, real quick."
+    line1_variant1 = "Hmm... didn’t expect to find anyone alive down here. Not often do people make it this far... Not many make it back from the deeper parts of this place. The dungeon changes, you see. Always shifts, always moves. It can get... personal, real quick."
+    line1_variant2 = "I didn’t think I’d see anyone alive in this place. Few who reach this depth ever return. The dungeon isn’t just stone and traps. It changes with every step you take."
+    line1_variant3 = "Not every day I run into someone still breathing at this depth. This place changes with its explorers. It learns from you and twists into something darker."
+    line1_variant4 = "You’re one of the lucky ones to make it this far. Be wary. This dungeon isn’t what it seems. It shifts and changes, and it knows exactly how to test you."
+    line1_variants = [line1_variant1, line1_variant2, line1_variant3, line1_variant4]
+    line1 = line1_variants[random.get_random_integer(0, len(line1_variants) -1, floor_data["seed"] - 2872827)]
+
     gift_index = random.get_random_integer(0, len(gifts) - 1, floor_data["seed"] + 27382)
     gift = gifts[gift_index]
 
