@@ -25,14 +25,20 @@ close_images = [
     "https://i.imgur.com/xBdB1WP.png",
     "https://i.imgur.com/CwxUEj5.jpeg"
 ]
-contributors = [":fox:  **Dodge** :fox:", ":wolf: **BrokenTorch** :wolf:", ":dragon: **Frederic** :dragon:", ":unicorn: **CJSparkle** :unicorn:"]
+contributors = [
+    ":fox: **Dodge** :fox:",
+    ":wolf: **BrokenTorch** :wolf:",
+    ":dragon: **Frederic** :dragon:",
+    ":unicorn: **CJSparkle** :unicorn:",
+    ":candy: **GratuaCuun** :candy:"
+]
 
 def format_credits() -> str:
-    last_contributor = contributors[-1]
-    return f'Credits|Developed by {", ".join(contributors[:-1])}, and {last_contributor}.'
+    list_of_contributors = f"\n- ".join(contributors)
+    return f'Contributors|\n- {list_of_contributors}'
 
 fields = [get_status.get_status_description(com.round_num, dungeon_data), format_credits()]
-image = close_images[random.get_random_integer(0, len(close_images) - 1)]
+image = close_images[random.get_random_integer(0, len(close_images) - 1, dungeon_data["floor_seed"])]
 description =  f'You closed the Downtime Dungeon after {dungeon_data["floor_num"]} floors.'
 
 return f'multiline \n{ctx.prefix}i end \n{ctx.prefix}{get_message.get_message(description=description, fields=fields, image=image)}'
