@@ -2122,7 +2122,6 @@ monster_list = [
         name = "Swarm of Poisonous Snakes",
         size = "M",
         type_str = "Swarm of Tiny beasts",
-
         cr = 2,
         pp = 10,
     ),
