@@ -2141,7 +2141,8 @@ monster_list = [
         image_url = "https://www.dndbeyond.com/avatars/thumbnails/9/908/1000/1000/636334289541603972.jpeg",
         token = "zqe54",
         size = "M",
-        type_str = "Medium swarm of Tiny beasts",
+        type_str = "Swarm of Tiny beasts",
+
         cr = 0.25,
         pp = 10,
     ),
