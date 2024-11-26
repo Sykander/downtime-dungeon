@@ -264,7 +264,7 @@ def cast_spell_on_random_adventurer(spellname, npc, floor_data, dungeon_data):
 def cast_spell_on_all_adventurers(spellname, npc, floor_data, dungeon_data):
     target_all_adventurers = ""
     for adventurer in dungeon_data["adventurers"]:
-        target_all_adventurers += f'-t "{adventurer.name}" '
+        target_all_adventurers += f'-t "{adventurer}" '
     return f"""{ctx.prefix}i rc "{npc["full_name"]}" "{spellname}" {target_all_adventurers}"""
 
 actions = {
@@ -278,7 +278,7 @@ actions = {
     "healing_touch": lambda npc, floor_data, dungeon_data: use_ability_on_random_adventurer("Healing Touch", npc, floor_data, dungeon_data),
     "stoneskin": lambda npc, floor_data, dungeon_data: cast_spell_on_random_adventurer("Stoneskin", npc, floor_data, dungeon_data),
     "barkskin": lambda npc, floor_data, dungeon_data: cast_spell_on_random_adventurer("Barkskin", npc, floor_data, dungeon_data),
-    "blur": lambda npc, floor_data, dungeon_data: cast_spell_on_self("Blur", npc, floor_data, dungeon_data),
+    "deep_gnome_blur": lambda npc, floor_data, dungeon_data: cast_spell_on_self("Blur", npc, floor_data, dungeon_data),
     "duergar_enlarge": lambda npc, floor_data, dungeon_data: use_action_no_target("Enlarge", npc, floor_data, dungeon_data),
     "duergar_invisibility": lambda npc, floor_data, dungeon_data: use_action_no_target("Invisibility", npc, floor_data, dungeon_data),
 }
@@ -348,7 +348,7 @@ npc_sheets = [
         "name": "Warlock",
         "monster": "Deep Gnome (Svirfneblin)",
         "has_special_actions": True,
-        "special_actions": ["blur"]
+        "special_actions": ["deep_gnome_blur"]
     },
     {
         "name": "Rogue",
@@ -459,7 +459,7 @@ npc_sheets = [
         "special_actions": ["cure_wounds"]
     },
     {
-        "name": "Druid",
+        "name": "Commoner",
         "monster": "Sahuagin",
         "has_special_actions": False,
         "special_actions": []
