@@ -3,7 +3,8 @@ using(env="0836565c-d03d-4f1f-9306-5e210c69b3d1")
 using(
     get_message = env.get_gvar_id_by_name("get_message"),
     get_dungeon_data = env.get_gvar_id_by_name("get_dungeon_data"),
-    get_status = env.get_gvar_id_by_name("get_status")
+    get_status = env.get_gvar_id_by_name("get_status"),
+    random = env.get_gvar_id_by_name("random")
 )
 
 com = combat()
