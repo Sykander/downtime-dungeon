@@ -241,8 +241,11 @@ goals = [
 ]
 goals_len = len(goals)
 
-def leadership_action(npc, floor_data, dungeon_data):
-    return f"""{ctx.prefix}i aoo "{npc["full_name"]}" leadership"""
+def cast_spell_on_self(spellname, npc, floor_data, dungeon_data):
+    return f"""{ctx.prefix}i rc "{npc["full_name"]}" "{spellname}" -t "{npc["full_name"]}" """
+
+def use_action_no_target(actionname, npc, floor_data, dungeon_data):
+    return f"""{ctx.prefix}i aoo "{npc["full_name"]}" "{actionname}" """
 
 def use_ability_on_random_adventurer(abilityname, npc, floor_data, dungeon_data):
     adventurers = dungeon_data["adventurers"]
@@ -265,7 +268,7 @@ def cast_spell_on_all_adventurers(spellname, npc, floor_data, dungeon_data):
     return f"""{ctx.prefix}i rc "{npc["full_name"]}" "Bless" {target_all_adventurers}"""
 
 actions = {
-    "leadership": leadership_action,
+    "leadership": lambda npc, floor_data, dungeon_data: use_action_no_target("Leadership", npc, floor_data, dungeon_data),,
     "greater_invisibility": lambda npc, floor_data, dungeon_data: cast_spell_on_random_adventurer("Greater Invisibility", npc, floor_data, dungeon_data),
     "cure_wounds": lambda npc, floor_data, dungeon_data: cast_spell_on_random_adventurer("Cure Wounds", npc, floor_data, dungeon_data),
     "bless": lambda npc, floor_data, dungeon_data: cast_spell_on_all_adventurers("Bless", npc, floor_data, dungeon_data),
@@ -275,6 +278,9 @@ actions = {
     "healing_touch": lambda npc, floor_data, dungeon_data: use_ability_on_random_adventurer("Healing Touch", npc, floor_data, dungeon_data),
     "stoneskin": lambda npc, floor_data, dungeon_data: cast_spell_on_random_adventurer("Stoneskin", npc, floor_data, dungeon_data),
     "barkskin": lambda npc, floor_data, dungeon_data: cast_spell_on_random_adventurer("Barkskin", npc, floor_data, dungeon_data),
+    "blur": lambda npc, floor_data, dungeon_data: cast_spell_on_self("Blur", npc, floor_data, dungeon_data),
+    "duergar_enlarge": lambda npc, floor_data, dungeon_data: use_action_no_target("Enlarge", npc, floor_data, dungeon_data),
+    "duergar_invisibility": lambda npc, floor_data, dungeon_data: use_action_no_target("Invisibility", npc, floor_data, dungeon_data),
 }
 
 npc_sheets = [
@@ -315,6 +321,12 @@ npc_sheets = [
         "special_actions": []
     },
     {
+        "name": "Barbarian",
+        "monster": "Bugbear",
+        "has_special_actions": False,
+        "special_actions": []
+    },
+    {
         "name": "Commoner",
         "monster": "Commoner",
         "has_special_actions": False,
@@ -327,10 +339,22 @@ npc_sheets = [
         "special_actions": []
     },
     {
-        "name": "Cleric",
+        "name": "Warlock",
         "monster": "Cult Fanatic",
         "has_special_actions": True,
         "special_actions": ["shield_of_faith"]
+    },
+    {
+        "name": "Warlock",
+        "monster": "Deep Gnome (Svirfneblin)",
+        "has_special_actions": True,
+        "special_actions": ["blur"]
+    },
+    {
+        "name": "Rogue",
+        "monster": "Drow",
+        "has_special_actions": False,
+        "special_actions": []
     },
     {
         "name": "Druid",
@@ -339,8 +363,32 @@ npc_sheets = [
         "special_actions": ["longstrider", "barkskin"]
     },
     {
+        "name": "Fighter",
+        "monster": "Duergar",
+        "has_special_actions": True,
+        "special_actions": ["duergar_enlarge", "duergar_invisibility"]
+    },
+    {
         "name": "Barbarian",
         "monster": "Gladiator",
+        "has_special_actions": False,
+        "special_actions": []
+    },
+    {
+        "name": "Barbarian",
+        "monster": "Gnoll",
+        "has_special_actions": False,
+        "special_actions": []
+    },
+    {
+        "name": "Rogue",
+        "monster": "Goblin",
+        "has_special_actions": False,
+        "special_actions": []
+    },
+    {
+        "name": "Barbarian",
+        "monster": "Grimlock",
         "has_special_actions": False,
         "special_actions": []
     },
@@ -352,9 +400,33 @@ npc_sheets = [
     },
     {
         "name": "Fighter",
+        "monster": "Half-Red Dragon Veteran",
+        "has_special_actions": False,
+        "special_actions": []
+    },
+    {
+        "name": "Fighter",
+        "monster": "Hobgoblin",
+        "has_special_actions": False,
+        "special_actions": []
+    },
+    {
+        "name": "Fighter",
         "monster": "Knight",
         "has_special_actions": True,
         "special_actions": ["leadership"]
+    },
+    {
+        "name": "Commoner",
+        "monster": "Kobold",
+        "has_special_actions": False,
+        "special_actions": []
+    },
+    {
+        "name": "Fighter",
+        "monster": "Lizardfolk",
+        "has_special_actions": False,
+        "special_actions": []
     },
     {
         "name": "Wizard",
@@ -364,7 +436,19 @@ npc_sheets = [
     },
     {
         "name": "Commoner",
+        "monster": "Merfolk",
+        "has_special_actions": False,
+        "special_actions": []
+    },
+    {
+        "name": "Commoner",
         "monster": "Noble",
+        "has_special_actions": False,
+        "special_actions": []
+    },
+    {
+        "name": "Barbarian",
+        "monster": "Orc",
         "has_special_actions": False,
         "special_actions": []
     },
@@ -373,6 +457,12 @@ npc_sheets = [
         "monster": "Priest",
         "has_special_actions": True,
         "special_actions": ["cure_wounds"]
+    },
+    {
+        "name": "Druid",
+        "monster": "Sahuagin",
+        "has_special_actions": False,
+        "special_actions": []
     },
     {
         "name": "Rogue",
@@ -405,10 +495,46 @@ npc_sheets = [
         "special_actions": []
     },
     {
+        "name": "Fighter",
+        "monster": "Werebear",
+        "has_special_actions": False,
+        "special_actions": []
+    },
+    {
+        "name": "Fighter",
+        "monster": "Wereboar",
+        "has_special_actions": False,
+        "special_actions": []
+    },
+    {
+        "name": "Fighter",
+        "monster": "Wererat",
+        "has_special_actions": False,
+        "special_actions": []
+    },
+    {
+        "name": "Fighter",
+        "monster": "Weretiger",
+        "has_special_actions": False,
+        "special_actions": []
+    },
+    {
+        "name": "Fighter",
+        "monster": "Werewolf",
+        "has_special_actions": False,
+        "special_actions": []
+    },
+    {
         "name": "Paladin",
         "monster": "Deva",
         "has_special_actions": True,
         "special_actions": ["healing_touch"]
+    },
+    {
+        "name": "Paladin",
+        "monster": "Erinyes",
+        "has_special_actions": False,
+        "special_actions": []
     },
 
 ]
