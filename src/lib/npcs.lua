@@ -327,18 +327,6 @@ npc_sheets = [
         "special_actions": []
     },
     {
-        "name": "Commoner",
-        "monster": "Commoner",
-        "has_special_actions": False,
-        "special_actions": []
-    },
-    {
-        "name": "Commoner",
-        "monster": "Cultist",
-        "has_special_actions": False,
-        "special_actions": []
-    },
-    {
         "name": "Warlock",
         "monster": "Cult Fanatic",
         "has_special_actions": True,
@@ -349,12 +337,6 @@ npc_sheets = [
         "monster": "Deep Gnome (Svirfneblin)",
         "has_special_actions": True,
         "special_actions": ["deep_gnome_blur"]
-    },
-    {
-        "name": "Rogue",
-        "monster": "Drow",
-        "has_special_actions": False,
-        "special_actions": []
     },
     {
         "name": "Druid",
@@ -371,18 +353,6 @@ npc_sheets = [
     {
         "name": "Barbarian",
         "monster": "Gladiator",
-        "has_special_actions": False,
-        "special_actions": []
-    },
-    {
-        "name": "Barbarian",
-        "monster": "Gnoll",
-        "has_special_actions": False,
-        "special_actions": []
-    },
-    {
-        "name": "Rogue",
-        "monster": "Goblin",
         "has_special_actions": False,
         "special_actions": []
     },
@@ -417,12 +387,6 @@ npc_sheets = [
         "special_actions": ["leadership"]
     },
     {
-        "name": "Commoner",
-        "monster": "Kobold",
-        "has_special_actions": False,
-        "special_actions": []
-    },
-    {
         "name": "Fighter",
         "monster": "Lizardfolk",
         "has_special_actions": False,
@@ -435,18 +399,6 @@ npc_sheets = [
         "special_actions": ["greater_invisibility"]
     },
     {
-        "name": "Commoner",
-        "monster": "Merfolk",
-        "has_special_actions": False,
-        "special_actions": []
-    },
-    {
-        "name": "Commoner",
-        "monster": "Noble",
-        "has_special_actions": False,
-        "special_actions": []
-    },
-    {
         "name": "Barbarian",
         "monster": "Orc",
         "has_special_actions": False,
@@ -457,18 +409,6 @@ npc_sheets = [
         "monster": "Priest",
         "has_special_actions": True,
         "special_actions": ["cure_wounds"]
-    },
-    {
-        "name": "Commoner",
-        "monster": "Sahuagin",
-        "has_special_actions": False,
-        "special_actions": []
-    },
-    {
-        "name": "Rogue",
-        "monster": "Scout",
-        "has_special_actions": False,
-        "special_actions": []
     },
     {
         "name": "Rogue",
@@ -544,7 +484,13 @@ def gift_dialogue(npc, floor_data, dungeon_data):
 
 They look up slowly as the adventurers approach, sizing them up with a mixture of curiosity and caution."""
 
-    line1 = "Hmm... didn’t expect to find anyone alive down here. Not often do people make it this far... Not many make it back from the deeper parts of this place. The dungeon changes, you see. Always shifts, always moves. It can get... personal, real quick."
+    line1_variant1 = "Hmm... didn’t expect to find anyone alive down here. Not often do people make it this far... Not many make it back from the deeper parts of this place. The dungeon changes, you see. Always shifts, always moves. It can get... personal, real quick."
+    line1_variant2 = "I didn’t think I’d see anyone alive in this place. Few who reach this depth ever return. The dungeon isn’t just stone and traps. It changes with every step you take."
+    line1_variant3 = "Not every day I run into someone still breathing at this depth. This place changes with its explorers. It learns from you and twists into something darker."
+    line1_variant4 = "You’re one of the lucky ones to make it this far. Be wary. This dungeon isn’t what it seems. It shifts and changes, and it knows exactly how to test you."
+    line1_variants = [line1_variant1, line1_variant2, line1_variant3, line1_variant4]
+    line1 = line1_variants[random.get_random_integer(0, len(line1_variants) -1, floor_data["seed"] - 2872827)]
+
     gift_index = random.get_random_integer(0, len(gifts) - 1, floor_data["seed"] + 27382)
     gift = gifts[gift_index]
 
