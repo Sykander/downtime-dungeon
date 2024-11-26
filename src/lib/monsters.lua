@@ -2115,7 +2115,6 @@ monster_list = [
         name = "Swarm of Insects",
         size = "M",
         type_str = "Swarm of Tiny beasts",
-
         cr = 0.5,
         pp = 8,
     ),
