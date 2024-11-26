@@ -16,7 +16,8 @@ dungeon_data = get_dungeon_data.get_dungeon_data(com)
 if not dungeon_data["started"]:
     return get_message.get_error("Ooops... you're not in a dungeon right now.")
 
-contributors: list[str] = ["Dodge", "BrokenTorch", "Frederic", "CJSparkle"]
+contributors: list[str] = [":fox: Dodge :fox:", ":wolf: BrokenTorch :wolf:", ":dragon: Frederic :dragon:", ":unicorn: CJSparkle :unicorn:"]
+
 
 def format_credits() -> str:
     last_contributor = contributors[-1]
