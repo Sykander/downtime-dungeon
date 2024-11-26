@@ -3,6 +3,7 @@
 ENV = "Development"
 
 gvars = {
+    "auto_tools": "27471f7a-208b-413b-86fe-531050e1e33d",
     "describe_floor": "85ef7be4-7af3-4a07-ac57-db9fc47fcb7c",
     "encounters": "a003f531-851f-4a1d-859e-a2766b5dbce1",
     "get_dungeon_data": "c6aa3456-83ac-4777-9e5c-524d337f67eb",

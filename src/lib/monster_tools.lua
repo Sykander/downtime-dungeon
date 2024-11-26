@@ -32,6 +32,10 @@ def get_add_monster_commands(dungeon_data, floor_data):
         image_part = f'-image {monster["image_url"]}' if monster["image_url"] else ""
 
         command_list.append(f'{ctx.prefix}embed -title "{name}" -desc "*{description_part}*" {image_part}')
-        command_list.append(f'{ctx.prefix}i madd "{name}" -name "{"#-" if monster["count"] > 1 else ""}{name}" -n {monster["count"]} -rollhp -note "Location: {start_square} | Note: PP {monster.pp} | Size: {monster.size} | Token: {monster.token}"')
+        note = f"Location: {start_square} | Note: PP {monster.pp} | Size: {monster.size}"
+
+        if monster.token:
+            note += f" | Token: {monster.token}"
+        command_list.append(f'{ctx.prefix}i madd "{name}" -name "{"#-" if monster["count"] > 1 else ""}{name}" -n {monster["count"]} -rollhp -note "{note}" ')
 
     return command_list

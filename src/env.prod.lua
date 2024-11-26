@@ -3,6 +3,7 @@
 ENV = "Production"
 
 gvars = {
+    "auto_tools": "abd22d03-21d0-41f5-87a4-74371cd6a22b",
     "describe_floor": "6ee6493d-8028-46d3-b4d9-3ce7b06c6ef4",
     "encounters": "b902325d-07e4-4082-8635-5e38443f29f9",
     "get_dungeon_data": "4091e5d2-6f37-4302-a90b-27065ab989e1",

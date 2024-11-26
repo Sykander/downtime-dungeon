@@ -89,8 +89,6 @@ def generate_map_image(overlays=None, from_state=None):
             if location:
                 size = note.get("size", "M")
                 size_letter = size[0].upper()
-                size_map = {"T": 1, "S": 1, "M": 1, "L": 2, "H": 3, "G": 4}
-                grid_size = size_map.get(size_letter, 1)
 
                 color = note.get("color", "b" if "/" in combatant.hp_str() else "r")
                 if len(color) in (3, 6) and color.isalnum():
