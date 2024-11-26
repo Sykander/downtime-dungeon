@@ -2115,7 +2115,8 @@ monster_list = [
     configure_monster(
         name = "Swarm of Insects",
         size = "M",
-        type_str = "Medium swarm of Tiny beasts",
+        type_str = "Swarm of Tiny beasts",
+
         cr = 0.5,
         pp = 8,
     ),
