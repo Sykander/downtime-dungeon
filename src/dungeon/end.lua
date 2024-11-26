@@ -25,7 +25,7 @@ close_images = [
     "https://i.imgur.com/xBdB1WP.png",
     "https://i.imgur.com/CwxUEj5.jpeg"
 ]
-contributors = [":fox: Dodge :fox:", ":wolf: BrokenTorch :wolf:", ":dragon: Frederic :dragon:", ":unicorn: CJSparkle :unicorn:"]
+contributors = [":fox:  **Dodge** :fox:", ":wolf: **BrokenTorch** :wolf:", ":dragon: **Frederic** :dragon:", ":unicorn: **CJSparkle** :unicorn:"]
 
 def format_credits() -> str:
     last_contributor = contributors[-1]
