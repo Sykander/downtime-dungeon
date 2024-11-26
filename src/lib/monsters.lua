@@ -1883,6 +1883,51 @@ monster_list = [
         pp = 11, 
     ),
     configure_monster(
+        name = "Vampire",
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/30836/365/1000/1000/638063935245277290.png",
+        token = "n5y2r",
+        cr = 13,
+        pp = 18,
+        legendary_actions = True,
+        size = "M",
+        type_str = "Undead (shapechanger)",
+        legendary_resistance = True
+    ),
+    configure_monster(
+        name = "Vampire Spawn",
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/30836/356/1000/1000/638063935154177308.png",
+        token = "b7qc9",
+        cr = 5,
+        pp = 13,
+        type_str = "Undead",
+        size = "M"
+    ),
+    configure_monster(
+        name = "Violet Fungus",
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/29317/506/1000/1000/638004853119895129.jpeg",
+        token = "46csp",
+        type_str = "Plant",
+        size = "M",
+        cr = 0.25,
+        pp = 6
+    ),
+    configure_monster(
+        name = "Vrock",
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/30781/648/1000/1000/638061932392542985.png",
+        token = "vjx57",
+        type_str = "Fiend (demon)",
+        cr = 6,
+        pp = 11,
+        size = "L"
+    ),
+    configure_monster(
+        name = "Vulture",
+        type_str = "Beast",
+        size = "M",
+        cr = 0,
+        pp = 13
+    ),
+    configure_monster(
         name = "Unicorn",
         image_url = "https://www.dndbeyond.com/avatars/thumbnails/30836/227/1000/1000/638063931763028274.png",
         token = "5vfxs",
@@ -1891,8 +1936,8 @@ monster_list = [
         cr = 5,
         pp = 13,
         legendary_actions = True
-  ),
-  configure_monster(
+    ),
+    configure_monster(
         name = "Tarrasque",
         image_url = "https://www.dndbeyond.com/avatars/thumbnails/30836/117/1000/1000/638063929008461547.png",
         token = "23q5b",
