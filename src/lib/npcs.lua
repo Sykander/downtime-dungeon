@@ -536,7 +536,6 @@ npc_sheets = [
         "has_special_actions": False,
         "special_actions": []
     },
-
 ]
 npc_sheets_len = len(npc_sheets)
 
