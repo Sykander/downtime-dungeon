@@ -30,32 +30,6 @@ def configure_monster(
 
 monster_list = [
     configure_monster(
-        name = "Kobold",
-        size = "S",
-        image_url = "https://www.dndbeyond.com/avatars/thumbnails/30832/207/1000/1000/638063832924455756.png",
-        token = "9wp52",
-        type_str = "Humanoid",
-        cr = 0.125,
-        pp = 8
-    ),
-    configure_monster(
-        name = "Bandit",
-        size = "Medium",
-        token = "jen83",
-        type_str = "Humanoid",
-        cr = 0.125,
-        pp = 10
-    ),
-    configure_monster(
-        name = "Goblin",
-        size = "Small",
-        image_url = "https://www.dndbeyond.com/avatars/thumbnails/30783/955/1000/1000/638062024584880857.png",
-        token = "2ftz7",
-        type_str = "Humanoid (goblinoid)",
-        cr = 0.25,
-        pp = 9
-    ),
-    configure_monster(
         name = "Aboleth",
         size = "L",
         token = "v5gn3",
@@ -1351,6 +1325,15 @@ monster_list = [
         type_str = "Beast",
         cr = 3,
         pp = 13,
+    ),
+    configure_monster(
+        name = "Kobold",
+        size = "S",
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/30832/207/1000/1000/638063832924455756.png",
+        token = "9wp52",
+        type_str = "Humanoid",
+        cr = 0.125,
+        pp = 8
     ),
     configure_monster(
         name = "Kraken",
