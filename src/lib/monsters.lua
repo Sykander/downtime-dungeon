@@ -1985,7 +1985,8 @@ monster_list = [
         image_url = "https://www.dndbeyond.com/avatars/thumbnails/16/585/1000/1000/636376363763232290.jpeg",
         token = "66qde",
         cr = 2,
-        pp 12,
+        pp = 12,
+
         size = "T",
         type_str = "Undead"
     ),
