@@ -2139,7 +2139,6 @@ monster_list = [
         token = "zqe54",
         size = "M",
         type_str = "Swarm of Tiny beasts",
-
         cr = 0.25,
         pp = 10,
     ),
