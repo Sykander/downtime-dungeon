@@ -1923,7 +1923,8 @@ monster_list = [
         image_url = "https://www.dndbeyond.com/avatars/thumbnails/30836/144/1000/1000/638063929586218907.png",
         token = "jhu9c",
         cr = 5,
-        pp 12,
+        pp = 12,
+
         type_str = "Giant",
         size = "L"
     ),
