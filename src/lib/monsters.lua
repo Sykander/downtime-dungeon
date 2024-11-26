@@ -2130,7 +2130,7 @@ monster_list = [
         image_url = "https://www.dndbeyond.com/avatars/thumbnails/30849/311/1000/1000/638064499389977008.png",
         token = "c2byn",
         size = "M",
-        type_str = "Swarm of Tiny beasts"
+        type_str = "Swarm of Tiny beasts",
         cr = 1,
         pp = 8,
     ),
@@ -2147,12 +2147,12 @@ monster_list = [
         name = "Swarm of Ravens",
         image_url = "https://www.dndbeyond.com/avatars/thumbnails/16/555/1000/1000/636376341743427326.jpeg",
         size = "M",
-        type_str = "Swarm of Tiny beasts"
+        type_str = "Swarm of Tiny beasts",
         token = "r6jjk",
         cr = 0.25, 
         pp = 15, 
     ), 
-    configure_monster
+    configure_monster(
         name = "Warhorse",
         image_url = "https://www.dndbeyond.com/avatars/thumbnails/43939/915/1000/1000/638607434779874338.png",
         token = "ykpgz",
