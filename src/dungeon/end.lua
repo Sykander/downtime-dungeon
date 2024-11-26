@@ -21,8 +21,7 @@ contributors: list[str] = ["Dodge", "BrokenTorch", "Frederic", "CJSparkle"]
 def format_credits() -> str:
     last_contributor = contributors[-1]
     return f'Credits|Developed by {", ".join(contributors[:-1])}, and {last_contributor}.'
-        
-    
+
 fields = [get_status.get_status_description(com.round_num, dungeon_data), format_credits()]
 description =  f'You closed the Downtime Dungeon after {dungeon_data["floor_num"]} floors.'
 
