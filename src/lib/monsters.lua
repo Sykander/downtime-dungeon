@@ -2155,6 +2155,15 @@ monster_list = [
         cr = 8,
         pp = 14
     ),
+    configure_monster(
+        name = "Xorn",
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/30836/551/1000/1000/638063939544338029.png",
+        token = "ggqm6",
+        cr = 5,
+        pp = 16,
+        size = "M",
+        type_str = "Elemental"
+    ),
 ]   
 
 def get_monsters_in_cr_range(cr_min, cr_max):
