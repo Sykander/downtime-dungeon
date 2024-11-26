@@ -1882,6 +1882,70 @@ monster_list = [
         cr = 0.5,
         pp = 11, 
     ),
+    configure_monster(
+        name = "Tarrasque",
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/30836/117/1000/1000/638063929008461547.png",
+        token = "23q5b",
+        size = "G",
+        type_str = "Monstrosity (titan)",
+        cr = 30,
+        pp = 10,
+        legendary_resistance = True,
+        legendary_actions = True
+    ),
+    configure_monster(
+        name = "Tiger",
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/43939/899/1000/1000/638607434272563738.png",
+        token = "wmzz7",
+        cr = 1,
+        pp = 13,
+        size = "L",
+        type_str = "Beast"
+    ),
+    configure_monster(
+        name = "Treant",
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/30836/130/1000/1000/638063929302059775.png",
+        token = "b8pbq",
+        size = "H",
+        type_str = "Plant",
+        cr = 9,
+        pp = 13,
+    ),
+    configure_monster(
+        name = "Triceratops",
+        type_str = "Beast",
+        size = "H",
+        cr = 5,
+        pp = 10,
+    ),
+    configure_monster(
+        name = "Troll",
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/30836/144/1000/1000/638063929586218907.png",
+        token = "jhu9c",
+        cr = 5,
+        pp = 12,
+
+        type_str = "Giant",
+        size = "L"
+    ),
+    configure_monster(
+        name = "Twig Blight",
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/16/464/1000/1000/636376286997771487.png",
+        token = "pec85",
+        cr = 0.125,
+        pp = 9,
+        size = "S",
+        type_str = "Plant"
+    ),
+    configure_monster(
+        name = "Tyrannosaurus Rex",
+        image_url = "https://www.dndbeyond.com/avatars/thumbnails/16/594/1000/1000/636376369004412963.jpeg",
+        token = "gexvx",
+        size = "h",
+        type_str = "Beast",
+        cr = 8,
+        pp = 14
+    ),
 ]   
 
 def get_monsters_in_cr_range(cr_min, cr_max):
