@@ -265,10 +265,10 @@ def cast_spell_on_all_adventurers(spellname, npc, floor_data, dungeon_data):
     target_all_adventurers = ""
     for adventurer in dungeon_data["adventurers"]:
         target_all_adventurers += f'-t "{adventurer.name}" '
-    return f"""{ctx.prefix}i rc "{npc["full_name"]}" "Bless" {target_all_adventurers}"""
+    return f"""{ctx.prefix}i rc "{npc["full_name"]}" "{spellname}" {target_all_adventurers}"""
 
 actions = {
-    "leadership": lambda npc, floor_data, dungeon_data: use_action_no_target("Leadership", npc, floor_data, dungeon_data),,
+    "leadership": lambda npc, floor_data, dungeon_data: use_action_no_target("Leadership", npc, floor_data, dungeon_data),
     "greater_invisibility": lambda npc, floor_data, dungeon_data: cast_spell_on_random_adventurer("Greater Invisibility", npc, floor_data, dungeon_data),
     "cure_wounds": lambda npc, floor_data, dungeon_data: cast_spell_on_random_adventurer("Cure Wounds", npc, floor_data, dungeon_data),
     "bless": lambda npc, floor_data, dungeon_data: cast_spell_on_all_adventurers("Bless", npc, floor_data, dungeon_data),
