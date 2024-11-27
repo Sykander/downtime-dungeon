@@ -193,7 +193,7 @@ def get_special_floors_list(default_list):
 ```
 
 ## Monsters
-`DowntimeDungeon_special_floors` - gvar_id
+`DowntimeDungeon_monsters` - gvar_id
 Configures the list of potential monsters
 
 The corresponding gvar if set should contain a function called `get_monster_list` which takes the argument `default_list` and returns a `list` to use on the server.
