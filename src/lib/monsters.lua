@@ -5,6 +5,11 @@
 
 # https://www.dndbeyond.com/sources/dnd/basic-rules-2014/monsters#MonsterStatBlocks
 
+using(env="0836565c-d03d-4f1f-9306-5e210c69b3d1")
+using(
+    server_config = env.get_gvar_id_by_name("server_config")
+)
+
 def configure_monster(
     name: str,
     size: str,
@@ -2520,7 +2525,7 @@ monster_list = [
 def get_monsters_in_cr_range(cr_min, cr_max):
     monsters_in_range = []
 
-    for monster in monster_list:
+    for monster in server_config.get_monster_list(monster_list):
         if monster.cr >= cr_min and monster.cr <= cr_max:
             monsters_in_range.append(monster)
 

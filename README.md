@@ -192,6 +192,35 @@ def get_special_floors_list(default_list):
   return default_list
 ```
 
+## Monsters
+`DowntimeDungeon_special_floors` - gvar_id
+Configures the list of potential monsters
+
+The corresponding gvar if set should contain a function called `get_monster_list` which takes the argument `default_list` and returns a `list` to use on the server.
+
+The configure_monster() function takes the list of arguments shown below.
+
+```py
+using(env="0836565c-d03d-4f1f-9306-5e210c69b3d1")
+using(
+    monster_tools = env.get_gvar_id_by_name("monsters")
+)
+
+def get_monster_list(default_list):
+  default_list.append(monster_tools.configure_monster(
+    name = "Lich",
+    image_url = "https://www.dndbeyond.com/avatars/thumbnails/30832/378/1000/1000/638063837085902470.png",
+    token = "mjy4f",
+    size = "M",
+    type_str = "Undead",
+    cr = 21,
+    pp = 19,
+    legendary_actions = True,
+    legendary_resistance = True
+  ))
+  return default_list
+```
+
 # Environmemt Variables
 
 We have environment variables for deploying the workshop and gvars.
