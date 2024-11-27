@@ -2525,7 +2525,7 @@ monster_list = [
 def get_monsters_in_cr_range(cr_min, cr_max):
     monsters_in_range = []
 
-    for monster in server_config.get_monster_list(monster_list):
+    for monster in server_config.get_monster_list(monster_list.copy()):
         if monster.cr >= cr_min and monster.cr <= cr_max:
             monsters_in_range.append(monster)
 
