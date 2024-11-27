@@ -202,11 +202,11 @@ The configure_monster() function takes the list of arguments shown below.
 
 ```py
 using(
-    monster_tools = "c1a83721-ba23-43e6-992d-3c5c3f56c93b"
+    monsters = "c1a83721-ba23-43e6-992d-3c5c3f56c93b"
 )
 
 def get_monster_list(default_list):
-  default_list.append(monster_tools.configure_monster(
+  default_list.append(monsters.configure_monster(
     name = "Lich",
     image_url = "https://www.dndbeyond.com/avatars/thumbnails/30832/378/1000/1000/638063837085902470.png",
     token = "mjy4f",
