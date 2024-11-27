@@ -202,7 +202,7 @@ The configure_monster() function takes the list of arguments shown below.
 
 ```py
 using(
-    monster_tools = "XXX"
+    monster_tools = "c1a83721-ba23-43e6-992d-3c5c3f56c93b"
 )
 
 def get_monster_list(default_list):
