@@ -199,14 +199,14 @@ Configures the list of potential monsters
 The corresponding gvar if set should contain a function called `get_monster_list` which takes the argument `default_list` and returns a `list` to use on the server.
 
 The configure_monster() function takes the list of arguments shown below.
+It creates the monster in the format the alias expects.
 
 ```py
 using(
     monsters = "c1a83721-ba23-43e6-992d-3c5c3f56c93b"
 )
 
-def get_monster_list(default_list):
-  default_list.append(monsters.configure_monster(
+extra_monsters = [monsters.configure_monster(
     name = "Lich",
     image_url = "https://www.dndbeyond.com/avatars/thumbnails/30832/378/1000/1000/638063837085902470.png",
     token = "mjy4f",
@@ -216,7 +216,11 @@ def get_monster_list(default_list):
     pp = 19,
     legendary_actions = True,
     legendary_resistance = True
-  ))
+  ),
+]
+
+def get_monster_list(default_list):
+  default_list.extend(extra_monsters)
   return default_list
 ```
 
