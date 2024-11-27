@@ -201,9 +201,8 @@ The corresponding gvar if set should contain a function called `get_monster_list
 The configure_monster() function takes the list of arguments shown below.
 
 ```py
-using(env="0836565c-d03d-4f1f-9306-5e210c69b3d1")
 using(
-    monster_tools = env.get_gvar_id_by_name("monsters")
+    monster_tools = "XXX"
 )
 
 def get_monster_list(default_list):
