@@ -4,7 +4,7 @@
   "description": "This is a collection of aliases for avrae, to be used to run an automated downtime dungeon.",
   "main": "",
   "scripts": {
-    "deploy": "node utils/deploy.js"
+    "deploy": "node utils/deployment/deploy.js"
   },
   "author": "",
   "license": "MIT",

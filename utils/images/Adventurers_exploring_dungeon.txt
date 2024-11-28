@@ -1,0 +1,19 @@
+A detailed digital painting of [number_of_adventurers] adventurers climbing a staircase in a mystical dungeon.
+The group consists of [adventurer_1], [adventurer_2], and [adventurer_3].
+They are actively interacting with their surroundings—examining glowing orbs, pointing at ancient relics, and gesturing toward arcane symbols.
+The staircase is covered in hazy mystical objects like luminous artifacts and swirling arcane energy.
+The background features archways opening to fantastical worlds: [world_1], [world_2], and [world_3].
+The scene is illuminated by eerie, otherworldly lighting, with dramatic shadows and highlights emphasizing the magical, high-fantasy atmosphere.
+Rendered in high definition with intricate textures and vibrant colors, capturing a sense of mystery and adventure.
+
+number_of_adventurers = 3
+adventurer_1 = tiefling sorcerer with purple skin and red eyes
+adventurer_2 = halfling rogue with a joyful expression and pockets full of gold
+adventurer_3 = a human fighter with a greatsword strapped to his back laughing
+
+number_of_worlds = 5
+world_1 = a lush tropical island
+world_2 = a an arid desert filled with demons
+world_3 = unicorns
+world_4 = volano lava magma drips magma onto the staircase
+world_5 = heaven
