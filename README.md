@@ -192,6 +192,16 @@ def get_special_floors_list(default_list):
   return default_list
 ```
 
+`DowntimeDungeon_pick_special_floor` - gvar_id
+Specifies what special floor should be chosen from the list dependent on the floor number.
+
+The corresponding gvar if set should contain a function called `pick_special_floor` which takes the arguments `floor_list` and `floor_num`, and returns the list entry to use.
+
+```py
+def pick_special_floor(floor_list: list[Object], floor_num: int):
+    return floor_list[5]
+```
+
 ## Monsters
 `DowntimeDungeon_monsters` - gvar_id
 Configures the list of potential monsters
