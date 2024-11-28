@@ -79,7 +79,8 @@ def auto_monster(auto_once=True, auto_react=False):
         return command_list
 
     if c.current is None:
-        command_list.append(f'{pref}{get_message.get_message("Starting combat.")}')
+        map_url = map_tools.generate_map_image()
+        command_list.append(f'{pref}{get_message.get_message("Starting combat.", image=map_url)}')
         command_list.append(f'{pref}i next')
         return command_list
 
