@@ -101,7 +101,7 @@ def generate_map_image(overlays=None, from_state=None):
                 combatant_str += f"-{name}"
 
                 token = note.get("token")
-                if token:
+                if token != "":
                     combatant_str += f'~{token}'
     if combatant_str:
         map_url += combatant_str

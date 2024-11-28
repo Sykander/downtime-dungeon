@@ -117,13 +117,13 @@ hiding = {
     * You must justify why the monsters cannot see you. If there is a monster who would obviously see you then you cannot hide.
 * Next, use the Hide action to make a Stealth check against the Passive Perception of all monsters present.
     * If a monster has advantage or disadvantage on perception checks you can add or minus 5 from their passive score.
-* If the stealth check you rolled meets or beats the highest passive perception of the monsters then you successfully hid, and may run the following command to set yourself as non-targettable by the monsters until your next turn.
+* If the stealth check you rolled meets or beats the highest passive perception of the monsters then you successfully hid, and may run the following command to remove yourself from the map.
 ```
-{ctx.prefix}i effect "<character_name>" "Ghost (auto)" -dur 1
+{ctx.prefix}invis
 ```
-* If an enemy would see you or you would stop hiding for any reason, then you can remove this effect with the following command:
+* If an enemy would see you or you would stop hiding for any reason, then you should set your token back on the map to their current location.
 ```
-{ctx.prefix}i re "<character_name>" "Ghost (auto)"
+{ctx.prefix}move E6
 ```
 """
 }

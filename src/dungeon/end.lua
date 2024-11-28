@@ -18,19 +18,23 @@ if not dungeon_data["started"]:
     return get_message.get_error("Ooops... you're not in a dungeon right now.")
 
 close_images = [
-    "https://i.imgur.com/JvZ3Iuj.png",
-    "https://i.imgur.com/53zaagy.png",
-    "https://i.imgur.com/XmZKqhQ.jpeg",
     "https://i.imgur.com/9lC3fQ5.jpeg",
+    "https://i.imgur.com/XmZKqhQ.jpeg",
+    "https://i.imgur.com/53zaagy.png",
+    "https://i.imgur.com/JvZ3Iuj.png",
     "https://i.imgur.com/xBdB1WP.png",
-    "https://i.imgur.com/CwxUEj5.jpeg"
+    "https://i.imgur.com/CwxUEj5.jpeg",
+    "https://i.imgur.com/gkenSaK.jpeg",
+    "https://i.imgur.com/L1U6e55.jpeg"
 ]
+
 contributors = [
     ":fox: **Dodge** :fox:",
     ":wolf: **BrokenTorch** :wolf:",
     ":dragon: **Frederic** :dragon:",
     ":unicorn: **CJSparkle** :unicorn:",
-    ":candy: **GratuaCuun** :candy:"
+    ":candy: **GratuaCuun** :candy:",
+    ":tiger: Twintail828 :tiger:"
 ]
 
 def format_credits() -> str:
