@@ -14,6 +14,7 @@ server_primary_npc_chance_override = get_svar("DowntimeDungeon_primary_npc_chanc
 server_secondary_npc_chance_override = get_svar("DowntimeDungeon_secondary_npc_chance", None)
 server_cr_calculator_override = get_svar("DowntimeDungeon_cr_calculator", None)
 server_special_floors_override = get_svar("DowntimeDungeon_special_floors", None)
+server_pick_special_floor_override = get_svar("DowntimeDungeon_pick_special_floor", None)
 server_monsters_override = get_svar("DowntimeDungeon_monsters", None)
 
 def get_gold_for_floor(floor_data, dungeon_data):
@@ -65,6 +66,13 @@ def get_special_floors_list(default_list):
         return server_special_floors_module.get_special_floors_list(default_list)
 
     return default_list
+
+def pick_special_floor(floor_list: list[Object], floor_num: int):
+    if server_pick_special_floor_override != None:
+        using(server_pick_special_floor_module=server_pick_special_floor_override)
+        return server_pick_special_floor_module.pick_special_floor(floor_list, floor_num)
+
+    return floor_list[random.get_random_integer(0, len(floor_list) - 1)]
 
 def get_monster_list(default_list):
     if server_monsters_override != None:

@@ -47,8 +47,7 @@ def get_floor_data(dungeon_data) -> dict:
     floor_data["map"] = map
 
     if encountered_special_floor:
-        special_floor_index = random.get_random_integer(0, SPECIAL_FLOOR_LEN - 1)
-        special_floor = SPECIAL_FLOOR_LIST[special_floor_index]
+        special_floor = server_config.pick_special_floor(SPECIAL_FLOOR_LIST, floor_num)
         floor_data["special_floor"] = special_floor
         floor_data['encountered_special_floor'] = True
     elif encountered_monsters:
