@@ -128,7 +128,7 @@ Any adventurer who knows Thieves' Cant may interpret a hidden message amongst th
 
 ||> **Dungeon Wall:** "There is a hidden stash of gold and potions hidden underneath an unmarked stone three paces from the foot of this wall. Beware, the hidden dart trap." 
 > 
-> After reading this message, and adventurer present with a set of Thieves Tools may locate the unmarked stone and make a Dexterity Thieves Tool Check DC 10 to disarm the trap and reveal the stash.```{ctx.prefix}tool thieves dex -dc 10```
+> After reading this message, and adventurer present with a set of Thieves Tools may locate the unmarked stone and make a Sleight of Hand or Dexterity Thieves Tool Check DC 10 to disarm the trap and reveal the stash.```{ctx.prefix}tool thieves dex -dc 10```
 > After making the Tool Check, pass or fail, you may read the next spoilered text block.||
 
 ||> On a pass the trap is disarmed and the stash is revealed, on a failure the trap triggers and the stash is still revealed. The trap inflicts 1 piercing damage and 2d8 poison damage to the adventurer who failed the Thieves Tool Check.
