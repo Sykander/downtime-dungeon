@@ -160,6 +160,19 @@ def get_has_secondary_npc(dungeon_data):
   return random.get_random_integer(0, 100, dungeon_data["floor_seed"] + 929) > 90
 ```
 
+## Can advance with monsters in combat
+`DowntimeDungeon_can_advance_whilst_monsters_in_combat` - gvar_id
+Configures whether an adventurer can proceed to the next floor whilst the monsters on the current floor are still undefeated.
+
+The corresponding gvar if set should contain a function called `can_advance_whilst_monsters_in_combat` which takes the argument `dungeon_data` and `floor_data` returns a `bool` corresponding to if the adventurers can proceed with monsters in the room.
+
+```py
+using(random="a1cd80b3-772b-49b7-8bf0-c743cd380ccb")
+
+def can_advance_whilst_monsters_in_combat(dungeon_data, floor_data):
+  return True
+```
+
 ## CR
 `DowntimeDungeon_cr_calculator` - gvar_id
 Configures the CR for each floor.

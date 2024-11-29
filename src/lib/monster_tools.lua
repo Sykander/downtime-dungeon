@@ -39,3 +39,45 @@ def get_add_monster_commands(dungeon_data, floor_data):
         command_list.append(f'{ctx.prefix}i madd "{name}" -name "{"#-" if monster["count"] > 1 else ""}{name}" -n {monster["count"]} -rollhp -note "{note}" ')
 
     return command_list
+
+def get_remove_monster_commands(dungeon_data, floor_data):
+    command_list = []
+    c = combat()
+
+    if not floor_data["encountered_monsters"]:
+        return command_list
+
+    monster_list = floor_data["monsters"]
+
+    for name, monster in monster_list.items():
+        if monster["count"] > 1:
+            for index in monster["count"]:
+                combatant_name = f'{index}-{name}'
+                combatant = c.get_combatant(combatant_name)
+                if combatant:
+                    command_list.append(f'{ctx.prefix}i remove {combatant_name}')        
+        else:
+            combatant = c.get_combatant(name)
+            if combatant:
+                command_list.append(f'{ctx.prefix}i remove {name}')
+    
+    return command_list
+
+def get_any_monsters_in_combat(dungeon_data, floor_data):
+    c = combat()
+    if not floor_data["encountered_monsters"]:
+        return False
+
+    monster_list = floor_data["monsters"]
+    for name, monster in monster_list.items():
+        if monster["count"] > 1:
+            for index in monster["count"]:
+                combatant_name = f'{index}-{name}'
+                combatant = c.get_combatant(combatant_name)
+                if combatant and combatant.hp > 0:
+                    return True      
+        else:
+            combatant = c.get_combatant(name)
+            if combatant and combatant.hp > 0:
+                return True
+    return False
