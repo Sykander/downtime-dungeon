@@ -50,7 +50,8 @@ starting_floor = difficulty_to_start_floor[difficulty_slug] if difficulty_slug i
 
 npcs = {
     "primary": npcs.get_random_npc(seed),
-    "secondary": npcs.get_random_npc(seed - 1)
+    "secondary": npcs.get_random_npc(seed - 1),
+    "shopkeeper": npcs.get_random_npc(seed - 2)
 }
 
 get_dungeon_data.set_dungeon_data(
