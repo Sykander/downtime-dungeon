@@ -17,6 +17,7 @@ Copy the following avrae commands to add the downtime dungeon aliases.
 !alias sub https://avrae.io/dashboard/workshop/5f88d637f2d59b2718721a9a
 !alias sub https://avrae.io/dashboard/workshop/63fe7c97caaad20bc4903309
 !alias sub https://avrae.io/dashboard/workshop/630b0e39b85ea38890666c08
+!alias sub https://avrae.io/dashboard/workshop/604a56061e2241970bbeffb5
 !alias sub https://avrae.io/dashboard/workshop/672e0ad6edc17a92c4ddbfae
 ```
 
@@ -31,6 +32,7 @@ The following workshops are required to work alongside the downtime dungeon comm
 * Initiative Utilities https://avrae.io/dashboard/workshop/5f88d637f2d59b2718721a9a
 * Targetting Assist https://avrae.io/dashboard/workshop/63fe7c97caaad20bc4903309
 * Tool Checks https://avrae.io/dashboard/workshop/630b0e39b85ea38890666c08
+* Map Plugins https://avrae.io/dashboard/workshop/604a56061e2241970bbeffb5
 
 ## Optional Workshops
 
@@ -156,6 +158,19 @@ using(random="a1cd80b3-772b-49b7-8bf0-c743cd380ccb")
 
 def get_has_secondary_npc(dungeon_data):
   return random.get_random_integer(0, 100, dungeon_data["floor_seed"] + 929) > 90
+```
+
+## Can advance with monsters in combat
+`DowntimeDungeon_can_advance_whilst_monsters_in_combat` - gvar_id
+Configures whether an adventurer can proceed to the next floor whilst the monsters on the current floor are still undefeated.
+
+The corresponding gvar if set should contain a function called `can_advance_whilst_monsters_in_combat` which takes the argument `dungeon_data` and `floor_data` returns a `bool` corresponding to if the adventurers can proceed with monsters in the room.
+
+```py
+using(random="a1cd80b3-772b-49b7-8bf0-c743cd380ccb")
+
+def can_advance_whilst_monsters_in_combat(dungeon_data, floor_data):
+  return True
 ```
 
 ## CR

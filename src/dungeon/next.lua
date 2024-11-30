@@ -9,7 +9,8 @@ using(
     get_status = env.get_gvar_id_by_name("get_status"),
     map_tools = env.get_gvar_id_by_name("map_tools"),
     random = env.get_gvar_id_by_name("random"),
-    npc_tools = env.get_gvar_id_by_name("npc_tools")
+    npc_tools = env.get_gvar_id_by_name("npc_tools"),
+    monster_tools = env.get_gvar_id_by_name("monster_tools")
 )
 
 com = combat()
@@ -22,6 +23,13 @@ last_dungeon_data = get_dungeon_data.get_dungeon_data(com)
 if not last_dungeon_data["started"]:
     return get_message.get_error("Ooops... you're not in a dungeon right now.")
 
+last_floor_data = get_floor_data.get_floor_data(dungeon_data = last_dungeon_data)
+
+if not server_config.can_advance_whilst_monsters_in_combat(last_dungeon_data, last_floor_data):
+    monsters_in_combat = monster_tools.get_any_monsters_in_combat(last_dungeon_data, last_floor_data)
+    if monsters_in_combat:
+        return get_message.get_error("Ooops... you can't advance to the next floor before defeating the monsters on this floor.")
+
 com.end_round()
 
 args = argparse(&ARGS&)
@@ -29,8 +37,6 @@ floorsToSkip = max(int(args.last("floors", 1)), 1)
 
 floor_num = last_dungeon_data["floor_num"]
 gold = last_dungeon_data["gold"]
-
-last_floor_data = get_floor_data.get_floor_data(dungeon_data = last_dungeon_data)
 
 gold += server_config.get_gold_for_floor(floor_data = last_floor_data, dungeon_data = last_dungeon_data)
 floor_num += floorsToSkip
@@ -65,9 +71,10 @@ messageEmbeded = get_message.get_message(floor_description, fields, image=map_ur
 
 output = f'multiline {ctx.prefix}{messageEmbeded}'
 
-remove_npcs = npc_tools.get_remove_npcs_commands(dungeon_data, floor_data)
+remove_npcs = npc_tools.get_remove_npcs_commands(last_dungeon_data, last_floor_data)
+remove_monsters = monster_tools.get_remove_monster_commands(last_dungeon_data, last_floor_data)
 
-for remove_command in remove_npcs:
+for remove_command in remove_npcs + remove_monsters:
     output += f'\n{remove_command}'
 
 output += f'\n{ctx.prefix}i round {floorsToSkip}'

@@ -53,6 +53,30 @@ special_floors_list = [
         "requirement": lambda dungeon_data: True
     },
     {
+        "name": "Mushrooms",
+        "desc": f"""The dungeon floor here is littered with mushrooms of all shapes and sizes. Each adventurer can roll a Survival DC 10 or Nature check DC 12 to determine if the mushrooms are edible.
+
+After eating the mushrooms or making a sucessful Nature or Survival check, you may read the following spoilered text.
+
+||> Golden chanterelles glow with apricot hues, porcini caps are rich and velvety, maitake fans spread like forest lace, crisp enokis stand tall, and lion’s mane puffs up like a savory cloud.
+>
+> After consuming the mushrooms nothing happens for 5 rounds until you are instantly restored to full hp.||
+
+Any mushrooms taken from this floor wither and lose their potency."""
+    },
+    {
+        "name": "Mushrooms Bad",
+        "desc": f"""The dungeon floor here is littered with mushrooms of all shapes and sizes. Each adventurer can roll a Survival DC 10 or Nature check DC 12 to determine if the mushrooms are edible.
+
+After eating the mushrooms or making a sucessful Nature or Survival check, you may read the following spoilered text.
+
+||> Slimy death caps gleam sickly pale, false morels twist in bloated lumps, fly agarics flash toxic red with white spots, yellow-stained agarics bruise to reek, and destroying angels lurk ghostly white, deadly in their beauty.
+>
+> After consuming the mushrooms nothing happens for 5 rounds until you take 2d8 poison damage and gained the Poisoned condition for 1 minute.||
+
+Any mushrooms taken from this floor wither and lose their potency."""
+    },
+    {
         "name": "Adventurer's Rest",
         "desc": "It seems this floor is well stocked with provisions and offers a safe place to stop and rest. All adventurers present may take a short rest.",
         "requirement": lambda dungeon_data: dungeon_data["floor_num"] > ROOMS_BEFORE_SHORT_REST
@@ -123,7 +147,7 @@ Any adventurer who knows Thieves' Cant may interpret a hidden message amongst th
 
 ||> **Dungeon Wall:** "There is a hidden stash of gold and potions hidden underneath an unmarked stone three paces from the foot of this wall. Beware, the hidden dart trap." 
 > 
-> After reading this message, and adventurer present with a set of Thieves Tools may locate the unmarked stone and make a Dexterity Thieves Tool Check DC 10 to disarm the trap and reveal the stash.```{ctx.prefix}tool thieves dex -dc 10```
+> After reading this message, and adventurer present with a set of Thieves Tools may locate the unmarked stone and make a Sleight of Hand or Dexterity Thieves Tool Check DC 10 to disarm the trap and reveal the stash.```{ctx.prefix}tool thieves dex -dc 10```
 > After making the Tool Check, pass or fail, you may read the next spoilered text block.||
 
 ||> On a pass the trap is disarmed and the stash is revealed, on a failure the trap triggers and the stash is still revealed. The trap inflicts 1 piercing damage and 2d8 poison damage to the adventurer who failed the Thieves Tool Check.
@@ -186,5 +210,12 @@ If the prayer is not offered or is failed, the chalice remains dim, but the cler
 
 ||> The spirit grants each adventurer a blessing of protection, allowing them to use a reaction to gain resistance against one damage type until the start of your next turn. This blessing of protection can be used once per time it has been received.||""",
         "requirement": lambda dungeon_data: True
-      }
+      },
+      {
+        "name": "Mushroom Ritual",
+        "desc": f"""In a shadowy glade lit by the eerie blue glow of a flickering will-o’-wisp, tiny humanoid mushrooms—each no taller than a squirrel—dance in a circle, their spindly arms swaying in harmony with their toadstool-capped heads. Their spotted caps glisten with dew, and faint, bioluminescent trails trace the air as they move, their movements rhythmic and hypnotic, casting strange, shifting patterns on the mossy ground as they chant in soft, otherworldly tones that resonate with the wisp’s ethereal hum.
+
+The air on this floor is awash with humming magical energy. All adventurers present gain 10 temporary hp. ```{ctx.prefix}g thp 10```""",
+        "requirement": lambda dungeon_data: True
+    },
 ]
