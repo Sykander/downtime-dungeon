@@ -180,6 +180,7 @@ def get_cr(dungeon_data):
 Configures the list of potential special floors
 
 The corresponding gvar if set should contain a function called `get_special_floors_list` which takes the argument `default_list` and returns a `list` to use on the server.
+The requirement determines if a special floor is available, and special floors will only be picked from those that evaluate to True for the state of the dungeon.
 
 ```py
 def get_special_floors_list(default_list):
@@ -187,7 +188,8 @@ def get_special_floors_list(default_list):
     "name": "Mid Dungeon Bar",
     "desc": """Buy a drink for 1 gp each or rest for a couple of hours for 25 gp!
     
-  Each adventurer may pay 25 gp to short rest on this floor."""
+  Each adventurer may pay 25 gp to short rest on this floor.""",
+    "requirement": lambda dungeon_data: True
   })
   return default_list
 ```
