@@ -15,6 +15,14 @@ server_secondary_npc_chance_override = get_svar("DowntimeDungeon_secondary_npc_c
 server_cr_calculator_override = get_svar("DowntimeDungeon_cr_calculator", None)
 server_special_floors_override = get_svar("DowntimeDungeon_special_floors", None)
 server_monsters_override = get_svar("DowntimeDungeon_monsters", None)
+can_advance_whilst_monsters_in_combat_override = get_svar("DowntimeDungeon_can_advance_whilst_monsters_in_combat", None)
+
+def can_advance_whilst_monsters_in_combat(dungeon_data, floor_data):
+    if can_advance_whilst_monsters_in_combat_override != None:
+        using(can_advance_whilst_monsters_in_combat_module=can_advance_whilst_monsters_in_combat_override)
+        return can_advance_whilst_monsters_in_combat_module.can_advance_whilst_monsters_in_combat(dungeon_data, floor_data)
+
+    return False
 
 def get_gold_for_floor(floor_data, dungeon_data):
     if server_gold_override != None:

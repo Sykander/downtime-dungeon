@@ -5,7 +5,6 @@ using(
     get_floor_data = env.get_gvar_id_by_name("get_floor_data"),
     get_dungeon_data = env.get_gvar_id_by_name("get_dungeon_data"),
     monster_tools = env.get_gvar_id_by_name("monster_tools"),
-    map_tools = env.get_gvar_id_by_name("map_tools"),
 )
 
 com = combat()
@@ -31,8 +30,7 @@ for command in monster_commands:
     output += f'\n{command}'
 
 message = f"All monsters added to initiative. Please run the following command to begin combat.```{ctx.prefix}dungeon auto```"
-map_url = map_tools.generate_map_image()
-output += f'\n{ctx.prefix}{get_message.get_message(description=message, image=map_url)}'
+output += f'\n{ctx.prefix}{get_message.get_message(description=message)}'
 
 return output
 </drac2>

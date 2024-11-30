@@ -130,7 +130,7 @@ Any adventurer who knows Thieves' Cant may interpret a hidden message amongst th
 
 ||> **Dungeon Wall:** "There is a hidden stash of gold and potions hidden underneath an unmarked stone three paces from the foot of this wall. Beware, the hidden dart trap." 
 > 
-> After reading this message, and adventurer present with a set of Thieves Tools may locate the unmarked stone and make a Dexterity Thieves Tool Check DC 10 to disarm the trap and reveal the stash.```{ctx.prefix}tool thieves dex -dc 10```
+> After reading this message, and adventurer present with a set of Thieves Tools may locate the unmarked stone and make a Sleight of Hand or Dexterity Thieves Tool Check DC 10 to disarm the trap and reveal the stash.```{ctx.prefix}tool thieves dex -dc 10```
 > After making the Tool Check, pass or fail, you may read the next spoilered text block.||
 
 ||> On a pass the trap is disarmed and the stash is revealed, on a failure the trap triggers and the stash is still revealed. The trap inflicts 1 piercing damage and 2d8 poison damage to the adventurer who failed the Thieves Tool Check.
@@ -190,5 +190,11 @@ If the prayer is not offered or is failed, the chalice remains dim, but the cler
         desc = """A ghostly light wreathed figure appears on the dungeon floor, floating from one end of the room to the other. You get the impression that it is bored. One adventurer can make DC 13 performance check to entertain the figure. On a success, you may read the following spoilered text.
 
 ||> The spirit grants each adventurer a blessing of protection, allowing them to use a reaction to gain resistance against one damage type until the start of your next turn. This blessing of protection can be used once per time it has been received.||"""
-      )
+      ),
+      configure_floor(
+        name = "Mushroom Ritual",
+        desc = f"""In a shadowy glade lit by the eerie blue glow of a flickering will-o’-wisp, tiny humanoid mushrooms—each no taller than a squirrel—dance in a circle, their spindly arms swaying in harmony with their toadstool-capped heads. Their spotted caps glisten with dew, and faint, bioluminescent trails trace the air as they move, their movements rhythmic and hypnotic, casting strange, shifting patterns on the mossy ground as they chant in soft, otherworldly tones that resonate with the wisp’s ethereal hum.
+
+The air on this floor is awash with humming magical energy. All adventurers present gain 10 temporary hp. ```{ctx.prefix}g thp 10```"""
+      ),
 ]
