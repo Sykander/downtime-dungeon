@@ -2207,7 +2207,6 @@ monster_list = [
         token = "jrcxt",
         size = "M",
         type_str = "Humanoid (human, shapechanger)",
-        size = "M",
         cr = 4,
         pp = 14
     ),
@@ -2522,11 +2521,14 @@ monster_list = [
     ),
 ]   
 
-def get_monsters_in_cr_range(cr_min, cr_max):
-    monsters_in_range = []
+def get_monsters_in_cr_range(cr_min, cr_max) -> dict[int, object]:
+    monsters_in_range = {}
 
     for monster in server_config.get_monster_list(monster_list.copy()):
         if monster.cr >= cr_min and monster.cr <= cr_max:
-            monsters_in_range.append(monster)
+            if monster.cr in monsters_in_range:
+                monsters_in_range[monster.cr].append(monster)
+            else:
+                monsters_in_range[monster.cr] = [monster]
 
     return monsters_in_range
