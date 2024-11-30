@@ -14,7 +14,7 @@ def configure_floor(
 ):
     if(str_desc != None):
         lambda_desc = lambda dungeon_data: str_desc
-    else if(lambda_desc == None):
+    elif(lambda_desc == None):
         {}[f"YOU NEED ONE OF str_desc OR lambda_desc, failure on room {name}"]
     return {
         "name": name,
