@@ -13,7 +13,7 @@ def configure_floor(
 ):
     return {
         "name": name,
-        "desc": (lambda dungeon_data: desc) if isinstance(desc, str) else desc,
+        "desc": (lambda dungeon_data: desc) if type(desc) is str else desc,
         "requirement": requirement
     }
 
