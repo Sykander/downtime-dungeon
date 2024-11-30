@@ -14,7 +14,9 @@ using(
 )
 
 SPECIAL_FLOOR_LIST = server_config.get_special_floors_list(special_floors.special_floors_list)
-SPECIAL_FLOOR_LEN = len(SPECIAL_FLOOR_LIST)
+
+def get_available_special_floors(floors: list[object], dungeon_data: object) -> list[object]:
+    return [floor for floor in floors if floor["requirement"](dungeon_data)]
 
 def get_floor_data(dungeon_data) -> dict:
     oldState = random.getState()
@@ -47,9 +49,9 @@ def get_floor_data(dungeon_data) -> dict:
     floor_data["map"] = map
 
     if encountered_special_floor:
-        special_floor_index = random.get_random_integer(0, SPECIAL_FLOOR_LEN - 1)
-        special_floor = SPECIAL_FLOOR_LIST[special_floor_index]
-        floor_data["special_floor"] = special_floor
+        available_special_floors = get_available_special_floors(SPECIAL_FLOOR_LIST, dungeon_data)
+        special_floor_index = random.get_random_integer(0, len(available_special_floors) - 1)
+        floor_data["special_floor"] = available_special_floors[special_floor_index]
         floor_data['encountered_special_floor'] = True
     elif encountered_monsters:
         monsters = encounters.generate_encounter(cr, seed)
