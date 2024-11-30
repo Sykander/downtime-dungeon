@@ -74,7 +74,7 @@ def generate_encounter(target_cr: int, seed: int):
         final_list.append(mon)
 
         # remove any monster lists with cr above the budget
-        for key in monsters.keys():
+        for key in list(monsters.keys()):
             if key > cr_budget:
                 monsters.pop(key)
 
