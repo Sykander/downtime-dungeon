@@ -33,7 +33,7 @@ def generate_encounter(target_cr: int, seed: int):
         cr_max = min(cr_min + 4, target_cr)
     elif difficulty == 3:
         cr_min = max(target_cr - 5, 0)
-        cr_max = max(target_cr - 1, 1)
+        cr_max = max(target_cr - 1, 0)
     elif difficulty == 4:
         cr_min = max(target_cr - 4, 0)
         cr_max = target_cr
@@ -41,12 +41,12 @@ def generate_encounter(target_cr: int, seed: int):
         cr_min = max(target_cr - 3, 0)
         cr_max = target_cr
         
-    cr_min = max(ceil(cr_min) - 0.875, 0.125) # the subtracted number only changes the range of monsters at cr 1, where it can also include monsters of >= cr 0.125
+    cr_min = max(ceil(cr_min), 0) # the subtracted number only changes the range of monsters at cr 1, where it can also include monsters of >= cr 0.125
 
     monsters = monster_tools.get_monsters_in_cr_range(cr_min, cr_max)
 
     # if there's no monsters in that cr range, expand range
-    while len(monsters) == 0 and cr_min > 1:
+    while len(monsters) == 0 and cr_min > 0:
         cr_min = cr_min - 1
         monsters = monster_tools.get_monsters_in_cr_range(cr_min, cr_max)
 
