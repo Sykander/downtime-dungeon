@@ -42,6 +42,7 @@ def generate_encounter(target_cr: int, seed: int):
         cr_max = target_cr
         
     cr_min = max(ceil(cr_min), 0)
+    cr_max = max(cr_max, 0.125)
 
     monsters = monster_tools.get_monsters_in_cr_range(cr_min, cr_max)
 
