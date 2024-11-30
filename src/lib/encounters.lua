@@ -12,6 +12,11 @@ using(
 # Never go over the monster limit
 MONSTER_LIMIT = 12
 
+#returns a random entry of a dict.
+def getRandomFromDict(dictionary: dict) -> object:
+    dict_index = random.get_random_integer(0, len(dictionary) - 1)
+    return dictionary[list(dictionary.keys())[dict_index]]
+
 def generate_encounter(target_cr: int, seed: int):
     oldState = random.getState()
     random.setSeed(seed)
@@ -35,35 +40,44 @@ def generate_encounter(target_cr: int, seed: int):
     else:
         cr_min = max(target_cr - 3, 0)
         cr_max = target_cr
+        
+    cr_min = max(ceil(cr_min), 0)
+    cr_max = max(cr_max, 0.125)
 
     monsters = monster_tools.get_monsters_in_cr_range(cr_min, cr_max)
 
-    # if there's no monsters in that cr range search lower
-    while len(monsters) == 0 and cr_min >= 0:
-        cr_min = floor(cr_min - 1)
+    # if there's no monsters in that cr range, expand range
+    while len(monsters) == 0 and cr_min > 0:
+        cr_min = cr_min - 1
         monsters = monster_tools.get_monsters_in_cr_range(cr_min, cr_max)
 
-    cr_min = max(cr_min, 0)
+    # if there is still no monsters, throw exception
+    if len(monsters) == 0:
+        {}[f"No monsters found in cr range {cr_min} to {cr_max}, please check if your server config has any monsters in this range."]
 
-    monsters_len = len(monsters)
     cr_budget = target_cr
     final_list = []
 
     if difficulty > 3:
-        highest_cr_mon = monsters[0]
+        highest_cr = max(monsters.keys())
+        highest_cr_mon_list = monsters[highest_cr]
 
-        for mon in monsters[1:]:
-            if mon.cr > highest_cr_mon.cr:
-                highest_cr_mon = mon
+        highest_cr_mon_index = random.get_random_integer(0, len(highest_cr_mon_list) - 1)
+        highest_cr_mon = highest_cr_mon_list[highest_cr_mon_index]
 
         final_list.append(highest_cr_mon)
         cr_budget -= highest_cr_mon.cr
     
-    while cr_budget > 0 and len(final_list) < MONSTER_LIMIT:
-        index = random.get_random_integer(0, monsters_len - 1)
-        mon = monsters[index]
+    while cr_budget > 0 and len(final_list) < MONSTER_LIMIT and len(monsters) > 0:
+        cr_list = getRandomFromDict(monsters)
+        mon = cr_list[random.get_random_integer(0, len(cr_list) - 1)]
         cr_budget -= mon.cr
         final_list.append(mon)
+
+        # remove any monster lists with cr above the budget
+        for key in list(monsters.keys()):
+            if key > cr_budget:
+                monsters.pop(key)
 
     final_dict = dict()
 
