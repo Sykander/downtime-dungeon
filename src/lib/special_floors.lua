@@ -9,12 +9,12 @@ ROOMS_BEFORE_SKIP = 4
 def configure_floor(
     name: str,
     str_desc: str = None,
-    lambda_desc: function = None # optional lambda that returns a string value
+    lambda_desc: function = None, # optional lambda that returns a string value
     requirement: function = lambda dungeon_data: True # optional lambda that returns a boolean value
 ):
     if(str_desc != None):
         lambda_desc = lambda dungeon_data: str_desc
-    else if(lambda_desc == None):
+    elif(lambda_desc == None):
         {}[f"YOU NEED ONE OF str_desc OR lambda_desc, failure on room {name}"]
     return {
         "name": name,
