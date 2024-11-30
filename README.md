@@ -196,7 +196,11 @@ Configures the list of potential special floors
 
 The corresponding gvar if set should contain a function called `get_special_floors_list` which takes the argument `default_list` and returns a `list` to use on the server.
 
-The description can be a string or a lambda which returns a string given the dungeon_data.
+The description can be a static string via the `str_desc` parameter.
+
+It can also be a dynamic string via the `lambda_desc` parameter, it should be a lambda which returns a string given the dungeon_data.
+
+Either `str_desc` or `lambda_desc` have to be set. If neither is given, the alias throws an exception.
 
 The requirement determines if a special floor is available, and special floors will only be picked from those that evaluate to True given the dungeon_data.
 
