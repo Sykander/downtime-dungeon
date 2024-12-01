@@ -51,7 +51,7 @@ def get_remove_monster_commands(dungeon_data, floor_data):
 
     for name, monster in monster_list.items():
         if monster["count"] > 1:
-            for index in monster["count"]:
+            for index in range(1, monster["count"]):
                 combatant_name = f'{index}-{name}'
                 combatant = c.get_combatant(combatant_name)
                 if combatant:
@@ -71,7 +71,7 @@ def get_any_monsters_in_combat(dungeon_data, floor_data):
     monster_list = floor_data["monsters"]
     for name, monster in monster_list.items():
         if monster["count"] > 1:
-            for index in monster["count"]:
+            for index in range(1, monster["count"]):
                 combatant_name = f'{index}-{name}'
                 combatant = c.get_combatant(combatant_name)
                 if combatant and combatant.hp > 0:
