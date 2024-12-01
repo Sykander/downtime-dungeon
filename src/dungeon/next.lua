@@ -49,7 +49,7 @@ get_dungeon_data.set_dungeon_data(com = com, gold = gold, floor_num = floor_num)
 dungeon_data = get_dungeon_data.get_dungeon_data(com)
 
 floor_data = get_floor_data.get_floor_data(dungeon_data)
-floor_description = describe_floor.describe_floor(floor_data)
+floor_description = describe_floor.describe_floor(floor_data, dungeon_data)
 
 map = floor_data["map"]
 starting_squares = map["adventurers_start"]
