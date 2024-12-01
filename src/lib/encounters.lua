@@ -10,7 +10,8 @@ using(
 )
 
 # Never go over the monster limit
-MONSTER_LIMIT = 12
+# Set to 9 to avoid going over the multiline command limit
+MONSTER_LIMIT = 9
 
 #returns a random entry of a dict.
 def getRandomFromDict(dictionary: dict) -> object:
