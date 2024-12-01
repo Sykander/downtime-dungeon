@@ -18,7 +18,7 @@
         {
             "name": "encounters",
             "file": "src/lib/encounters.lua",
-            "gvar_id": "a003f531-851f-4a1d-859e-a2766b5dbce1"
+            "gvar_id": "b902325d-07e4-4082-8635-5e38443f29f9"
         },
         {
             "name": "get_dungeon_data",

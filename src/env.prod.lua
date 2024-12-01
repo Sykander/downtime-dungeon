@@ -10,7 +10,7 @@ gvars = {
     "get_floor_data": "c7a510b3-3bf4-47f4-b6fa-3f12416284b7",
     "get_message": "2d3e8126-cd02-4554-98f9-0a8dff98a09f",
     "get_readable_list": "fbdefe43-b658-482b-82ec-d77be042b98c",
-    "get_Status": "37def108-11f5-45aa-a000-f8c68ff72207",
+    "get_status": "37def108-11f5-45aa-a000-f8c68ff72207",
     "map_picker": "87c896d0-1ba1-47ae-bd93-827da92f78aa",
     "map_tools": "468bce27-653b-47aa-b8ed-9357196459df",
     "maps": "5290d47a-086f-4d56-8cb2-91a62976f365",
