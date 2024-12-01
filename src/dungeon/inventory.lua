@@ -1,0 +1,97 @@
+<drac2>
+using(env="0836565c-d03d-4f1f-9306-5e210c69b3d1")
+using(
+    get_message = env.get_gvar_id_by_name("get_message"),
+    get_dungeon_data = env.get_gvar_id_by_name("get_dungeon_data"),
+    get_floor_data = env.get_gvar_id_by_name("get_floor_data"),
+    core = env.get_gvar_id_by_name("core")
+)
+
+com = combat()
+
+if not com:
+    return get_message.get_error("Ooops... you're not in a dungeon right now.")
+
+dungeon_data = get_dungeon_data.get_dungeon_data(com)
+
+if not dungeon_data["started"]:
+    return get_message.get_error("Ooops... you're not in a dungeon right now.")
+
+floor_data = get_floor_data.get_floor_data(dungeon_data)
+old_inventory = dungeon_data.get("inventory")
+
+args = argparse(&ARGS&)
+# add gold - `gold`, `g`
+gold_arg = str(args.last("gold", args.last("g", "")))
+
+# add item - `add`, `a`, `find`, `pickup`
+add_item = args.last("add", args.last("find", args.last("pickup", None)))
+# remove item - `remove`, `r`, `lose`, `drop`
+remove_item = args.last("remove", args.last("lose", args.last("drop", None)))
+
+# number of items to add or remove - `n`, `amt`
+number_of_items = int(args.last("n", args.last("amt", 1)))
+
+if number_of_items <= 0 or ceil(number_of_items) != number_of_items:
+    return get_message.get_error(f"Please input a positive whole number for the number of items, got {number_of_items}")
+
+if add_item != None and remove_item != None:
+    return get_message.get_error("You cannot add and remove items at the same time.")
+
+description = ""
+
+old_gold = dungeon_data.get("gold")
+if gold_arg != "" and gold_arg != "0":
+    gold_change = vroll(gold_arg)
+    new_gold = old_gold + gold_change.total
+    get_dungeon_data.set_dungeon_data(com, gold = new_gold)
+    description += f'{gold_change.full} gp {"added to" if gold_change.total > 0 else "removed from"} your inventory.'
+    description += f'\n\n {old_gold} gp -> {new_gold} gp'
+else:
+    description += f'{old_gold} gp'
+
+def update_item_in_inventory(inventory, item_name, number_of_items = 1):
+    new_inventory = inventory.copy()
+    item_in_inventory = inventory.get(item_name, 0)
+    item_in_inventory += number_of_items
+    new_inventory[item_name] = item_in_inventory
+
+    return new_inventory
+
+if add_item != None:
+    inventory = dungeon_data.get("inventory")
+    new_inventory = update_item_in_inventory(inventory, item_name = add_item, number_of_items = number_of_items)
+    get_dungeon_data.set_dungeon_data(com, inventory = new_inventory)
+    description += f'\n\n{"A" if number_of_items == 1 else number_of_items} {add_item}{"s" if number_of_items > 1 else ""} added to your inventory.'
+
+if remove_item != None:
+    inventory = dungeon_data.get("inventory")
+    new_inventory = update_item_in_inventory(inventory, item_name = remove_item, number_of_items = -1 * number_of_items)
+    get_dungeon_data.set_dungeon_data(com, inventory = new_inventory)
+    description += f'\n\n{"A" if number_of_items == 1 else number_of_items} {add_item}{"s" if number_of_items > 1 else ""} removed from your inventory.'
+
+dungeon_data = get_dungeon_data.get_dungeon_data(com)
+inventory = dungeon_data.get("inventory")
+
+def get_quantity_string(quantity):
+    quantity_str = str(quantity)
+    return quantity_str.rjust(3, " ")
+
+def describe_inventory(inventory, old_inventory = None):
+    description = "```diff"
+    changes_dict = core.merge_dicts(inventory, old_inventory if old_inventory != None else {})
+    for name, changes in changes_dict.items():
+        if old_inventory != None and changes[1] != changes[0]:
+            if changes[1] != None and changes[1] != 0:
+                description += f'\n- {get_quantity_string(changes[1])}x {name}'
+            if changes[0] != None and changes[0] != 0:
+                description += f'\n+ {get_quantity_string(changes[0])}x {name}'
+        elif changes[0] != None and changes[0] != 0:
+            description += f'\n* {get_quantity_string(changes[0])}x {name}'
+
+    return description + '\n```'
+
+description += describe_inventory(inventory, old_inventory if add_item != None or remove_item != None else None)
+
+return get_message.get_message(description)
+</drac2>
