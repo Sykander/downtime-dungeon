@@ -34,7 +34,7 @@ contributors = [
     ":dragon: **Frederic** :dragon:",
     ":unicorn: **CJSparkle** :unicorn:",
     ":candy: **GratuaCuun** :candy:",
-    ":tiger: Twintail828 :tiger:"
+    ":tiger: **Twintail828** :tiger:"
 ]
 
 def format_credits() -> str:
