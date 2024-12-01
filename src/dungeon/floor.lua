@@ -20,7 +20,7 @@ if not dungeon_data["started"]:
     return get_message.get_error("Ooops... you're not in a dungeon right now.")
 
 floor_data = get_floor_data.get_floor_data(dungeon_data)
-floor_description = describe_floor.describe_floor(floor_data)
+floor_description = describe_floor.describe_floor(floor_data, dungeon_data)
 
 map = floor_data["map"]
 map_url = map_tools.generate_map_image()

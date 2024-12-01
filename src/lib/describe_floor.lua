@@ -9,7 +9,7 @@ using(
 )
 
 # Creates a description for each floor
-def describe_floor(floor_data):
+def describe_floor(floor_data, dungeon_data):
     output = ""
 
     output += f'{floor_data["map"]["desc"]}\n\n'
@@ -23,7 +23,7 @@ def describe_floor(floor_data):
 
         output += f'You encounter some CR {floor_data["cr"]} monsters:{monsters_list}'
     elif floor_data["encountered_special_floor"]:
-        output += f'{floor_data["special_floor"]["desc"]()}'
+        output += f'{floor_data["special_floor"]["desc"](dungeon_data)}'
 
     if floor_data["encountered_npc"]:
         for npc_event in floor_data["npc_events"]:
