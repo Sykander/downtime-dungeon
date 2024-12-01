@@ -120,11 +120,31 @@ last_names = [
 last_names_len = len(last_names)
 
 gifts = [
+    "Purple Oil of Etherealness",
+    "Lilac Oil of Sharpness",
+    "Green Oil of Slipperiness",
+    "Opalescent Philter of Love",
+    "Viridian Potion of Animal Friendship",
+    "Cerulean Potion of Clairvoyance",
+    "Crimson Potion of Climbing",
+    "Translucent Potion of Diminution",
+    "Orange Bubbling Potion of Flying",
+    "Brown Sludge Potion of Gaseous Form",
+    "Amaranth Potion of Hill Giant Strength",
+    "Blue Cherry Potion of Frost Giant Strength",
+    "Spciy Ginger Potion of Fire Giant Strength",
+    "Cucumber Potion of Cloud Giant Strength",
+    "Xanthous Potion of Storm Giant Strength",
+    "Garlic Potion of Growth",
     "Blue Potion of Healing",
-    "Purple Potion of Growth",
-    "Lilac Elixir of Health",
-    "Green Potion of Advantage",
-    "Opalescent Potion of Polychromy"
+    "Deep Blue Potion of Heroism",
+    "Deep Red Potion of Invisibility",
+    "Vibrant Yellow Potion of Mind Reading",
+    "Rusted Potion of Poison",
+    "Multihued Potion of Resistance",
+    "Carbonated Potion of Speed",
+    "Grape Potion of Vitality",
+    "Banana Potion of Water Breathing",
 ]
 
 goals = [
