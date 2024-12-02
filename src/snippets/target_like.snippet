@@ -1,0 +1,32 @@
+# -tl <str>
+
+<drac2>
+using(env="0836565c-d03d-4f1f-9306-5e210c69b3d1")
+using(
+    get_readable_list = env.get_gvar_id_by_name("get_readable_list")
+)
+args = argparse(&ARGS&)
+target_like_arg = args.last("tl", "")
+
+# if there are no following args then `-tl` by itself resolves to "True"
+if target_like_arg == "" or target_like_arg == "True":
+    return f'-f "Target Like|No search string given so no targets matched."'
+
+c = combat()
+
+target_like = str(target_like_arg).lower()
+
+if not c:
+    return f'-f "Target Like|Not in combat so no targets matched."'
+
+targets_list = []
+
+for combatant in c.combatants:
+    if target_like in combatant.name.lower():
+        targets_list.append(combatant.name)
+
+if len(targets_list) == 0:
+    return f'-f "Target Like|Found no targets matching {target_like}."'
+        
+return f'''{" ".join(f'-t "{name}"' for name in targets_list)} -f "Target Like|Targetting: {get_readable_list.get_readable_list(targets_list)}."'''
+</drac2>

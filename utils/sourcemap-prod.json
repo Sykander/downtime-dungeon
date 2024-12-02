@@ -3,12 +3,12 @@
     {
       "name": "environment",
       "file": "src/env.prod.gvar",
-      "gvar_id": "ea6bd498-5320-410d-8501-28e119857f17"
+      "id": "ea6bd498-5320-410d-8501-28e119857f17"
     },
     {
       "name": "auto_tools",
       "file": "src/lib/auto_tools.gvar",
-      "gvar_id": "abd22d03-21d0-41f5-87a4-74371cd6a22b"
+      "id": "abd22d03-21d0-41f5-87a4-74371cd6a22b"
     },
     {
       "name": "core",
@@ -18,116 +18,113 @@
     {
       "name": "describe_floor",
       "file": "src/lib/describe_floor.gvar",
-      "gvar_id": "6ee6493d-8028-46d3-b4d9-3ce7b06c6ef4"
+      "id": "6ee6493d-8028-46d3-b4d9-3ce7b06c6ef4"
     },
     {
       "name": "encounters",
       "file": "src/lib/encounters.gvar",
-      "gvar_id": "b902325d-07e4-4082-8635-5e38443f29f9"
+      "id": "b902325d-07e4-4082-8635-5e38443f29f9"
     },
     {
       "name": "get_dungeon_data",
       "file": "src/lib/get_dungeon_data.gvar",
-      "gvar_id": "4091e5d2-6f37-4302-a90b-27065ab989e1"
+      "id": "4091e5d2-6f37-4302-a90b-27065ab989e1"
     },
     {
       "name": "get_floor_data",
       "file": "src/lib/get_floor_data.gvar",
-      "gvar_id": "c7a510b3-3bf4-47f4-b6fa-3f12416284b7"
+      "id": "c7a510b3-3bf4-47f4-b6fa-3f12416284b7"
     },
     {
       "name": "get_message",
       "file": "src/lib/get_message.gvar",
-      "gvar_id": "2d3e8126-cd02-4554-98f9-0a8dff98a09f"
+      "id": "2d3e8126-cd02-4554-98f9-0a8dff98a09f"
     },
     {
       "name": "get_readable_list",
       "file": "src/lib/get_readable_list.gvar",
-      "gvar_id": "fbdefe43-b658-482b-82ec-d77be042b98c"
+      "id": "fbdefe43-b658-482b-82ec-d77be042b98c"
     },
     {
       "name": "get_status",
       "file": "src/lib/get_status.gvar",
-      "gvar_id": "37def108-11f5-45aa-a000-f8c68ff72207"
+      "id": "37def108-11f5-45aa-a000-f8c68ff72207"
     },
     {
       "name": "map_picker",
       "file": "src/lib/map_picker.gvar",
-      "gvar_id": "87c896d0-1ba1-47ae-bd93-827da92f78aa"
+      "id": "87c896d0-1ba1-47ae-bd93-827da92f78aa"
     },
     {
       "name": "map_tools",
       "file": "src/lib/map_tools.gvar",
-      "gvar_id": "468bce27-653b-47aa-b8ed-9357196459df"
+      "id": "468bce27-653b-47aa-b8ed-9357196459df"
     },
     {
       "name": "maps",
       "file": "src/lib/maps.gvar",
-      "gvar_id": "5290d47a-086f-4d56-8cb2-91a62976f365"
+      "id": "5290d47a-086f-4d56-8cb2-91a62976f365"
     },
     {
       "name": "monster_tools",
       "file": "src/lib/monster_tools.gvar",
-      "gvar_id": "d62a1569-c48b-4e80-8702-96d05ffaacb9"
+      "id": "d62a1569-c48b-4e80-8702-96d05ffaacb9"
     },
     {
       "name": "monsters",
       "file": "src/lib/monsters.gvar",
-      "gvar_id": "c1a83721-ba23-43e6-992d-3c5c3f56c93b"
+      "id": "c1a83721-ba23-43e6-992d-3c5c3f56c93b"
     },
     {
       "name": "npc_tools",
       "file": "src/lib/npc_tools.gvar",
-      "gvar_id": "521ded99-888c-4765-ba6b-f833d66ced27"
+      "id": "521ded99-888c-4765-ba6b-f833d66ced27"
     },
     {
       "name": "npcs",
       "file": "src/lib/npcs.gvar",
-      "gvar_id": "3dc472d1-b166-49a5-a801-ead859547152"
+      "id": "3dc472d1-b166-49a5-a801-ead859547152"
     },
     {
       "name": "random",
       "file": "src/lib/random.gvar",
-      "gvar_id": "a1cd80b3-772b-49b7-8bf0-c743cd380ccb"
+      "id": "a1cd80b3-772b-49b7-8bf0-c743cd380ccb"
     },
     {
       "name": "script",
       "file": "src/lib/script.gvar",
-      "gvar_id": "ed8121b6-8534-42cf-84f0-1e46269ed9c8"
+      "id": "ed8121b6-8534-42cf-84f0-1e46269ed9c8"
     },
     {
       "name": "server_config",
       "file": "src/lib/server_config.gvar",
-      "gvar_id": "7c518500-8f21-4188-b61a-14195865169f"
+      "id": "7c518500-8f21-4188-b61a-14195865169f"
     },
     {
       "name": "special_floors",
       "file": "src/lib/special_floors.gvar",
-      "gvar_id": "14e039a9-8241-464d-9209-23114d166f59"
+      "id": "14e039a9-8241-464d-9209-23114d166f59"
     }
   ],
   "aliases": [
     {
-      "group_name": "dungeon",
+      "name": "dungeon",
+      "file": "src/dungeon/floor.alias",
       "sub_aliases": [
         {
           "name": "setup",
-          "alias_name": "dungeon setup",
           "file": "src/dungeon/setup.alias"
         },
         {
           "name": "begin",
-          "alias_name": "dungeon begin",
           "file": "src/dungeon/begin.alias"
         },
         {
           "name": "next",
-          "alias_name": "dungeon next",
           "file": "src/dungeon/next.alias"
         },
         {
           "name": "floor",
-          "alias_name": "dungeon floor",
           "file": "src/dungeon/floor.alias"
         },
         {
@@ -137,31 +134,35 @@
         },
         {
           "name": "end",
-          "alias_name": "dungeon end",
           "file": "src/dungeon/end.alias"
         },
         {
           "name": "monsters",
-          "alias_name": "dungeon monsters",
           "file": "src/dungeon/monsters.alias"
         },
         {
           "name": "script",
-          "alias_name": "dungeon script",
           "file": "src/dungeon/script.alias"
         },
         {
           "name": "auto",
-          "alias_name": "dungeon auto",
           "file": "src/dungeon/auto.alias"
         }
       ]
     }
   ],
-  "snippets": [],
+  "snippets": [
+    {
+      "name": "-tl",
+      "file": "src/snippets/target_like.snippet"
+    },
+    {
+      "name": "-tc",
+      "file": "src/snippets/target_choose.snippet"
+    }
+  ],
   "workshop": {
-    "url": "",
+    "environment": "ea6bd498-5320-410d-8501-28e119857f17",
     "id": "672e0ad6edc17a92c4ddbfae"
-  },
-  "environment": "ea6bd498-5320-410d-8501-28e119857f17"
+  }
 }
