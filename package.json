@@ -4,7 +4,6 @@
   "description": "This is a collection of aliases for avrae, to be used to run an automated downtime dungeon.",
   "main": "",
   "scripts": {
-    "predeploy": "npm run lint",
     "deploy": "node utils/deploy.js",
     "lint": "prettier --write ."
   },
