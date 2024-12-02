@@ -161,4 +161,5 @@ deploy(sourceMap)
   .catch((e) => {
     console.error(e);
     console.log("Deployment Failed");
+    process.exit(1);
   });
