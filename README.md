@@ -27,20 +27,20 @@ Copy the following avrae commands to add the downtime dungeon aliases.
 
 The following workshops are required to work alongside the downtime dungeon commands.
 
-* Auto Monster AI https://avrae.io/dashboard/workshop/617805d1137cd863517bc42c
-* Map Utilities https://avrae.io/dashboard/workshop/5f6a4623f4c89c324d6a5cd3
-* Initiative Utilities https://avrae.io/dashboard/workshop/5f88d637f2d59b2718721a9a
-* Targetting Assist https://avrae.io/dashboard/workshop/63fe7c97caaad20bc4903309
-* Tool Checks https://avrae.io/dashboard/workshop/630b0e39b85ea38890666c08
-* Map Plugins https://avrae.io/dashboard/workshop/604a56061e2241970bbeffb5
+- Auto Monster AI https://avrae.io/dashboard/workshop/617805d1137cd863517bc42c
+- Map Utilities https://avrae.io/dashboard/workshop/5f6a4623f4c89c324d6a5cd3
+- Initiative Utilities https://avrae.io/dashboard/workshop/5f88d637f2d59b2718721a9a
+- Targetting Assist https://avrae.io/dashboard/workshop/63fe7c97caaad20bc4903309
+- Tool Checks https://avrae.io/dashboard/workshop/630b0e39b85ea38890666c08
+- Map Plugins https://avrae.io/dashboard/workshop/604a56061e2241970bbeffb5
 
 ## Optional Workshops
 
 The following are not required but work well alongside the downtime dungeon:
 
-* Riptide Shortcuts https://avrae.io/dashboard/workshop/60069282052554a14d397617
-* Bard SFX https://avrae.io/dashboard/workshop/638f5e434dbab671607f33a5
-  * Get the Discord Bot https://discorddungeon.com/
+- Riptide Shortcuts https://avrae.io/dashboard/workshop/60069282052554a14d397617
+- Bard SFX https://avrae.io/dashboard/workshop/638f5e434dbab671607f33a5
+  - Get the Discord Bot https://discorddungeon.com/
 
 # How does the Dungeon work?
 
@@ -113,6 +113,7 @@ using(random="a1cd80b3-772b-49b7-8bf0-c743cd380ccb")
 ```
 
 ## Gold
+
 `DowntimeDungeon_gold` - gvar_id
 Configures how much gold is earnt per floor.
 
@@ -124,6 +125,7 @@ def get_gold_for_floor(floor_data, dungeon_data):
 ```
 
 ## Special Floor Chance
+
 `DowntimeDungeon_special_floor_chance` - gvar_id
 Configures the chance of a special floor appearing on a floor.
 
@@ -135,6 +137,7 @@ def get_is_special_floor(dungeon_data):
 ```
 
 ## Primary NPC Chance
+
 `DowntimeDungeon_primary_npc_chance` - gvar_id
 Configures the chance of the primary npc showing up on a floor.
 
@@ -148,6 +151,7 @@ def get_has_primary_npc(dungeon_data):
 ```
 
 ## Secondary NPC Chance
+
 `DowntimeDungeon_secondary_npc_chance` - gvar_id
 Configures the chance of the secondary npc showing up on a floor.
 
@@ -161,6 +165,7 @@ def get_has_secondary_npc(dungeon_data):
 ```
 
 ## Can advance with monsters in combat
+
 `DowntimeDungeon_can_advance_whilst_monsters_in_combat` - gvar_id
 Configures whether an adventurer can proceed to the next floor whilst the monsters on the current floor are still undefeated.
 
@@ -174,6 +179,7 @@ def can_advance_whilst_monsters_in_combat(dungeon_data, floor_data):
 ```
 
 ## CR
+
 `DowntimeDungeon_cr_calculator` - gvar_id
 Configures the CR for each floor.
 
@@ -191,6 +197,7 @@ def get_cr(dungeon_data):
 ```
 
 ## Special Floors
+
 `DowntimeDungeon_special_floors` - gvar_id
 Configures the list of potential special floors
 
@@ -213,7 +220,7 @@ def get_special_floors_list(default_list):
   default_list.append(special_floors.configure_floor(
     name = "Mid Dungeon Bar",
     desc = """Buy a drink for 1 gp each or rest for a couple of hours for 25 gp!
-    
+
   Each adventurer may pay 25 gp to short rest on this floor.""",
     requirement = lambda dungeon_data: dungeon_data["floor_num"] > 5
   ))
@@ -221,6 +228,7 @@ def get_special_floors_list(default_list):
 ```
 
 ## Monsters
+
 `DowntimeDungeon_monsters` - gvar_id
 Configures the list of potential monsters
 
@@ -264,14 +272,16 @@ AVRAE_TOKEN=***
 ## ENV
 
 A string representing the environment.
-* `Development`
-* `Production`
+
+- `Development`
+- `Production`
 
 ## AVRAE_TOKEN
 
 A string authentication token, used when publishing new versions of the workshop or gvars.
 
 You can get an AVRAE_TOKEN by:
+
 1. Go to [Avrae](https://avrae.io/) and log in to the dashboard
 2. Open the Developer Tools
 3. Go to the `Application` tab
