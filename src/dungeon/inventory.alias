@@ -78,7 +78,8 @@ def get_quantity_string(quantity):
     return quantity_str.rjust(3, " ")
 
 def describe_inventory(inventory, old_inventory = None):
-    description = "```diff"
+    open_diff ="```diff"
+    description = ""
     changes_dict = core.merge_dicts(inventory, old_inventory if old_inventory != None else {})
     for name, changes in changes_dict.items():
         if old_inventory != None and changes[1] != changes[0]:
@@ -89,7 +90,9 @@ def describe_inventory(inventory, old_inventory = None):
         elif changes[0] != None and changes[0] != 0:
             description += f'\n* {get_quantity_string(changes[0])}x {name}'
 
-    return description + '\n```'
+    if description == "":
+        description = "\n* Empty"
+    return open_diff + description + '\n```'
 
 description += describe_inventory(inventory, old_inventory if add_item != None or remove_item != None else None)
 

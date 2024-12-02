@@ -13,7 +13,7 @@
     {
       "name": "core",
       "file": "src/lib/core.gvar",
-      "gvar_id": "0df096b5-a5ec-48ca-88bd-b310061c5b79"
+      "id": "0df096b5-a5ec-48ca-88bd-b310061c5b79"
     },
     {
       "name": "describe_floor",
@@ -130,7 +130,7 @@
         {
           "name": "inventory",
           "alias_name": "dungeon inventory",
-          "file": "src/dungeon/inventory.lua"
+          "file": "src/dungeon/inventory.alias"
         },
         {
           "name": "end",
