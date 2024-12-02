@@ -33,4 +33,4 @@
  * @property {string} id
  */
 
-module.exports = {alias, sub_alias}
+module.exports = { alias, sub_alias };

@@ -2,11 +2,10 @@ name: Deploy Dev
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     strategy:
@@ -14,15 +13,15 @@ jobs:
         node-version: [22.x]
 
     steps:
-    - uses: actions/checkout@v4
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v4
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - run: npm ci
-    - name: Deploy
-      run: npm run deploy
-      env:
-        AVRAE_TOKEN: ${{ secrets.AVRAE_TOKEN }}
-        ENV: Development
+      - uses: actions/checkout@v4
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "npm"
+      - run: npm ci
+      - name: Deploy
+        run: npm run deploy
+        env:
+          AVRAE_TOKEN: ${{ secrets.AVRAE_TOKEN }}
+          ENV: Development

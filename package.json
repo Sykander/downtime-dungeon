@@ -4,11 +4,14 @@
   "description": "This is a collection of aliases for avrae, to be used to run an automated downtime dungeon.",
   "main": "",
   "scripts": {
-    "deploy": "node utils/deploy.js"
+    "predeploy": "npm run lint",
+    "deploy": "node utils/deploy.js",
+    "lint": "prettier --write ."
   },
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "axios": "^1.7.7"
+    "axios": "^1.7.7",
+    "prettier": "^3.4.1"
   }
 }
