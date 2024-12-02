@@ -5,6 +5,7 @@
 
 STARTED_KEY = "DowntimeDungeon"
 GOLD_KEY = "DowntimeDungeon_gold"
+INV_KEY = "DowntimeDungeon_inventory"
 FLOOR_KEY = "DowntimeDungeon_floor_num"
 SEED_KEY = "DowntimeDungeon_seed"
 ADVENTURERS_KEY = "DowntimeDungeon_adventurers"
@@ -14,6 +15,7 @@ def get_dungeon_data(com):
     dungeon_data = {
         "started": False,
         "gold": None,
+        "inventory": {},
         "floor_num": None,
         "seed": None,
         "floor_seed": None,
@@ -29,6 +31,7 @@ def get_dungeon_data(com):
         return dungeon_data
 
     gold = int(com.get_metadata(GOLD_KEY))
+    inventory = load_json(com.get_metadata(INV_KEY, "{}"))
     floor_num = int(com.get_metadata(FLOOR_KEY))
     seed = int(com.get_metadata(SEED_KEY))
     floor_seed = seed + floor_num
@@ -36,6 +39,7 @@ def get_dungeon_data(com):
     npcs = load_json(com.get_metadata(NPCS_KEY))
 
     dungeon_data["gold"] = gold
+    dungeon_data["inventory"] = inventory
     dungeon_data["floor_num"] = floor_num
     dungeon_data["seed"] = seed
     dungeon_data["floor_seed"] = floor_seed
@@ -44,12 +48,15 @@ def get_dungeon_data(com):
 
     return dungeon_data
 
-def set_dungeon_data(com, started = None, gold = None, floor_num = None, seed = None, adventurers = None, npcs = None):
+def set_dungeon_data(com, started = None, gold = None, inventory = None, floor_num = None, seed = None, adventurers = None, npcs = None):
     if started != None:
         com.set_metadata(STARTED_KEY, started)
     
     if gold != None:
         com.set_metadata(GOLD_KEY, gold)
+
+    if inventory != None:
+        com.set_metadata(INV_KEY, dump_json(inventory))
     
     if seed != None:
         com.set_metadata(SEED_KEY, seed)

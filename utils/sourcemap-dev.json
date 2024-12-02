@@ -11,6 +11,11 @@
       "gvar_id": "27471f7a-208b-413b-86fe-531050e1e33d"
     },
     {
+      "name": "core",
+      "file": "src/lib/core.gvar",
+      "gvar_id": "0df096b5-a5ec-48ca-88bd-b310061c5b79"
+    },
+    {
       "name": "describe_floor",
       "file": "src/lib/describe_floor.gvar",
       "gvar_id": "85ef7be4-7af3-4a07-ac57-db9fc47fcb7c"
@@ -124,6 +129,11 @@
           "name": "floor",
           "alias_name": "dungeon floor",
           "file": "src/dungeon/floor.alias"
+        },
+        {
+          "name": "inventory",
+          "alias_name": "dungeon inventory",
+          "file": "src/dungeon/inventory.lua"
         },
         {
           "name": "end",
