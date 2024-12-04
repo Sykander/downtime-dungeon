@@ -41,10 +41,10 @@ wild_shapes_and_transformations = {
 {ctx.prefix}i madd '<new_creature_name>' -h -controller @<discord_name> -name '<new_creature_name>'
 ```
 ```
-{ctx.prefix}invis '<original_creature_name>'
+{ctx.prefix}invis -t '<original_creature_name>'
 ```
 ```
-{ctx.prefix}team 1 '<new_Creature_name>'
+{ctx.prefix}team 1 '<new_creature_name>'
 ```
 
 When the form ends you can then run the following commands, replacing A1 with the position of the original creature:
