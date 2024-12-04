@@ -62,7 +62,9 @@ for adventurer in com.combatants:
         map_tools.set_combatant_square(adventurer, start_square)
 
 map_tools.attach_map_to_combatant(map["map_state"], com.get_combatant(dungeon_data["adventurers"][0]))
-map_url = map_tools.generate_map_image()
+map_url = map_tools.generate_map_image(
+    skip_combatants=monster_tools.get_monster_names(last_dungeon_data, last_floor_data) + npc_tools.get_npc_names(last_dungeon_data)
+)
 
 fields = [
     get_status.get_status_description(com.round_num + floorsToSkip, dungeon_data)
