@@ -265,6 +265,20 @@ map_list = [
         "map_state": {"size": "16x12", "background": "https://i.ibb.co/J2SzN2d/Roadside-Rise-26x20.jpg", "options": "c40dz3"},
         "adventurers_start": ["A6", "A7", "B6", "B7", "C6", "C7", "D6", "D7"],
         "monsters_start": ["E1", "E2", "E3", "F1", "F2", "F3", "G1", "G2", "G3", "H1", "H2", "H3", "K5", "K6", "K7", "L5", "L6", "L7", "M5", "M6", "M7", "N5", "N6", "N7", "O5", "O6", "O7", "P5", "P6", "P7", "H10", "H11", "H12", "I10", "I11", "I12", "J10", "J11", "J12", "K10", "K11", "K12"]
+    },
+    {
+        "name": "Shattered Stronghold",
+        "desc": "A shattered stronghold, crumbling in ruin strewn rocks, scattered across the astral sea.",
+        "map_state": {"size": "22x16", "background": "https://i.ibb.co/VwXFSG0/Shattered-Stronghold-Astral-Sea-Blue-Star-22x16-300-DPI.jpg", "options": "c28dz3"},
+        "adventurers_start": ["A8", "A9", "B8", "B9" , "C8" , "C9" "D7" , "D8" , "D9" , "D10"],
+        "monsters_start": [
+            "R3", "S3", "S4",
+            "S8", "T8", "S9", "T9", "U8",
+            "N7", "N8", "N9", "O10",
+            "G14", "H14", "I15", "J14", "J15",
+            "L4", "K3", "G2", "H2",
+            "H7", "L8", "H9", "G11", "R9"
+        ]
     }
 ]
 map_list_len = len(map_list)
