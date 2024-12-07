@@ -267,8 +267,8 @@ map_list = [
         "monsters_start": ["E1", "E2", "E3", "F1", "F2", "F3", "G1", "G2", "G3", "H1", "H2", "H3", "K5", "K6", "K7", "L5", "L6", "L7", "M5", "M6", "M7", "N5", "N6", "N7", "O5", "O6", "O7", "P5", "P6", "P7", "H10", "H11", "H12", "I10", "I11", "I12", "J10", "J11", "J12", "K10", "K11", "K12"]
     },
     {
-        "name": "Shattered Stronghold",
-        "desc": "A shattered stronghold, crumbling in ruin strewn rocks, scattered across the astral sea.",
+        "name": "Shattered Stronghold Blue",
+        "desc": "The shattered stronghold drifts in the astral sea, its crumbling towers and fractured walls scattered across an endless expanse of silver mist and swirling starlight. Glimmering crystals jut from the floating debris, pulsing faintly with arcane energy, their facets reflecting the infinite horizon. Shards of stone and ethereal dust swirl gently around, suspended in the weightless void, where time feels as distant as the flickering constellations above.",
         "map_state": {"size": "22x16", "background": "https://i.ibb.co/VwXFSG0/Shattered-Stronghold-Astral-Sea-Blue-Star-22x16-300-DPI.jpg", "options": "c28dz3"},
         "adventurers_start": ["A8", "A9", "B8", "B9" , "C8" , "C9" "D7" , "D8" , "D9" , "D10"],
         "monsters_start": [
@@ -278,6 +278,66 @@ map_list = [
             "G14", "H14", "I15", "J14", "J15",
             "L4", "K3", "G2", "H2",
             "H7", "L8", "H9", "G11", "R9"
+        ]
+    },
+    {
+        "name": "Shattered Stronghold Red",
+        "desc": "The shattered stronghold drifts in the astral sea, its crumbling towers and fractured walls scattered across an endless expanse of silver mist and swirling starlight. Glimmering crystals jut from the floating debris, pulsing faintly with arcane energy, their facets reflecting the infinite horizon. Shards of stone and ethereal dust swirl gently around, suspended in the weightless void, where time feels as distant as the flickering constellations above.",
+        "map_state": {"size": "22x16", "background": "https://i.ibb.co/3pHwFgM/Shattered-Stronghold-Astral-Sea-Red-Star-22x16-300-DPI.jpg", "options": "c28dz3"},
+        "adventurers_start": ["A8", "A9", "B8", "B9" , "C8" , "C9" "D7" , "D8" , "D9" , "D10"],
+        "monsters_start": [
+            "R3", "S3", "S4",
+            "S8", "T8", "S9", "T9", "U8",
+            "N7", "N8", "N9", "O10",
+            "G14", "H14", "I15", "J14", "J15",
+            "L4", "K3", "G2", "H2",
+            "H7", "L8", "H9", "G11", "R9"
+        ]
+    },
+    {
+        "name": "Mushroom Village Day",
+        "desc": "Nestled in a serene glade, the quaint mushroom village hums with quiet charm. Tall, colorful toadstools serve as cozy homes, their spotted caps sheltering round doors and glowing windows. A gentle river winds through the village, its crystal-clear waters splitting into small, flower-speckled islands connected by rustic wooden bridges. The air is rich with the scent of earth and moss, and faint laughter and the murmur of conversation drift from the mushroom homes. Lanterns made of glowing fungi hang from twisted branches, casting soft, golden light over the idyllic scene as fireflies dance lazily in the dusk.",
+        "map_state": {"size": "32x21", "background": "https://i.ibb.co/YbFst8P/Mushroom-Village-Forest-Day-43x29-300-DPI.jpg", "options": "c14dz3"},
+        "adventurers_start": ["B20", "C20", "D20", "A21", "B21", "C21", "C18", "C19", "D19", "E20"],
+        "monsters_start": [
+            "S2", "S3", "S4", "T15", "T16",
+            "W6" , "Y6", "Z6", "AA7", "Z6"
+            "AA15" "AA16", "AB18", "AC18",
+            "Q17" , "R12" , "U14" , "W18",
+            "P13", "U2", "V10", "W12",
+            # on the road
+            "N15", "N10", "M10", "M9", "T13", "AC10", "O4"
+            # on the mushroom
+            "G11", "G12", "G13",
+            "H11", "H12", "H13",
+            "I11", "I12", "I13",
+            # In the farm
+            "B7", "C9", "D6", "E8",
+            # On another mushroom
+            "K19", "L18", "L20", "O19", "M19", "M20"
+        ]
+    },
+    {
+        "name": "Mushroom Village Night",
+        "desc": "Nestled in a serene glade, the quaint mushroom village hums with quiet charm. Tall, colorful toadstools serve as cozy homes, their spotted caps sheltering round doors and glowing windows. A gentle river winds through the village, its crystal-clear waters splitting into small, flower-speckled islands connected by rustic wooden bridges. The air is rich with the scent of earth and moss, and faint laughter and the murmur of conversation drift from the mushroom homes. Lanterns made of glowing fungi hang from twisted branches, casting soft, golden light over the idyllic scene as fireflies dance lazily in the dusk.",
+        "map_state": {"size": "32x21", "background": "https://i.ibb.co/nscgPsn/Mushroom-Village-Forest-Night-43x29-300-DPI.jpg", "options": "c14dz3"},
+        "adventurers_start": ["B20", "C20", "D20", "A21", "B21", "C21", "C18", "C19", "D19", "E20"],
+        "monsters_start": [
+            "S2", "S3", "S4", "T15", "T16",
+            "W6" , "Y6", "Z6", "AA7", "Z6"
+            "AA15" "AA16", "AB18", "AC18",
+            "Q17" , "R12" , "U14" , "W18",
+            "P13", "U2", "V10", "W12",
+            # on the road
+            "N15", "N10", "M10", "M9", "T13", "AC10", "O4"
+            # on the mushroom
+            "G11", "G12", "G13",
+            "H11", "H12", "H13",
+            "I11", "I12", "I13",
+            # In the farm
+            "B7", "C9", "D6", "E8",
+            # On another mushroom
+            "K19", "L18", "L20", "O19", "M19", "M20"
         ]
     }
 ]
