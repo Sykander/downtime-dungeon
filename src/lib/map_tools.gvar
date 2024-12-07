@@ -65,7 +65,7 @@ def update_combatant_note(combatant, **kwargs):
     new_note = " | ".join(f"{k.title()}: {v.strip()}" for k, v in note.items())
     combatant.set_note(new_note)
 
-def generate_map_image(overlays=None, from_state=None):
+def generate_map_image(overlays=None, from_state=None, skip_combatants=[]):
     c = combat()
     map_url = f"{get('otfbm_base_url', 'http://otfbm.io/')}"
 
@@ -83,7 +83,7 @@ def generate_map_image(overlays=None, from_state=None):
 
     combatant_str = ""
     for combatant in c.combatants:
-        if combatant.name.lower() not in ["map", "dm", "lair"]:
+        if combatant.name.lower() not in (["map", "dm", "lair"] + [n.lower() for n in skip_combatants]):
             note = parse_note(combatant.note)
             location = note.get("location")
             if location:

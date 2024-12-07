@@ -405,6 +405,43 @@ def auto_monster(auto_once=True, auto_react=False):
             command_list.append(f'{pref}i n')
             return
 
+        monster_effect_names = [effect.name.lower() for effect in monster.effects]
+        # Check if the monster is stunned
+        if "stunned" in monster_effect_names:
+            map_url = map_tools.generate_map_image(overlays)
+            title = f"Skipping stunned monster: {monster.name}"
+            description = f"{monster.name} is stunned. Its turn will be skipped."
+            command_list.append(f'{pref}{get_message.get_message(title=title, description=description, image=map_url)}')
+            command_list.append(f'{pref}i n')
+            return
+
+        # Check if the monster is paralysed
+        if "paralysed" in monster_effect_names:
+            map_url = map_tools.generate_map_image(overlays)
+            title = f"Skipping paralysed monster: {monster.name}"
+            description = f"{monster.name} is paralysed. Its turn will be skipped."
+            command_list.append(f'{pref}{get_message.get_message(title=title, description=description, image=map_url)}')
+            command_list.append(f'{pref}i n')
+            return
+
+        # Check if the monster is paralysed
+        if "petrified" in monster_effect_names:
+            map_url = map_tools.generate_map_image(overlays)
+            title = f"Skipping petrified monster: {monster.name}"
+            description = f"{monster.name} is petrified. Its turn will be skipped."
+            command_list.append(f'{pref}{get_message.get_message(title=title, description=description, image=map_url)}')
+            command_list.append(f'{pref}i n')
+            return
+
+        # Check if the monster is unconscious
+        if "unconscious" in monster_effect_names:
+            map_url = map_tools.generate_map_image(overlays)
+            title = f"Skipping unconscious monster: {monster.name}"
+            description = f"{monster.name} is unconscious. Its turn will be skipped."
+            command_list.append(f'{pref}{get_message.get_message(title=title, description=description, image=map_url)}')
+            command_list.append(f'{pref}i n')
+            return
+
         # Get location from note
         map_data = placed[indexed_combatant]
         location = map_data["location"]
@@ -419,7 +456,8 @@ def auto_monster(auto_once=True, auto_react=False):
         
         # Check if map is present
         if map_attach and location:
-            monster_speed = mobl.get_monster_speed(monster_name)[0]
+            monster_cant_move = "restrained" in monster_effect_names or "grappled" in monster_effect_names
+            monster_speed = mobl.get_monster_speed(monster_name)[0] if not monster_cant_move else 0
             monster_move_verb = mobl.get_monster_speed(monster_name)[1]
 
             start_pos, size_m = map_data["pos"], map_data["size_mod"]

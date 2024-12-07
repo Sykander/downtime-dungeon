@@ -12,6 +12,15 @@ using(
 
 c = combat()
 
+def get_npc_names(dungeon_data):
+    npc_names = []
+    npcs = dungeon_data
+
+    for priority, data_npc in dungeon_data["npcs"].items():
+        npc_names.append(data_npc["full_name"])
+
+    return npc_names
+
 def check_and_update_is_dead(npc, dungeon_data):
     npc_in_combat = c.get_combatant(npc["full_name"])
     npcs = dungeon_data["npcs"]

@@ -17,6 +17,8 @@ size_table = {
     "G": "Gargantuan"
 }
 
+c = combat()
+
 def get_add_monster_commands(dungeon_data, floor_data):
     monster_list = floor_data["monsters"]
     starting_squares = floor_data["map"]["monsters_start"]
@@ -42,7 +44,6 @@ def get_add_monster_commands(dungeon_data, floor_data):
 
 def get_remove_monster_commands(dungeon_data, floor_data):
     command_list = []
-    c = combat()
 
     if not floor_data["encountered_monsters"]:
         return command_list
@@ -64,7 +65,6 @@ def get_remove_monster_commands(dungeon_data, floor_data):
     return command_list
 
 def get_any_monsters_in_combat(dungeon_data, floor_data):
-    c = combat()
     if not floor_data["encountered_monsters"]:
         return False
 
@@ -81,3 +81,18 @@ def get_any_monsters_in_combat(dungeon_data, floor_data):
             if combatant and combatant.hp > 0:
                 return True
     return False
+
+def get_monster_names(dungeon_data, floor_data):
+    monster_names = []
+    if not floor_data["encountered_monsters"]:
+        return monster_names
+
+    monster_list = floor_data["monsters"]
+    for name, monster in monster_list.items():
+        if monster["count"] > 1:
+            for index in range(1, monster["count"]):
+                monster_names.append(f'{index}-{name}')
+        else:
+            monster_names.append(name)
+
+    return monster_names

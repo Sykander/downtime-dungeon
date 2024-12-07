@@ -41,19 +41,19 @@ wild_shapes_and_transformations = {
 {ctx.prefix}i madd '<new_creature_name>' -h -controller @<discord_name> -name '<new_creature_name>'
 ```
 ```
-{ctx.prefix}team ghost '<original_creature_name>'
+{ctx.prefix}invis -t '<original_creature_name>'
 ```
 ```
-{ctx.prefix}team 1 '<new_Creature_name>'
+{ctx.prefix}team 1 '<new_creature_name>'
 ```
 
-When the form ends you can then run the following commands:
+When the form ends you can then run the following commands, replacing A1 with the position of the original creature:
 
 ```
 {ctx.prefix}i remove '<new_creature_name>'
 ```
 ```
-{ctx.prefix}team ghost '<original_creature_name>'
+{ctx.prefix}move A1 -t '<original_creature_name>'
 ```"""
 }
 
@@ -152,6 +152,19 @@ You can use the following command to advance time, replacing 100 with the number
 For each day (24 hours) spent without long resting, adventurers must roll a Constitution saving throw or suffer a level of exhaustion. The DC is 10 and increases by 5 for each additional day spent without long resting."""
 }
 
+token_script = {
+    "title": "Setting your token on the map",
+    "body": f"""To set a token for your character on the map, you must follow a few steps:
+
+1. Get a token image url
+You can use an image you already have or use avrae to generate one for you using:```{ctx.prefix}token```Then right click on the image and click `Copy Link`
+2. Import the token into OTFBM
+Using the url from step 1 run the following command:```{ctx.prefix}tokenimport <url_here>```
+This will give you a 5-letter long shortcode.
+3. Set the token on your character in game using:```{ctx.prefix}map -token <shortcode_here>```
+You can pass the `-t` argument to set the token on a summon or other combatant instead."""
+}
+
 script = [
     avrae_asking_for_inputs,
     flight,
@@ -165,7 +178,8 @@ script = [
     resting,
     hiding,
     death,
-    time_script
+    time_script,
+    token_script
 ]
 
 def get_script(section_name = None):
