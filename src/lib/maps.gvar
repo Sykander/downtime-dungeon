@@ -269,7 +269,7 @@ map_list = [
     {
         "name": "Shattered Stronghold Blue",
         "desc": "The shattered stronghold drifts in the astral sea, its crumbling towers and fractured walls scattered across an endless expanse of silver mist and swirling starlight. Glimmering crystals jut from the floating debris, pulsing faintly with arcane energy, their facets reflecting the infinite horizon. Shards of stone and ethereal dust swirl gently around, suspended in the weightless void, where time feels as distant as the flickering constellations above.",
-        "map_state": {"size": "22x16", "background": "https://i.ibb.co/VwXFSG0/Shattered-Stronghold-Astral-Sea-Blue-Star-22x16-300-DPI.jpg", "options": "c28dz3"},
+        "map_state": {"size": "22x16", "background": "https://i.ibb.co/fN2c8c6/Shattered-Stronghold-Astral-Sea-Blue-Star-22x16-72-DPI.jpg", "options": "c72dz3"},
         "adventurers_start": ["A8", "A9", "B8", "B9" , "C8" , "C9" "D7" , "D8" , "D9" , "D10"],
         "monsters_start": [
             "R3", "S3", "S4",
@@ -283,7 +283,7 @@ map_list = [
     {
         "name": "Shattered Stronghold Red",
         "desc": "The shattered stronghold drifts in the astral sea, its crumbling towers and fractured walls scattered across an endless expanse of silver mist and swirling starlight. Glimmering crystals jut from the floating debris, pulsing faintly with arcane energy, their facets reflecting the infinite horizon. Shards of stone and ethereal dust swirl gently around, suspended in the weightless void, where time feels as distant as the flickering constellations above.",
-        "map_state": {"size": "22x16", "background": "https://i.ibb.co/3pHwFgM/Shattered-Stronghold-Astral-Sea-Red-Star-22x16-300-DPI.jpg", "options": "c28dz3"},
+        "map_state": {"size": "22x16", "background": "https://i.ibb.co/hZ5X23K/Shattered-Stronghold-Astral-Sea-Red-Star-22x16-72-DPI.jpg", "options": "c72dz3"},
         "adventurers_start": ["A8", "A9", "B8", "B9" , "C8" , "C9" "D7" , "D8" , "D9" , "D10"],
         "monsters_start": [
             "R3", "S3", "S4",
@@ -297,7 +297,7 @@ map_list = [
     {
         "name": "Mushroom Village Day",
         "desc": "Nestled in a serene glade, the quaint mushroom village hums with quiet charm. Tall, colorful toadstools serve as cozy homes, their spotted caps sheltering round doors and glowing windows. A gentle river winds through the village, its crystal-clear waters splitting into small, flower-speckled islands connected by rustic wooden bridges. The air is rich with the scent of earth and moss, and faint laughter and the murmur of conversation drift from the mushroom homes. Lanterns made of glowing fungi hang from twisted branches, casting soft, golden light over the idyllic scene as fireflies dance lazily in the dusk.",
-        "map_state": {"size": "32x21", "background": "https://i.ibb.co/YbFst8P/Mushroom-Village-Forest-Day-43x29-300-DPI.jpg", "options": "c14dz3"},
+        "map_state": {"size": "32x21", "background": "https://i.ibb.co/tJsD1G7/Mushroom-Village-Forest-Day-43x29-72-DPI.jpg", "options": "c72dz3"},
         "adventurers_start": ["B20", "C20", "D20", "A21", "B21", "C21", "C18", "C19", "D19", "E20"],
         "monsters_start": [
             "S2", "S3", "S4", "T15", "T16",
@@ -320,7 +320,7 @@ map_list = [
     {
         "name": "Mushroom Village Night",
         "desc": "Nestled in a serene glade, the quaint mushroom village hums with quiet charm. Tall, colorful toadstools serve as cozy homes, their spotted caps sheltering round doors and glowing windows. A gentle river winds through the village, its crystal-clear waters splitting into small, flower-speckled islands connected by rustic wooden bridges. The air is rich with the scent of earth and moss, and faint laughter and the murmur of conversation drift from the mushroom homes. Lanterns made of glowing fungi hang from twisted branches, casting soft, golden light over the idyllic scene as fireflies dance lazily in the dusk.",
-        "map_state": {"size": "32x21", "background": "https://i.ibb.co/nscgPsn/Mushroom-Village-Forest-Night-43x29-300-DPI.jpg", "options": "c14dz3"},
+        "map_state": {"size": "32x21", "background": "https://i.ibb.co/FYjcpx3/Mushroom-Village-Forest-Night-43x29-72-DPI.jpg", "options": "c72dz3"},
         "adventurers_start": ["B20", "C20", "D20", "A21", "B21", "C21", "C18", "C19", "D19", "E20"],
         "monsters_start": [
             "S2", "S3", "S4", "T15", "T16",
