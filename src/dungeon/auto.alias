@@ -4,6 +4,11 @@ using(
     auto_tools = env.get_gvar_id_by_name("auto_tools")
 )
 
+com = combat()
+
+if not com:
+    return get_message.get_error(f"You're not in combat, there are no monsters to automate.")
+
 monster_commands = auto_tools.auto_monster(auto_once=True, auto_react=False)
 
 return f'multiline\n' + "\n".join(monster_commands)
