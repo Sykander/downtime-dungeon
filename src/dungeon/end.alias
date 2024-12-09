@@ -44,7 +44,7 @@ def format_credits() -> str:
 def attribute_map_credits() -> str:
     return f'''2-Minute Tabletop|Maps provided by the downtime dungeon are licensed under [Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0) License](https://creativecommons.org/licenses/by-nc/4.0/) from [2-Minute Tabletop](https://2minutetabletop.com/).'''
 
-fields = [get_status.get_status_description(com.round_num, dungeon_data), format_credits(), attribute_map_credits()]
+fields = [get_status.get_status_description(com.round_num, dungeon_data), attribute_map_credits(), format_credits()]
 image = close_images[random.get_random_integer(0, len(close_images) - 1, dungeon_data["floor_seed"])]
 description =  f'You closed the Downtime Dungeon after {dungeon_data["floor_num"]} floors.'
 
