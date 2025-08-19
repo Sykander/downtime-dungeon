@@ -1740,7 +1740,7 @@ monster_list = [
         pp = 11,
     ),
     configure_monster(
-        name = "Purple Worn",
+        name = "Purple Worm",
         image_url = "https://www.dndbeyond.com/avatars/thumbnails/30834/702/1000/1000/638063895243217798.png",
         token = "nxc39",
         size = "G",
