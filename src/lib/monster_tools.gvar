@@ -5,7 +5,9 @@
 
 using(env="0836565c-d03d-4f1f-9306-5e210c69b3d1")
 using(
-    random = env.get_gvar_id_by_name("random")
+    random = env.get_gvar_id_by_name("random"),
+    # monster dictionary from the auto workshop
+    mobl = "65c27eae-11c3-4b5c-90e5-472bc49f0037"
 )
 
 size_table = {
@@ -96,3 +98,6 @@ def get_monster_names(dungeon_data, floor_data):
             monster_names.append(name)
 
     return monster_names
+
+def get_should_remove_monster():
+    mobl.get_monster_data()
