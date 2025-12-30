@@ -16,7 +16,7 @@ using(
     autolib = "40c06ebb-8487-4e0f-8cd5-e38d52364c53",
     core = "49f5f503-1c00-4f24-ba43-92e65c2c2fb6",
     presets = "c14e4526-4acb-4964-8ba9-f6861617ffdf",
-    mapl = "4b5633ff-7082-4411-95b3-50970c30e832",
+    mapl = "1f26a1a8-9360-4529-adcf-1536abd9ff39", # replaced
     mobl = "65c27eae-11c3-4b5c-90e5-472bc49f0037",
     targl = "f8369cc0-8ab0-42a5-8dfd-4ab7f34c0e61",
     helpl = "aacef7e2-fb6a-4786-9d26-193ed45e4916"
