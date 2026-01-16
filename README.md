@@ -124,6 +124,18 @@ def get_gold_for_floor(floor_data, dungeon_data):
     return floor_data["floor_num"]
 ```
 
+## Monsters use Rolled HP
+
+`DowntimeDungeon_mosters_use_rolled_hp` - gvar_id
+Configures whether to roll hp for monsters or use the default value.
+
+The corresponding gvar if set should contain a function called `use_rolled_hp` which takes the arguments `dungeon_data` and `floor_data` and returns and `bool`.
+
+```py
+def use_rolled_hp(dungeon_data, floor_data):
+    return False
+```
+
 ## Special Floor Chance
 
 `DowntimeDungeon_special_floor_chance` - gvar_id

@@ -7,7 +7,8 @@ using(env="0836565c-d03d-4f1f-9306-5e210c69b3d1")
 using(
     random = env.get_gvar_id_by_name("random"),
     # monster dictionary from the auto workshop
-    mobl = "65c27eae-11c3-4b5c-90e5-472bc49f0037"
+    mobl = "65c27eae-11c3-4b5c-90e5-472bc49f0037",
+    server_config = env.get_gvar_id_by_name("server_config")
 )
 
 size_table = {
@@ -26,6 +27,7 @@ def get_add_monster_commands(dungeon_data, floor_data):
     starting_squares = floor_data["map"]["monsters_start"]
     command_list = []
     starting_squares_len = len(starting_squares)
+    monsters_use_rolled_hp = server_config.mosters_use_rolled_hp(dungeon_data, floor_data)
 
     for name, monster in monster_list.items():
         square_index = random.get_random_integer(0, starting_squares_len - 1)
@@ -40,7 +42,8 @@ def get_add_monster_commands(dungeon_data, floor_data):
 
         if monster.token:
             note += f" | Token: {monster.token}"
-        command_list.append(f'{ctx.prefix}i madd "{name}" -name "{"#-" if monster["count"] > 1 else ""}{name}" -n {monster["count"]} -rollhp -note "{note}" ')
+
+        command_list.append(f'{ctx.prefix}i madd "{name}" -name "{"#-" if monster["count"] > 1 else ""}{name}" -n {monster["count"]} {"-rollhp" if monsters_use_rolled_hp else ""} -note "{note}" ')
 
     return command_list
 
