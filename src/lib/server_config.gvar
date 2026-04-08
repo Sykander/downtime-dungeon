@@ -17,6 +17,7 @@ server_special_floors_override = get_svar("DowntimeDungeon_special_floors", None
 server_monsters_override = get_svar("DowntimeDungeon_monsters", None)
 can_advance_whilst_monsters_in_combat_override = get_svar("DowntimeDungeon_can_advance_whilst_monsters_in_combat", None)
 mosters_use_rolled_hp_override = get_svar("DowntimeDungeon_mosters_use_rolled_hp", None)
+server_difficulty_start_floors_override = get_svar("DowntimeDungeon_difficulty_start_floors", None)
 
 def can_advance_whilst_monsters_in_combat(dungeon_data, floor_data):
     if can_advance_whilst_monsters_in_combat_override != None:
@@ -80,6 +81,18 @@ def get_monster_list(default_list):
         using(server_monsters_module=server_monsters_override)
         return server_monsters_module.get_monster_list(default_list)
     return default_list
+
+def get_difficulty_start_floors():
+    default_map = {
+        "easy": 1,
+        "medium": 11,
+        "hard": 21,
+        "deadly": 31
+    }
+    if server_difficulty_start_floors_override != None:
+        using(server_difficulty_start_floors_module=server_difficulty_start_floors_override)
+        return server_difficulty_start_floors_module.get_difficulty_start_floors(default_map)
+    return default_map
 
 def mosters_use_rolled_hp(dungeon_data, floor_data):
     if mosters_use_rolled_hp_override != None:

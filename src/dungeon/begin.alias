@@ -10,19 +10,13 @@ using(
     random = env.get_gvar_id_by_name("random"),
     map_tools = env.get_gvar_id_by_name("map_tools"),
     npc_tools = env.get_gvar_id_by_name("npc_tools"),
-    npcs = env.get_gvar_id_by_name("npcs")
+    npcs = env.get_gvar_id_by_name("npcs"),
+    server_config = env.get_gvar_id_by_name("server_config")
 )
 
 args = argparse(&ARGS&)
 seed = int(args.last("seed", randint(0, 1000000)))
 difficulty_slug = args.last("difficulty", "easy")
-
-difficulty_to_start_floor = {
-    "easy": 1,
-    "medium": 11,
-    "hard": 21,
-    "deadly": 31
-}
 
 com = combat()
 
@@ -46,6 +40,7 @@ if len(adventurers) > 4:
     return get_message.get_error("Too many adventurers tried to enter the dungeon all at once.")
 
 adventurers_list_str = get_readable_list.get_readable_list(adventurers)
+difficulty_to_start_floor = server_config.get_difficulty_start_floors()
 starting_floor = difficulty_to_start_floor[difficulty_slug] if difficulty_slug in difficulty_to_start_floor else 1
 
 npcs = {

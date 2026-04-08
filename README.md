@@ -124,6 +124,25 @@ def get_gold_for_floor(floor_data, dungeon_data):
     return floor_data["floor_num"]
 ```
 
+## Difficulty start floors
+
+`DowntimeDungeon_difficulty_start_floors` - gvar_id
+
+Configures which floor number the dungeon uses when `!dungeon begin` is run with a given `-difficulty` slug. The built-in slugs are `easy`, `medium`, `hard`, and `deadly`.
+
+The corresponding gvar, if set, should define a function called `get_difficulty_start_floors` which takes the argument `default_map` (a dict mapping difficulty slug strings to starting floor integers) and returns the dict to use on the server. You may replace the mapping entirely or copy `default_map`, change it, and return it. Slugs not present in the returned dict start at floor `1`, same as the default alias behavior.
+
+```py
+def get_difficulty_start_floors(default_map):
+    return {
+        "easy": 1,
+        "medium": 6,
+        "hard": 11,
+        "deadly": 16,
+        "nightmare": 41,
+    }
+```
+
 ## Monsters use Rolled HP
 
 `DowntimeDungeon_mosters_use_rolled_hp` - gvar_id
