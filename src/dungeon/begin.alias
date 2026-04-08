@@ -41,7 +41,7 @@ if len(adventurers) > 4:
 
 adventurers_list_str = get_readable_list.get_readable_list(adventurers)
 difficulty_to_start_floor = server_config.get_difficulty_start_floors()
-starting_floor = difficulty_to_start_floor[difficulty_slug] if difficulty_slug in difficulty_to_start_floor else 1
+starting_floor = difficulty_to_start_floor.get(difficulty_slug, 1)
 
 npcs = {
     "primary": npcs.get_random_npc(seed),
