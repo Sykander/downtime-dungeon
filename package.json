@@ -5,6 +5,8 @@
   "main": "",
   "scripts": {
     "deploy": "node utils/deploy.js",
+    "generate-vars": "node utils/generate-vars.js",
+    "test": "npm run generate-vars && avrae-ls --log-level INFO --silent-gvar-fetch --run-tests src",
     "lint": "prettier --write ."
   },
   "author": "",

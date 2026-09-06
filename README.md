@@ -88,6 +88,19 @@ You can copy the following avrae commands to subscribe to the the Development al
 !alias rename dungeon devDungeon
 ```
 
+## Local tests (avrae-ls)
+
+Requires [avrae-ls](https://github.com/1drturtle/avrae-ls) (`uv tool install avrae-ls`).
+
+`.avraels.json` + `.varfile.json` wire local gvars for tests (same pattern as westmarch-generic). After sourcemap changes, regenerate the varfile:
+
+```sh
+npm run generate-vars
+npm test
+```
+
+Put `.gvar-test` / `.alias-test` files next to the sibling `.gvar` / `.alias` they exercise.
+
 # Production
 
 [Link to workshop](https://avrae.io/dashboard/workshop/672e0ad6edc17a92c4ddbfae)

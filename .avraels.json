@@ -1,10 +1,26 @@
 {
-  "enableGvarFetch": false,
+  "enableGvarFetch": true,
+  "avraeService": {
+    "token": "$AVRAE_TOKEN"
+  },
   "varFiles": [".varfile.json"],
   "defaultProfile": "default",
   "profiles": {
     "default": {
-      "description": "Local Downtime Dungeon gvar tests"
+      "description": "Local Downtime Dungeon gvar/alias tests",
+      "ctx": {
+        "guild": {
+          "servsettings": {
+            "rules_version": "2014"
+          }
+        },
+        "author": {
+          "roles": [
+            { "id": 4567, "name": "DM" },
+            { "id": 4568, "name": "Player" }
+          ]
+        }
+      }
     }
   }
 }

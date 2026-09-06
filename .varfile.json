@@ -1,67 +1,127 @@
 {
-  "gvars": {
-    "0836565c-d03d-4f1f-9306-5e210c69b3d1": {
-      "filePath": "src/env.dev.gvar"
-    },
-    "27471f7a-208b-413b-86fe-531050e1e33d": {
-      "filePath": "src/lib/auto_tools.gvar"
-    },
-    "0df096b5-a5ec-48ca-88bd-b310061c5b79": {
-      "filePath": "src/lib/core.gvar"
-    },
-    "85ef7be4-7af3-4a07-ac57-db9fc47fcb7c": {
-      "filePath": "src/lib/describe_floor.gvar"
-    },
-    "a003f531-851f-4a1d-859e-a2766b5dbce1": {
-      "filePath": "src/lib/encounters.gvar"
-    },
-    "c6aa3456-83ac-4777-9e5c-524d337f67eb": {
-      "filePath": "src/lib/get_dungeon_data.gvar"
-    },
-    "a117e4f1-951f-4f6c-bf4a-c8eb948d1ad0": {
-      "filePath": "src/lib/get_floor_data.gvar"
-    },
-    "2513d58e-ef40-498d-9f0d-ef35ef480436": {
-      "filePath": "src/lib/get_message.gvar"
-    },
-    "fbdefe43-b658-482b-82ec-d77be042b98c": {
-      "filePath": "src/lib/get_readable_list.gvar"
-    },
-    "cf0a6486-b429-49fe-95b8-0dec6187a95d": {
-      "filePath": "src/lib/get_status.gvar"
-    },
-    "673c127c-9511-409a-89b8-042da80cbf58": {
-      "filePath": "src/lib/map_picker.gvar"
-    },
-    "c8d78194-0128-4429-a253-e6a2df36caf2": {
-      "filePath": "src/lib/map_tools.gvar"
-    },
-    "86271b74-5f48-478a-8f11-d5999277ae29": {
-      "filePath": "src/lib/maps.gvar"
-    },
-    "9d62fab6-eff1-4f53-a24a-38ea4fc99713": {
-      "filePath": "src/lib/monster_tools.gvar"
-    },
-    "b0967794-7146-4503-ba0c-b94aa539b321": {
-      "filePath": "src/lib/monsters.gvar"
-    },
-    "50ca7e2f-4ac7-438f-bf6a-859233d50b23": {
-      "filePath": "src/lib/npc_tools.gvar"
-    },
-    "d2ad1c71-0e1d-464c-b90f-761405cd249b": {
-      "filePath": "src/lib/npcs.gvar"
-    },
-    "e0665619-4690-4724-875a-b6779e88a7f9": {
-      "filePath": "src/lib/random.gvar"
-    },
-    "f79a73a7-3d3d-4b2b-9435-4fd791f6133e": {
-      "filePath": "src/lib/script.gvar"
-    },
-    "d83b0d37-56e1-416f-91a7-8a8b90bcd5bb": {
-      "filePath": "src/lib/server_config.gvar"
-    },
-    "9d986792-ba34-491c-8d26-5191ca05aa5d": {
-      "filePath": "src/lib/special_floors.gvar"
+    "gvars": {
+        "0836565c-d03d-4f1f-9306-5e210c69b3d1": {
+            "filePath": "src/env.dev.gvar"
+        },
+        "27471f7a-208b-413b-86fe-531050e1e33d": {
+            "filePath": "src/lib/auto_tools.gvar"
+        },
+        "0df096b5-a5ec-48ca-88bd-b310061c5b79": {
+            "filePath": "src/lib/core.gvar"
+        },
+        "85ef7be4-7af3-4a07-ac57-db9fc47fcb7c": {
+            "filePath": "src/lib/describe_floor.gvar"
+        },
+        "a003f531-851f-4a1d-859e-a2766b5dbce1": {
+            "filePath": "src/lib/encounters.gvar"
+        },
+        "c6aa3456-83ac-4777-9e5c-524d337f67eb": {
+            "filePath": "src/lib/get_dungeon_data.gvar"
+        },
+        "a117e4f1-951f-4f6c-bf4a-c8eb948d1ad0": {
+            "filePath": "src/lib/get_floor_data.gvar"
+        },
+        "2513d58e-ef40-498d-9f0d-ef35ef480436": {
+            "filePath": "src/lib/get_message.gvar"
+        },
+        "fbdefe43-b658-482b-82ec-d77be042b98c": {
+            "filePath": "src/lib/get_readable_list.gvar"
+        },
+        "cf0a6486-b429-49fe-95b8-0dec6187a95d": {
+            "filePath": "src/lib/get_status.gvar"
+        },
+        "673c127c-9511-409a-89b8-042da80cbf58": {
+            "filePath": "src/lib/map_picker.gvar"
+        },
+        "c8d78194-0128-4429-a253-e6a2df36caf2": {
+            "filePath": "src/lib/map_tools.gvar"
+        },
+        "86271b74-5f48-478a-8f11-d5999277ae29": {
+            "filePath": "src/lib/maps.gvar"
+        },
+        "9d62fab6-eff1-4f53-a24a-38ea4fc99713": {
+            "filePath": "src/lib/monster_tools.gvar"
+        },
+        "b0967794-7146-4503-ba0c-b94aa539b321": {
+            "filePath": "src/lib/monsters.gvar"
+        },
+        "50ca7e2f-4ac7-438f-bf6a-859233d50b23": {
+            "filePath": "src/lib/npc_tools.gvar"
+        },
+        "d2ad1c71-0e1d-464c-b90f-761405cd249b": {
+            "filePath": "src/lib/npcs.gvar"
+        },
+        "e0665619-4690-4724-875a-b6779e88a7f9": {
+            "filePath": "src/lib/random.gvar"
+        },
+        "f79a73a7-3d3d-4b2b-9435-4fd791f6133e": {
+            "filePath": "src/lib/script.gvar"
+        },
+        "d83b0d37-56e1-416f-91a7-8a8b90bcd5bb": {
+            "filePath": "src/lib/server_config.gvar"
+        },
+        "9d986792-ba34-491c-8d26-5191ca05aa5d": {
+            "filePath": "src/lib/special_floors.gvar"
+        },
+        "ea6bd498-5320-410d-8501-28e119857f17": {
+            "filePath": "src/env.prod.gvar"
+        },
+        "abd22d03-21d0-41f5-87a4-74371cd6a22b": {
+            "filePath": "src/lib/auto_tools.gvar"
+        },
+        "8f86e5dd-2f5b-4948-85bf-19531c936e45": {
+            "filePath": "src/lib/core.gvar"
+        },
+        "6ee6493d-8028-46d3-b4d9-3ce7b06c6ef4": {
+            "filePath": "src/lib/describe_floor.gvar"
+        },
+        "b902325d-07e4-4082-8635-5e38443f29f9": {
+            "filePath": "src/lib/encounters.gvar"
+        },
+        "4091e5d2-6f37-4302-a90b-27065ab989e1": {
+            "filePath": "src/lib/get_dungeon_data.gvar"
+        },
+        "c7a510b3-3bf4-47f4-b6fa-3f12416284b7": {
+            "filePath": "src/lib/get_floor_data.gvar"
+        },
+        "2d3e8126-cd02-4554-98f9-0a8dff98a09f": {
+            "filePath": "src/lib/get_message.gvar"
+        },
+        "37def108-11f5-45aa-a000-f8c68ff72207": {
+            "filePath": "src/lib/get_status.gvar"
+        },
+        "87c896d0-1ba1-47ae-bd93-827da92f78aa": {
+            "filePath": "src/lib/map_picker.gvar"
+        },
+        "468bce27-653b-47aa-b8ed-9357196459df": {
+            "filePath": "src/lib/map_tools.gvar"
+        },
+        "5290d47a-086f-4d56-8cb2-91a62976f365": {
+            "filePath": "src/lib/maps.gvar"
+        },
+        "d62a1569-c48b-4e80-8702-96d05ffaacb9": {
+            "filePath": "src/lib/monster_tools.gvar"
+        },
+        "c1a83721-ba23-43e6-992d-3c5c3f56c93b": {
+            "filePath": "src/lib/monsters.gvar"
+        },
+        "521ded99-888c-4765-ba6b-f833d66ced27": {
+            "filePath": "src/lib/npc_tools.gvar"
+        },
+        "3dc472d1-b166-49a5-a801-ead859547152": {
+            "filePath": "src/lib/npcs.gvar"
+        },
+        "a1cd80b3-772b-49b7-8bf0-c743cd380ccb": {
+            "filePath": "src/lib/random.gvar"
+        },
+        "ed8121b6-8534-42cf-84f0-1e46269ed9c8": {
+            "filePath": "src/lib/script.gvar"
+        },
+        "7c518500-8f21-4188-b61a-14195865169f": {
+            "filePath": "src/lib/server_config.gvar"
+        },
+        "14e039a9-8241-464d-9209-23114d166f59": {
+            "filePath": "src/lib/special_floors.gvar"
+        }
     }
-  }
 }
