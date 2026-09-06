@@ -2521,14 +2521,27 @@ monster_list = [
     ),
 ]   
 
-def get_monsters_in_cr_range(cr_min, cr_max) -> dict[int, object]:
-    monsters_in_range = {}
+def get_monsters_by_cr() -> dict:
+    """One-pass CR -> [monster] index over the resolved monster list."""
+    monsters_by_cr = {}
 
     for monster in server_config.get_monster_list(monster_list.copy()):
-        if monster.cr >= cr_min and monster.cr <= cr_max:
-            if monster.cr in monsters_in_range:
-                monsters_in_range[monster.cr].append(monster)
-            else:
-                monsters_in_range[monster.cr] = [monster]
+        cr = monster.cr
+        if cr in monsters_by_cr:
+            monsters_by_cr[cr].append(monster)
+        else:
+            monsters_by_cr[cr] = [monster]
+
+    return monsters_by_cr
+
+def get_monsters_in_cr_range(cr_min, cr_max, monsters_by_cr=None) -> dict:
+    """Filter an optional prebuilt CR index. Builds one if not provided."""
+    if monsters_by_cr is None:
+        monsters_by_cr = get_monsters_by_cr()
+
+    monsters_in_range = {}
+    for cr, monsters in monsters_by_cr.items():
+        if cr >= cr_min and cr <= cr_max:
+            monsters_in_range[cr] = monsters
 
     return monsters_in_range

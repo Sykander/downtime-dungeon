@@ -22,6 +22,19 @@ def generate_encounter(target_cr: int, seed: int):
     oldState = random.getState()
     random.setSeed(seed)
 
+    # Index once — never rescan the full monster list while widening CR bands.
+    # (Repeated full scans at CR above the highest monster burned Avrae's ~10k loop budget.)
+    monsters_by_cr = monster_tools.get_monsters_by_cr()
+    if len(monsters_by_cr) == 0:
+        {}["No monsters available, please check your server monster config."]
+
+    max_available_cr = max(monsters_by_cr.keys())
+    min_available_cr = min(monsters_by_cr.keys())
+
+    # Soft-cap encounter CR to monsters that actually exist (default list tops at 30).
+    if target_cr > max_available_cr:
+        target_cr = max_available_cr
+
     cr_min = None
     cr_max = None
     difficulty = random.get_random_integer(0, 5)
@@ -45,14 +58,23 @@ def generate_encounter(target_cr: int, seed: int):
     cr_min = max(ceil(cr_min), 0)
     cr_max = max(cr_max, 0.125)
 
-    monsters = monster_tools.get_monsters_in_cr_range(cr_min, cr_max)
+    # Keep the band inside the available CR span so the first filter usually hits.
+    if cr_max > max_available_cr:
+        cr_max = max_available_cr
+    if cr_min > max_available_cr:
+        cr_min = max_available_cr
+    if cr_min < min_available_cr:
+        cr_min = min_available_cr
 
-    # if there's no monsters in that cr range, expand range
-    while len(monsters) == 0 and cr_min > 0:
-        cr_min = cr_min - 1
-        monsters = monster_tools.get_monsters_in_cr_range(cr_min, cr_max)
+    monsters = monster_tools.get_monsters_in_cr_range(cr_min, cr_max, monsters_by_cr)
 
-    # if there is still no monsters, throw exception
+    # Empty band: widen in at most two cheap index filters (no per-CR full rescans).
+    if len(monsters) == 0:
+        monsters = monster_tools.get_monsters_in_cr_range(min_available_cr, cr_max, monsters_by_cr)
+    if len(monsters) == 0:
+        # Copy so later budget pops do not mutate the shared index.
+        monsters = dict(monsters_by_cr)
+
     if len(monsters) == 0:
         {}[f"No monsters found in cr range {cr_min} to {cr_max}, please check if your server config has any monsters in this range."]
 

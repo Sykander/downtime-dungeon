@@ -1,0 +1,31 @@
+by_cr = monsters.get_monsters_by_cr()
+return 30 in by_cr and by_cr[30][0].name == "Tarrasque" and max(by_cr.keys()) == 30
+---
+True
+---
+name: get_monsters_by_cr indexes tarrasque at max CR 30
+
+by_cr = monsters.get_monsters_by_cr()
+empty = monsters.get_monsters_in_cr_range(47, 50, by_cr)
+hit = monsters.get_monsters_in_cr_range(28, 30, by_cr)
+return len(empty) == 0 and 30 in hit and hit[30][0].name == "Tarrasque"
+---
+True
+---
+name: get_monsters_in_cr_range filters high empty bands from index
+
+# Regression for TooManyStatements when CR is above every monster:
+# expand a CR-50-style empty band downward using the prebuilt index
+# (same pattern encounters used to do with full-list rescans).
+by_cr = monsters.get_monsters_by_cr()
+cr_min = 200
+cr_max = 200
+found = monsters.get_monsters_in_cr_range(cr_min, cr_max, by_cr)
+while len(found) == 0 and cr_min > 0:
+    cr_min -= 1
+    found = monsters.get_monsters_in_cr_range(cr_min, cr_max, by_cr)
+return cr_min == 30 and 30 in found and found[30][0].name == "Tarrasque"
+---
+True
+---
+name: high CR expand-down via index does not blow loop budget

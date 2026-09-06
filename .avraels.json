@@ -1,0 +1,10 @@
+{
+  "enableGvarFetch": false,
+  "varFiles": [".varfile.json"],
+  "defaultProfile": "default",
+  "profiles": {
+    "default": {
+      "description": "Local Downtime Dungeon gvar tests"
+    }
+  }
+}
